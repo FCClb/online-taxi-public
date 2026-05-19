@@ -18,6 +18,7 @@
 
   <modules>
     <module>api-passenger</module>
+    <module>service-verification</module>
   </modules>
 
   <properties>
