@@ -1,2 +1,5 @@
-com\fc\apipassenger\ApiPassengerApplication.class
 com\fc\apipassenger\controller\TestController.class
+com\fc\apipassenger\controller\VerificationCodeController.class
+com\fc\apipassenger\service\VerificationCodService.class
+com\fc\apipassenger\ApiPassengerApplication.class
+com\fc\apipassenger\request\VerificationCodeDTO.class
