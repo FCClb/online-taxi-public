@@ -1,5 +1,7 @@
 package com.fc.serviceverification.controller;
 
+import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.response.NumberCodeResponse;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,20 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class NumberCodeController {
 
     @GetMapping("/numberCode/{size}")
-    public String numberCode(@PathVariable int size) {
+    public ResponseResult numberCode(@PathVariable int size) {
 
         System.out.println("size: " + size);
         //生成验证码
         double mathRandom = (Math.random() * 9 + 1) * Math.pow(10, size - 1);
-        int numResult = (int) mathRandom;
+        int resultInt = (int) mathRandom;
 
-        JSONObject result = new JSONObject();
-        result.put("code", 1);
-        result.put("message", "success");
-        JSONObject data = new JSONObject();
-        data.put("numberCode", numResult);
-        result.put("data", data);
+        //定义返回值
+        NumberCodeResponse response = new NumberCodeResponse();
+        response.setNumberCode(resultInt);
 
-        return result.toString();
+
+
+        return ResponseResult.success(response);
     }
 }
