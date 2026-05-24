@@ -17,12 +17,11 @@ public class NumberCodeController {
         //生成验证码
         double mathRandom = (Math.random() * 9 + 1) * Math.pow(10, size - 1);
         int resultInt = (int) mathRandom;
+        System.out.println("generate src code: " + resultInt);
 
         //定义返回值
         NumberCodeResponse response = new NumberCodeResponse();
         response.setNumberCode(resultInt);
-
-
 
         return ResponseResult.success(response);
     }
