@@ -2,6 +2,7 @@ package com.fc.apipassenger.controller;
 
 import com.fc.apipassenger.request.VerificationCodeDTO;
 import com.fc.apipassenger.service.VerificationCodeService;
+import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class VerificationCodeController {
     private VerificationCodeService verificationCodeService;
 
     @GetMapping("/verification-code")
-    public String verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO) {
+    public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO) {
 
         //todo 后续可以改为日志打印
         String passengerPhone = verificationCodeDTO.getPassengerPhone();

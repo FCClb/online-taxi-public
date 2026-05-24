@@ -17,6 +17,16 @@ public class ResponseResult<T> {
     private T data;
 
     /**
+     * 默认的成功响应方法
+     * @return
+     * @param <T>
+     */
+    public static <T> ResponseResult success() {
+
+        return new ResponseResult().setCode(CommonStatusEnum.SUCCESS.getCode()).setMessage(CommonStatusEnum.SUCCESS.getValue());
+    }
+
+    /**
      * 成功响应的方法
      * @param data
      * @return
@@ -28,16 +38,6 @@ public class ResponseResult<T> {
     }
 
     /**
-     * 失败：自定义失败 错误码和提示信息
-     * @param code
-     * @param message
-     * @return
-     */
-    public static ResponseResult fail(int code, String message) {
-        return new ResponseResult().setCode(code).setMessage(message);
-    }
-
-    /**
      * 失败：统一的失败
      * @param data
      * @return
@@ -45,6 +45,16 @@ public class ResponseResult<T> {
      */
     public static <T> ResponseResult fail(T data) {
         return new ResponseResult().setData(data);
+    }
+
+    /**
+     * 失败：自定义失败 错误码和提示信息
+     * @param code
+     * @param message
+     * @return
+     */
+    public static ResponseResult fail(int code, String message) {
+        return new ResponseResult().setCode(code).setMessage(message);
     }
 
     /**
