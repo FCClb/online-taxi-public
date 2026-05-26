@@ -1,17 +1,15 @@
 package com.fc.apipassenger.request;
 
+import lombok.Data;
+
 /**
  * 验证码
  */
+@Data
 public class VerificationCodeDTO {
 
     private String passengerPhone;
 
-    public String getPassengerPhone() {
-        return passengerPhone;
-    }
+    private String verificationCode;
 
-    public void setPassengerPhone(String passengerPhone) {
-        this.passengerPhone = passengerPhone;
-    }
 }
