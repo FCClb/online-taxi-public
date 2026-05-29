@@ -20,6 +20,7 @@
     <module>api-passenger</module>
     <module>service-verification</module>
     <module>internal-common</module>
+      <module>service-passenger-user</module>
   </modules>
 
   <properties>
