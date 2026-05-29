@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/ApiPassengerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/ApiPassengerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/test/java/com/fc/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/ApiPassengerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/remote/ServiceVerificationClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/request/VerificationCodeDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/service/VerificationCodeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/target/test-classes/com/fc/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/dto/ResponseResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/response/NumberCodeResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/response/TokenResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/java/comf/fc/ServicePassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/ServicePassengerUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/java/comf/fc/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/comf/fc/ServicePassengerUserApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/comf/fc/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/ServiceVerificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/ServiceVerificationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/controller/NumberCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/controller/NumberCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/ServiceVerificationApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/controller/NumberCodeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FCClb&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:FCClb/online-taxi-public.git&quot;,
+    &quot;accountId&quot;: &quot;8cbb3dca-b2fc-4559-aa98-a5804252e5a8&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="D:\B_code\Maven\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3EOaQmmZ2RpX6pCd4vYKE8RYffm" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ServicePassengerUserApplication">
+    <configuration name="ApiPassengerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-passenger" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apipassenger.ApiPassengerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePassengerUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-passenger-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="comf.fc.ServicePassengerUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceVerificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-verification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.serviceverification.ServiceVerificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19416.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19416.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="" />
+      <created>1768986471821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768986471821</updated>
+      <workItem from="1768986472859" duration="458000" />
+      <workItem from="1780052057624" duration="24000" />
+      <workItem from="1780052085863" duration="326000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
