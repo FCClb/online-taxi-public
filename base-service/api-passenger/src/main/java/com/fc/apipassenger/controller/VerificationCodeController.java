@@ -1,6 +1,6 @@
 package com.fc.apipassenger.controller;
 
-import com.fc.apipassenger.request.VerificationCodeDTO;
+import com.fc.internalcommon.request.VerificationCodeDTO;
 import com.fc.apipassenger.service.VerificationCodeService;
 import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;

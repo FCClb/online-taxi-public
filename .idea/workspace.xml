@@ -4,57 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/ApiPassengerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/ApiPassengerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/test/java/com/fc/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/ApiPassengerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/remote/ServiceVerificationClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/request/VerificationCodeDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/classes/com/fc/apipassenger/service/VerificationCodeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/target/test-classes/com/fc/AppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/dto/ResponseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/response/NumberCodeResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/response/TokenResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/java/comf/fc/ServicePassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/ServicePassengerUserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/java/comf/fc/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/comf/fc/ServicePassengerUserApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-passenger-user/target/classes/comf/fc/controller/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/ServiceVerificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/ServiceVerificationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/controller/NumberCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/controller/NumberCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/src/main/java/com/fc/serviceverification/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/java/com/fc/serviceverification/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/ServiceVerificationApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/controller/NumberCodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/classes/com/fc/serviceverification/controller/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
+      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/VerificationCodeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/request/VerificationCodeDTO.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +21,13 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,30 +56,37 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3EOaQmmZ2RpX6pCd4vYKE8RYffm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.online-taxi-public [clean].executor": "Run",
-    "Maven.online-taxi-public [compile].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -165,11 +137,26 @@
       <updated>1768986471821</updated>
       <workItem from="1768986472859" duration="458000" />
       <workItem from="1780052057624" duration="24000" />
-      <workItem from="1780052085863" duration="326000" />
+      <workItem from="1780052085863" duration="1373000" />
+      <workItem from="1780053522281" duration="593000" />
+      <workItem from="1780127971613" duration="659000" />
     </task>
+    <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
+      <option name="closed" value="true" />
+      <created>1780052526060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780052526060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题" />
   </component>
 </project>

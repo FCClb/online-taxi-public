@@ -1,4 +1,4 @@
-package com.fc.apipassenger.request;
+package com.fc.internalcommon.request;
 
 import lombok.Data;
 
