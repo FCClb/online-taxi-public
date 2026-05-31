@@ -1,8 +1,8 @@
-package comf.fc.controller;
+package com.fc.servicepassengeruser.controller;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.VerificationCodeDTO;
-import comf.fc.service.UserService;
+import com.fc.servicepassengeruser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

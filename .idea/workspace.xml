@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
-      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/VerificationCodeDTO.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-passenger-user:登录or注册用户骨架编写完成">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/dto/PassengerUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/mapper/PassengerUserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/request/VerificationCodeDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/VerificationCodeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/request/VerificationCodeDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/ServicePassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/ServicePassengerUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/comf/fc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/comf/fc/ServicePassengerUserApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/comf/fc/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/comf/fc/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/comf/fc/service/UserService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -62,31 +70,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -106,7 +115,7 @@
     </configuration>
     <configuration name="ServicePassengerUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-passenger-user" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="comf.fc.ServicePassengerUserApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicepassengeruser.ServicePassengerUserApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,7 +148,8 @@
       <workItem from="1780052057624" duration="24000" />
       <workItem from="1780052085863" duration="1373000" />
       <workItem from="1780053522281" duration="593000" />
-      <workItem from="1780127971613" duration="659000" />
+      <workItem from="1780127971613" duration="883000" />
+      <workItem from="1780220900455" duration="1607000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -149,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780052526060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="service-passenger-user:登录or注册用户骨架编写完成">
+      <option name="closed" value="true" />
+      <created>1780128833863</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780128833863</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +175,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题" />
+    <MESSAGE value="service-passenger-user:登录or注册用户骨架编写完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-passenger-user:登录or注册用户骨架编写完成" />
   </component>
 </project>
