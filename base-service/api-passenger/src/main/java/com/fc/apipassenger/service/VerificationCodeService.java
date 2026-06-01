@@ -1,11 +1,12 @@
 package com.fc.apipassenger.service;
 
+import com.fc.apipassenger.remote.ServicePassengerUserClient;
 import com.fc.apipassenger.remote.ServiceVerificationClient;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.request.VerificationCodeDTO;
 import com.fc.internalcommon.response.NumberCodeResponse;
 import com.fc.internalcommon.response.TokenResponse;
-import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -30,6 +31,10 @@ public class VerificationCodeService {
     //否则用RedisTemplate
     private StringRedisTemplate stringRedisTemplate;
 
+    //乘客用户服务
+    @Autowired
+    private ServicePassengerUserClient servicePassengerUserClient;
+
     /**
      * 工具方法
      * 根据手机号生成Key
@@ -47,13 +52,10 @@ public class VerificationCodeService {
      */
     public ResponseResult generatorCode(String passengerPhone) {
         //调用验证码服务，获取验证码
-//        System.out.println("调用验证码服务，获取验证码");
         ResponseResult<NumberCodeResponse> numberCodeResponse = serviceVerificationClient.numberCode(6);
         int numberCode = numberCodeResponse.getData().getNumberCode();
-//        System.out.println("get numberCode: " + numberCode);
 
         //存入redis
-//        System.out.println("存入redis");
         //需要有key，value，过期时间
         String key = generateKeyByPhone(passengerPhone);
         stringRedisTemplate.opsForValue().set(key, numberCode + "", 2, TimeUnit.MINUTES);
@@ -87,10 +89,13 @@ public class VerificationCodeService {
             return ResponseResult.fail(CommonStatusEnum.VERIFICATION_CODE_ERROR.getCode(), CommonStatusEnum.VERIFICATION_CODE_ERROR.getValue());
         }
 
-        System.out.println("校验验证码");
+        System.out.println("校验验证码成功");
 
         //判断原来是否有用户，并进行对应的处理
         System.out.println("判断原来是否有用户，并进行对应的处理");
+        VerificationCodeDTO verificationCodeDTO = new VerificationCodeDTO();
+        verificationCodeDTO.setPassengerPhone(passengerPhone);
+        servicePassengerUserClient.loginOrRegister(verificationCodeDTO);
 
         //颁发令牌
         System.out.println("颁发令牌");

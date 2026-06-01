@@ -2,6 +2,7 @@ server:
   port: 8083
 
 spring:
+  # 微服务配置
   application:
     name: service-passenger-user
   cloud:
