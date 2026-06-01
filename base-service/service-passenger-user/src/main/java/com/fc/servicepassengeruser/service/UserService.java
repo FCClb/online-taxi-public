@@ -6,6 +6,7 @@ import com.fc.servicepassengeruser.mapper.PassengerUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 
@@ -18,15 +19,27 @@ public class UserService {
     public ResponseResult loginOrRegister(String passengerPhone) {
         System.out.println("UserService 被调用，手机号passengerPhone=" + passengerPhone);
 
-        //todo 根据手机号查询用户信息
+        //根据手机号查询用户信息
         HashMap<String, Object> map = new HashMap<>();
         map.put("passenger_phone", passengerPhone);
         List<PassengerUser> passengerUsers = passengerUserMapper.selectByMap(map);
-        System.out.println(passengerUsers.size() == 0 ? "无记录" : passengerUsers.get(0).getPassengerName());
+        System.out.println(passengerUsers.size() == 0 ? "无记录，插入用户" : "已存在相同手机号用户：用户称谓：" + passengerUsers.get(0).getPassengerName() + "，用户手机号：" + passengerUsers.get(0).getPassengerPhone());
 
-        //todo 判断用户信息是否存在
+        //判断用户信息是否存在
+        //如果不存在，则插入用户信息
+        if (passengerUsers.size() == 0) {
+            PassengerUser passengerUser = new PassengerUser();
+            passengerUser.setPassengerName("芙芙");
+            passengerUser.setPassengerGender((byte) 0);
+            passengerUser.setPassengerPhone(passengerPhone);
+            passengerUser.setState((byte) 0);
 
-        //todo 如果不存在，则插入用户信息
+            LocalDateTime now = LocalDateTime.now();
+            passengerUser.setGmtCreate(now);
+            passengerUser.setGmtModified(now);
+
+            passengerUserMapper.insert(passengerUser);
+        }
 
         return ResponseResult.success(passengerPhone);
     }
