@@ -1,0 +1,6 @@
+com\fc\servicepassengeruser\dto\PassengerUser.class
+com\fc\servicepassengeruser\controller\UserController.class
+com\fc\servicepassengeruser\mapper\PassengerUserMapper.class
+com\fc\servicepassengeruser\controller\TestController.class
+com\fc\servicepassengeruser\service\UserService.class
+com\fc\servicepassengeruser\ServicePassengerUserApplication.class

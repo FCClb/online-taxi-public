@@ -30,6 +30,7 @@
     <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
     <lombok.version>1.18.24</lombok.version>
     <json-lib.version>2.4</json-lib.version>
+    <java-jwt.version>3.14.0</java-jwt.version>
   </properties>
 
   <dependencyManagement>
@@ -64,6 +65,13 @@
         <artifactId>json-lib</artifactId>
         <version>${json-lib.version}</version>
         <classifier>jdk15</classifier>
+      </dependency>
+
+      <!-- jwt（java web token）令牌，用于校验身份 -->
+      <dependency>
+        <groupId>com.auth0</groupId>
+        <artifactId>java-jwt</artifactId>
+        <version>${java-jwt.version}</version>
       </dependency>
 
     </dependencies>
