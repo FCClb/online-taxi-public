@@ -5,9 +5,12 @@ import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.fc.internalcommon.dto.TokenResult;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Jwt工具类
@@ -17,14 +20,22 @@ public class JwtUtils {
     //盐
     private static final String SIGN = "@FCClb";
 
-    private static final String JWT_KEY = "passengerPhone";
+    private static final String JWT_KEY_PHONE = "phone";
+
+    //司机是0，乘客是1
+    private static final String JWT_KEY_IDENTITY = "identity";
 
     //生成token
-    public static String generateToken(String passengerPhone) {
+    public static String generateToken(String Phone, String identity) {
+
         JWTCreator.Builder builder = JWT.create();
 
-        //整合JWT_KEY
-        builder.withClaim(JWT_KEY, passengerPhone);
+        Map<String, String> map = new HashMap<>();
+        map.put(JWT_KEY_PHONE, Phone);
+        map.put(JWT_KEY_IDENTITY, identity);
+
+        //整合map
+        map.forEach((k, v) -> builder.withClaim(k, v));
 
         //token过期时间
         Calendar calendar = Calendar.getInstance();
@@ -40,20 +51,21 @@ public class JwtUtils {
     }
 
     //解析token
-    public static String parseToken(String token) {
+    public static TokenResult parseToken(String token) {
         DecodedJWT verify = JWT.require(Algorithm.HMAC256(SIGN)).build().verify(token);
-        Claim claim = verify.getClaim(JWT_KEY);
-        return claim.toString();
+        String phone = verify.getClaim(JWT_KEY_PHONE).toString();
+        String identity = verify.getClaim(JWT_KEY_IDENTITY).toString() ;
+
+        return new TokenResult(phone, identity);
     }
 
     public static void main(String[] args) {
-        String s = generateToken("15503478318");
+        String s = generateToken("15503478318", "1");
 
         System.out.println("生成的token：" + s);
         System.out.println("==========");
 
         System.out.println("解析token：" + parseToken(s));
-
 
     }
 }

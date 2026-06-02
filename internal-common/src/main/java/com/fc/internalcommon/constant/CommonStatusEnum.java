@@ -2,6 +2,9 @@ package com.fc.internalcommon.constant;
 
 import lombok.Getter;
 
+/**
+ * 验证码常量
+ */
 public enum CommonStatusEnum {
 
     /**

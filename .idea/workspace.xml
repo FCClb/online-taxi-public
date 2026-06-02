@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="internal-common:jwt通用工具类token生成代码编写">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="internal-common:jwt通用工具类token解析代码编写">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/IdentityConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/TokenResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/IdentityConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/dto/TokenResult.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/VerificationCodeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/VerificationCodeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/util/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/util/JwtUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +34,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -95,7 +109,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JwtUtils">
+  <component name="RunManager" selected="Spring Boot.ApiPassengerApplication">
     <configuration name="JwtUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fc.internalcommon.util.JwtUtils" />
       <module name="internal-common" />
@@ -160,7 +174,7 @@
       <workItem from="1780220900455" duration="1824000" />
       <workItem from="1780222874038" duration="87000" />
       <workItem from="1780296727600" duration="4445000" />
-      <workItem from="1780386120132" duration="882000" />
+      <workItem from="1780386120132" duration="5138000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -210,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780301176532</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="internal-common:jwt通用工具类token解析代码编写">
+      <option name="closed" value="true" />
+      <created>1780387311018</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780387311018</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +245,7 @@
     <MESSAGE value="service-passenger-user:根据手机号插入用户信息" />
     <MESSAGE value="api-passenger:调用service-passenger-user插入新用户" />
     <MESSAGE value="internal-common:jwt通用工具类token生成代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="internal-common:jwt通用工具类token生成代码编写" />
+    <MESSAGE value="internal-common:jwt通用工具类token解析代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="internal-common:jwt通用工具类token解析代码编写" />
   </component>
 </project>
