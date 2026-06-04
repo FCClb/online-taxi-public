@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="service-passenger-user@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.52">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1045,39 +1045,39 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="301" parent="300" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>用户id</Comment>
-      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <column id="302" parent="300" name="gmt_create">
       <Comment>创建时间</Comment>
-      <DasType>datetime|0s</DasType>
       <Position>2</Position>
+      <StoredType>datetime|0s</StoredType>
     </column>
     <column id="303" parent="300" name="gmt_modified">
       <Comment>更新时间</Comment>
-      <DasType>datetime|0s</DasType>
       <Position>3</Position>
+      <StoredType>datetime|0s</StoredType>
     </column>
     <column id="304" parent="300" name="passenger_phone">
       <Comment>用户手机号</Comment>
-      <DasType>varchar(16)|0s</DasType>
       <Position>4</Position>
+      <StoredType>varchar(16)|0s</StoredType>
     </column>
     <column id="305" parent="300" name="passenger_name">
       <Comment>用户称谓</Comment>
-      <DasType>varchar(16)|0s</DasType>
       <Position>5</Position>
+      <StoredType>varchar(16)|0s</StoredType>
     </column>
     <column id="306" parent="300" name="passenger_gender">
       <Comment>用户性别</Comment>
-      <DasType>tinyint(1)|0s</DasType>
       <Position>6</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
     </column>
     <column id="307" parent="300" name="state">
       <Comment>状态（0有效，1失效）</Comment>
-      <DasType>tinyint(1)|0s</DasType>
       <Position>7</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
     </column>
     <index id="308" parent="300" name="PRIMARY">
       <ColNames>id</ColNames>

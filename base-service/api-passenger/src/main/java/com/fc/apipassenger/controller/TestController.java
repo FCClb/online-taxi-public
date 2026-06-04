@@ -1,5 +1,6 @@
 package com.fc.apipassenger.controller;
 
+import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,4 +12,16 @@ public class TestController {
 
         return "test api passenger";
     }
+
+    @GetMapping("/authTest")
+    public ResponseResult authTest() {
+        return ResponseResult.success("auth test");
+    }
+
+
+    @GetMapping("/noAuthTest")
+    public ResponseResult noAuthTest() {
+        return ResponseResult.success("noAuth test");
+    }
+
 }
