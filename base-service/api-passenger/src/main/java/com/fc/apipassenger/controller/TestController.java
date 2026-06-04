@@ -13,12 +13,19 @@ public class TestController {
         return "test api passenger";
     }
 
+    /**
+     * 需要有token
+     * @return
+     */
     @GetMapping("/authTest")
     public ResponseResult authTest() {
         return ResponseResult.success("auth test");
     }
 
-
+    /**
+     * 不用token
+     * @return
+     */
     @GetMapping("/noAuthTest")
     public ResponseResult noAuthTest() {
         return ResponseResult.success("noAuth test");
