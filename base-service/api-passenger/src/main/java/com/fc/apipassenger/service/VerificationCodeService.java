@@ -9,6 +9,7 @@ import com.fc.internalcommon.request.VerificationCodeDTO;
 import com.fc.internalcommon.response.NumberCodeResponse;
 import com.fc.internalcommon.response.TokenResponse;
 import com.fc.internalcommon.util.JwtUtils;
+import com.fc.internalcommon.util.RedisPrefixUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -25,12 +26,6 @@ public class VerificationCodeService {
     @Autowired
     private ServiceVerificationClient serviceVerificationClient;
 
-    //乘客验证码的前缀
-    private String verificationCodePrefix = "passenger-verification-code-";
-
-    //token存储的前缀
-    private String tokenPrefix = "token-";
-
     @Autowired
     //如果key，value是String类型，推荐用StringRedisTemplate
     //否则用RedisTemplate
@@ -40,26 +35,6 @@ public class VerificationCodeService {
     @Autowired
     private ServicePassengerUserClient servicePassengerUserClient;
 
-    /**
-     * 工具方法
-     * 根据手机号生成Key
-     * @param passengerPhone
-     * @return
-     */
-    private String generateKeyByPhone(String passengerPhone) {
-        return verificationCodePrefix + passengerPhone;
-    }
-
-    /**
-     * 工具方法
-     * 根据手机号和身份标识 生成token存储的key
-     * @param passengerPhone
-     * @param identity
-     * @return
-     */
-    private String generateTokenKey(String passengerPhone, String identity) {
-        return verificationCodePrefix + passengerPhone + "-" + identity;
-    }
 
     /**
      * 生成验证码
@@ -73,7 +48,7 @@ public class VerificationCodeService {
 
         //存入redis
         //需要有key，value，过期时间
-        String key = generateKeyByPhone(passengerPhone);
+        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone);
         stringRedisTemplate.opsForValue().set(key, numberCode + "", 2, TimeUnit.MINUTES);
 
         //todo 通过短信服务商（阿里短信服务，腾讯短信通，华信，容联），将对应的验证码发送到手机上
@@ -91,7 +66,7 @@ public class VerificationCodeService {
     public ResponseResult checkVerificationCode(String passengerPhone, String verificationCode) {
         //1.根据手机号，去redis验证验证码
         // 生成key
-        String key = generateKeyByPhone(passengerPhone);
+        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone);
         //根据key去获取value
         String value = stringRedisTemplate.opsForValue().get(key);
 
@@ -113,7 +88,7 @@ public class VerificationCodeService {
         //颁发令牌
         String token = JwtUtils.generateToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY.getValue());
         //将token存储到redis中
-        String tokenKey = generateTokenKey(passengerPhone, IdentityConstant.PASSENGER_IDENTITY.getValue());
+        String tokenKey = RedisPrefixUtils.generateTokenKey(passengerPhone, IdentityConstant.PASSENGER_IDENTITY.getValue());
         stringRedisTemplate.opsForValue().set(tokenKey, token, 30, TimeUnit.DAYS);
 
         //响应

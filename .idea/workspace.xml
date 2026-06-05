@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="internal-common:jwt通用工具类token解析代码编写">
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/JwtInterceptor.class" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:token存储到redis">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/RedisPrefixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,7 @@
       <workItem from="1780296727600" duration="4445000" />
       <workItem from="1780386120132" duration="5138000" />
       <workItem from="1780534878447" duration="1788000" />
-      <workItem from="1780618732611" duration="2162000" />
+      <workItem from="1780618732611" duration="4593000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -230,7 +226,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780387311018</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="api-passenger:jwt拦截器的注册">
+      <option name="closed" value="true" />
+      <created>1780621156279</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780621156279</updated>
+    </task>
+    <task id="LOCAL-00009" summary="api-passenger:token存储到redis">
+      <option name="closed" value="true" />
+      <created>1780622009760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780622009760</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +267,8 @@
     <MESSAGE value="api-passenger:调用service-passenger-user插入新用户" />
     <MESSAGE value="internal-common:jwt通用工具类token生成代码编写" />
     <MESSAGE value="internal-common:jwt通用工具类token解析代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="internal-common:jwt通用工具类token解析代码编写" />
+    <MESSAGE value="api-passenger:jwt拦截器的注册" />
+    <MESSAGE value="api-passenger:token存储到redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:token存储到redis" />
   </component>
 </project>
