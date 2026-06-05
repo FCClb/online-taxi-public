@@ -41,8 +41,8 @@ public class JwtUtils {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE, 1); //找到一天后的时间点
         Date date = calendar.getTime();
-        //整合过期时间
-        builder.withExpiresAt(date);
+        //整合过期时间    已经设置了redis中存储的过期时间，故这里可以不设置
+//        builder.withExpiresAt(date);
 
         //生成 token
         String sign = builder.sign(Algorithm.HMAC256(SIGN));
