@@ -1,3 +1,4 @@
+com\fc\apipassenger\interceptor\JwtInterceptor.class
 com\fc\apipassenger\remote\ServicePassengerUserClient.class
 com\fc\apipassenger\controller\VerificationCodeController.class
 com\fc\apipassenger\ApiPassengerApplication.class

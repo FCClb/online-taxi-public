@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="internal-common:jwt通用工具类token解析代码编写">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f9fb8b9-77cd-4373-ac67-7de8914a69f8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8f9fb8b9-77cd-4373-ac67-7de8914a69f8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/JwtInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -26,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,7 +82,7 @@
     "Spring Boot.ServiceVerificationApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/test/online-taxi-public",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/testProject/online-taxi-public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -170,6 +172,7 @@
       <workItem from="1780296727600" duration="4445000" />
       <workItem from="1780386120132" duration="5138000" />
       <workItem from="1780534878447" duration="1788000" />
+      <workItem from="1780618732611" duration="2162000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
