@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:校验验证码接口改造，支持双token">
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/TokenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/TokenService.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:双token生成骨架编写">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/JwtInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/interceptor/JwtInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/TokenService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/util/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/util/JwtUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +98,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -162,7 +176,7 @@
       <workItem from="1780222874038" duration="87000" />
       <workItem from="1780296727600" duration="4445000" />
       <workItem from="1780386120132" duration="5248000" />
-      <workItem from="1780731462372" duration="3240000" />
+      <workItem from="1780731462372" duration="7196000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -236,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780734469829</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="api-passenger:双token生成骨架编写">
+      <option name="closed" value="true" />
+      <created>1780734941428</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780734941428</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +285,7 @@
     <MESSAGE value="internal-common:jwt通用工具类token解析代码编写" />
     <MESSAGE value="api-passenger:使用jwt通用工具类，颁发令牌" />
     <MESSAGE value="api-passenger:校验验证码接口改造，支持双token" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:校验验证码接口改造，支持双token" />
+    <MESSAGE value="api-passenger:双token生成骨架编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:双token生成骨架编写" />
   </component>
 </project>

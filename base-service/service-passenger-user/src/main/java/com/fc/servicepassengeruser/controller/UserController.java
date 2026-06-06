@@ -14,6 +14,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 登录或注册
+     * @param verificationCodeDTO
+     * @return
+     */
     @PostMapping("/user")
     public ResponseResult loginOrRegister(@RequestBody VerificationCodeDTO verificationCodeDTO) {
 
