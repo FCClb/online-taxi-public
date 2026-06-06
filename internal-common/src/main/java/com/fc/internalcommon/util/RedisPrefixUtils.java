@@ -21,12 +21,14 @@ public class RedisPrefixUtils {
     /**
      * 工具方法
      * 根据手机号和身份标识 生成token存储的key
+     *
      * @param passengerPhone
      * @param identity
      * @return
      */
-    public static String generateTokenKey(String passengerPhone, String identity) {
-        return tokenPrefix + passengerPhone + "-" + identity;
+    public static String generateTokenKey(String passengerPhone, String identity, String tokenType) {
+
+        return tokenPrefix + passengerPhone + "-" + identity + "-" + tokenType;
     }
 
 }

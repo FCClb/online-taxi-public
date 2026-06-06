@@ -1,8 +1,0 @@
-com\fc\internalcommon\response\TokenResponse.class
-com\fc\internalcommon\constant\IdentityConstant.class
-com\fc\internalcommon\response\NumberCodeResponse.class
-com\fc\internalcommon\constant\CommonStatusEnum.class
-com\fc\internalcommon\request\VerificationCodeDTO.class
-com\fc\internalcommon\dto\ResponseResult.class
-com\fc\internalcommon\dto\TokenResult.class
-com\fc\internalcommon\util\JwtUtils.class

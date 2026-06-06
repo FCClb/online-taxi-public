@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * 身份常量
  */
-public enum IdentityConstant {
+public enum IdentityEnum {
 
     /**
      * 乘客身份
@@ -22,7 +22,7 @@ public enum IdentityConstant {
     @Getter
     private String value;
 
-    IdentityConstant(String value) {
+    IdentityEnum(String value) {
         this.value = value;
     }
 

@@ -25,14 +25,19 @@ public class JwtUtils {
     //司机是0，乘客是1
     private static final String JWT_KEY_IDENTITY = "identity";
 
+    //token类型
+    private static final String JWT_TOKEN_TYPE = "tokenType";
+
+
     //生成token
-    public static String generateToken(String Phone, String identity) {
+    public static String generateToken(String Phone, String identity, String tokenType) {
 
         JWTCreator.Builder builder = JWT.create();
 
         Map<String, String> map = new HashMap<>();
         map.put(JWT_KEY_PHONE, Phone);
         map.put(JWT_KEY_IDENTITY, identity);
+        map.put(JWT_TOKEN_TYPE, tokenType);
 
         //整合map
         map.forEach((k, v) -> builder.withClaim(k, v));
@@ -60,7 +65,7 @@ public class JwtUtils {
     }
 
     public static void main(String[] args) {
-        String s = generateToken("15503478318", "1");
+        String s = generateToken("15503478318", "1", "accessToken");
 
         System.out.println("生成的token：" + s);
         System.out.println("==========");

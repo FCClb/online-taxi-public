@@ -3,7 +3,8 @@ package com.fc.apipassenger.service;
 import com.fc.apipassenger.remote.ServicePassengerUserClient;
 import com.fc.apipassenger.remote.ServiceVerificationClient;
 import com.fc.internalcommon.constant.CommonStatusEnum;
-import com.fc.internalcommon.constant.IdentityConstant;
+import com.fc.internalcommon.constant.IdentityEnum;
+import com.fc.internalcommon.constant.TokenTypeEnum;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.VerificationCodeDTO;
 import com.fc.internalcommon.response.NumberCodeResponse;
@@ -86,14 +87,23 @@ public class VerificationCodeService {
         servicePassengerUserClient.loginOrRegister(verificationCodeDTO);
 
         //颁发令牌
-        String token = JwtUtils.generateToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY.getValue());
+        //认证token
+        String accessToken = JwtUtils.generateToken(passengerPhone, IdentityEnum.PASSENGER_IDENTITY.getValue(), TokenTypeEnum.ACCESS_TOKEN_TYPE.getTokenType());
+        //刷新token：用于在accessToken过期后刷新accessToken和自身
+        String refreshToken = JwtUtils.generateToken(passengerPhone, IdentityEnum.PASSENGER_IDENTITY.getValue(), TokenTypeEnum.REFRESH_TOKEN_TYPE.getTokenType());
+
         //将token存储到redis中
-        String tokenKey = RedisPrefixUtils.generateTokenKey(passengerPhone, IdentityConstant.PASSENGER_IDENTITY.getValue());
-        stringRedisTemplate.opsForValue().set(tokenKey, token, 30, TimeUnit.DAYS);
+        String accessTokenKey = RedisPrefixUtils.generateTokenKey(passengerPhone, IdentityEnum.PASSENGER_IDENTITY.getValue(),TokenTypeEnum.ACCESS_TOKEN_TYPE.getTokenType());
+        stringRedisTemplate.opsForValue().set(accessTokenKey, accessToken, 30, TimeUnit.DAYS);
+
+        String refreshTokenKey = RedisPrefixUtils.generateTokenKey(passengerPhone, IdentityEnum.PASSENGER_IDENTITY.getValue(),TokenTypeEnum.REFRESH_TOKEN_TYPE.getTokenType());
+        //refreshToken比accessToken晚过期一天
+        stringRedisTemplate.opsForValue().set(refreshTokenKey, refreshToken, 31, TimeUnit.DAYS);
 
         //响应
         TokenResponse tokenResponse = new TokenResponse();
-        tokenResponse.setToken(token);
+        tokenResponse.setAccessToken(accessToken);
+        tokenResponse.setRefreshToken(refreshToken);
 
         return new ResponseResult<>().success(tokenResponse);
     }

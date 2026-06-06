@@ -1,7 +1,8 @@
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\controller\VerificationCodeController.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\service\VerificationCodeService.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\controller\TestController.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\ApiPassengerApplication.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\remote\ServicePassengerUserClient.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\interceptor\JwtInterceptor.java
-C:\Users\Lenovo\Desktop\testProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\remote\ServiceVerificationClient.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\remote\ServiceVerificationClient.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\interceptor\InterceptorConfig.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\remote\ServicePassengerUserClient.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\controller\TestController.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\controller\VerificationCodeController.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\service\VerificationCodeService.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\ApiPassengerApplication.java
+D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\api-passenger\src\main\java\com\fc\apipassenger\interceptor\JwtInterceptor.java

@@ -3,6 +3,7 @@ package com.fc.apipassenger.interceptor;
 import com.auth0.jwt.exceptions.AlgorithmMismatchException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import com.fc.internalcommon.constant.TokenTypeEnum;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.dto.TokenResult;
 import com.fc.internalcommon.util.JwtUtils;
@@ -58,7 +59,8 @@ public class JwtInterceptor implements HandlerInterceptor {
             String phone = tokenResult.getPhone();
             String identity = tokenResult.getIdentity();
 
-            String tokenKey = RedisPrefixUtils.generateTokenKey(phone, identity);
+            String tokenKey = RedisPrefixUtils.generateTokenKey(phone, identity, TokenTypeEnum.ACCESS_TOKEN_TYPE.getTokenType());
+
             String tokenRedis = redisTemplate.opsForValue().get(tokenKey);
             if (StringUtils.isBlank(tokenRedis)) {  //redis中没有
                 resultString = "token invalid";
