@@ -1,7 +1,7 @@
 package com.fc.servicepassengeruser.service;
 
 import com.fc.internalcommon.dto.ResponseResult;
-import com.fc.servicepassengeruser.dto.PassengerUser;
+import com.fc.internalcommon.dto.PassengerUser;
 import com.fc.servicepassengeruser.mapper.PassengerUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

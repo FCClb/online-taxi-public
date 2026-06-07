@@ -1,0 +1,31 @@
+package com.fc.apipassenger.controller;
+
+import com.fc.apipassenger.service.UserService;
+import com.fc.internalcommon.dto.ResponseResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+
+@RestController
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    /**
+     * 查询乘客信息
+     * @param request
+     * @return
+     */
+    @GetMapping("/users")
+    public ResponseResult getUser(HttpServletRequest request) {
+        //从http请求header中获取 accessToken
+        String accessToken = request.getHeader("Authorization");
+
+        return userService.getUserByAccessToken(accessToken);
+
+    }
+
+}
