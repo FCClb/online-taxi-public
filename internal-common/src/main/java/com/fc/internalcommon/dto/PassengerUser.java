@@ -33,7 +33,7 @@ public class PassengerUser {
     private String passengerName;
 
     /**
-     * 用户性别
+     * 用户性别（0女，1男）
      */
     private byte passengerGender;
 

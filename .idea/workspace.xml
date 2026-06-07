@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:根据refreshToken刷新双token，代码编写及测试">
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/UserService.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:查询乘客用户信息，骨架代码编写">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/dto/PassengerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/mapper/PassengerUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/mapper/PassengerUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,35 +64,35 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JwtUtils.executor": "Run",
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "15",
+    "RequestMappingsPanelWidth1": "15",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiPassengerApplication.executor": "Run",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "Spring Boot.ServiceVerificationApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -103,7 +105,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiPassengerApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePassengerUserApplication">
     <configuration name="JwtUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fc.internalcommon.util.JwtUtils" />
       <module name="internal-common" />
@@ -170,7 +172,7 @@
       <workItem from="1780296727600" duration="4445000" />
       <workItem from="1780386120132" duration="5248000" />
       <workItem from="1780731462372" duration="7398000" />
-      <workItem from="1780816071472" duration="1099000" />
+      <workItem from="1780816071472" duration="2385000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -260,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780738862404</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="api-passenger:查询乘客用户信息，骨架代码编写">
+      <option name="closed" value="true" />
+      <created>1780817426875</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780817426875</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +299,7 @@
     <MESSAGE value="api-passenger:校验验证码接口改造，支持双token" />
     <MESSAGE value="api-passenger:双token生成骨架编写" />
     <MESSAGE value="api-passenger:根据refreshToken刷新双token，代码编写及测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:根据refreshToken刷新双token，代码编写及测试" />
+    <MESSAGE value="api-passenger:查询乘客用户信息，骨架代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:查询乘客用户信息，骨架代码编写" />
   </component>
 </project>

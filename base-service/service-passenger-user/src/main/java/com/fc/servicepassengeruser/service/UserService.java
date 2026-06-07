@@ -1,5 +1,6 @@
 package com.fc.servicepassengeruser.service;
 
+import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.dto.PassengerUser;
 import com.fc.servicepassengeruser.mapper.PassengerUserMapper;
@@ -16,6 +17,9 @@ public class UserService {
     @Autowired
     private PassengerUserMapper passengerUserMapper;
 
+    /**
+     * 登录或注册
+     */
     public ResponseResult loginOrRegister(String passengerPhone) {
         System.out.println("UserService 被调用，手机号passengerPhone=" + passengerPhone);
 
@@ -42,5 +46,21 @@ public class UserService {
         }
 
         return ResponseResult.success(passengerPhone);
+    }
+
+    /**
+     * 根据手机号查询用户信息
+     */
+    public ResponseResult getUserByPhone(String passengerPhone) {
+        //根据手机号查询用户信息
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("passenger_phone", passengerPhone);
+        List<PassengerUser> passengerUsers = passengerUserMapper.selectByMap(map);
+        if (passengerUsers.size() == 0) {   //用户不存在
+            return ResponseResult.fail(CommonStatusEnum.USER_NOT_EXISTS.getCode(), CommonStatusEnum.USER_NOT_EXISTS.getValue());
+        } else {
+            return ResponseResult.success(passengerUsers.get(0));
+        }
+
     }
 }

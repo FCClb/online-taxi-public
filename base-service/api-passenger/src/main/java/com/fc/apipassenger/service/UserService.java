@@ -2,6 +2,8 @@ package com.fc.apipassenger.service;
 
 import com.fc.internalcommon.dto.PassengerUser;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.dto.TokenResult;
+import com.fc.internalcommon.util.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,9 @@ public class UserService {
      * @return
      */
     public ResponseResult getUserByAccessToken(String accessToken) {
-        log.info("getUserByAccessToken: " + accessToken);
         //解析accessToken，拿到手机号
+        TokenResult tokenResult = JwtUtils.checkToken(accessToken);
+        String phone = tokenResult.getPhone();
 
         //根据手机号查询用户信息
 
