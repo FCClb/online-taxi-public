@@ -29,14 +29,13 @@ public class UserController {
     /**
      * 根据手机号查询用户信息
      *
-     * @param verificationCodeDTO
+     * @param phone
      * @return
      */
-    @GetMapping("/user")
-    public ResponseResult getUserByPhone(@RequestBody VerificationCodeDTO verificationCodeDTO) {
-        String passengerPhone = verificationCodeDTO.getPassengerPhone();
+    @GetMapping("/user/{phone}")
+    public ResponseResult getUserByPhone(@PathVariable("phone") String phone) {
 
-        return userService.getUserByPhone(passengerPhone);
+        return userService.getUserByPhone(phone);
     }
 
 }

@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:查询乘客用户信息，骨架代码编写">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-passenger-user:根据手机号查询乘客用户信息，代码编写">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServicePassengerUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServicePassengerUserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/controller/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +70,8 @@
     "Maven.online-taxi-public [compile].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "15",
-    "RequestMappingsPanelWidth1": "15",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiPassengerApplication.executor": "Run",
@@ -105,7 +104,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicePassengerUserApplication">
+  <component name="RunManager" selected="Spring Boot.ApiPassengerApplication">
     <configuration name="JwtUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fc.internalcommon.util.JwtUtils" />
       <module name="internal-common" />
@@ -172,7 +171,7 @@
       <workItem from="1780296727600" duration="4445000" />
       <workItem from="1780386120132" duration="5248000" />
       <workItem from="1780731462372" duration="7398000" />
-      <workItem from="1780816071472" duration="2385000" />
+      <workItem from="1780816071472" duration="3655000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -270,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780817426875</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="service-passenger-user:根据手机号查询乘客用户信息，代码编写">
+      <option name="closed" value="true" />
+      <created>1780818745758</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780818745758</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +307,7 @@
     <MESSAGE value="api-passenger:双token生成骨架编写" />
     <MESSAGE value="api-passenger:根据refreshToken刷新双token，代码编写及测试" />
     <MESSAGE value="api-passenger:查询乘客用户信息，骨架代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:查询乘客用户信息，骨架代码编写" />
+    <MESSAGE value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
   </component>
 </project>
