@@ -3,8 +3,6 @@ package com.fc.apipassenger.service;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.ForecastPriceResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ForecastPriceService {
 
-    private static final Logger log = LoggerFactory.getLogger(ForecastPriceService.class);
 
     /**
      * 根据 出发地和目的地的经纬度 计算预估价格

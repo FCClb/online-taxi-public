@@ -4,30 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写">
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/ForecastPriceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/ForecastPriceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/ServicePriceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/ForecastPriceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/ForecastPriceDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/ForecastPriceResponse.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写">
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/Controller/DirectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/ServiceMapApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/ForecastPriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/ForecastPriceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/ForecastPriceService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-verification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceMapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-map" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicemap.ServiceMapApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServicePassengerUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-passenger-user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicepassengeruser.ServicePassengerUserApplication" />
@@ -203,7 +201,7 @@
       <workItem from="1780386120132" duration="5248000" />
       <workItem from="1780731462372" duration="7398000" />
       <workItem from="1780816071472" duration="4400000" />
-      <workItem from="1780901448648" duration="2812000" />
+      <workItem from="1780901448648" duration="4601000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -317,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780819866007</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写">
+      <option name="closed" value="true" />
+      <created>1780904376148</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780904376148</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +355,7 @@
     <MESSAGE value="api-passenger:查询乘客用户信息，骨架代码编写" />
     <MESSAGE value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
     <MESSAGE value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
+    <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
   </component>
 </project>

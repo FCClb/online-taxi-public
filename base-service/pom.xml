@@ -24,6 +24,9 @@
 
         <!-- 价格服务-->
         <module>service-price</module>
+
+        <!-- 地图服务-->
+        <module>service-map</module>
     </modules>
 
     <dependencies>
