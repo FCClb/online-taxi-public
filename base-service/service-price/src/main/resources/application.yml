@@ -1,0 +1,12 @@
+server:
+  port: 8084
+
+spring:
+  # 微服务配置
+  application:
+    name: service-price
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+

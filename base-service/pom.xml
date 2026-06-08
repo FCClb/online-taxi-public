@@ -3,21 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.fc</groupId>
         <artifactId>online-taxi-public</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>base-service</artifactId>
     <packaging>pom</packaging>
 
     <modules>
+        <!-- 乘客用户api-->
         <module>api-passenger</module>
+
+        <!-- 验证码服务-->
         <module>service-verification</module>
+
+        <!-- 乘客服务-->
         <module>service-passenger-user</module>
+
+        <!-- 价格服务-->
+        <module>service-price</module>
     </modules>
 
     <dependencies>

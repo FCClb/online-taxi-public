@@ -9,15 +9,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>api-passenger</artifactId>
+    <artifactId>service-price</artifactId>
 
     <dependencies>
-
-        <!-- redis依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
 
     </dependencies>
 
