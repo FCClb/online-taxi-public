@@ -17,7 +17,10 @@
   <url>http://maven.apache.org</url>
 
   <modules>
+    <!-- 业务模块 -->
     <module>internal-common</module>
+
+    <!-- 通用工具模块 -->
     <module>base-service</module>
   </modules>
 

@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写">
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/Controller/DirectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/ServiceMapApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/ForecastPriceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/ForecastPriceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/target/classes/com/fc/apipassenger/service/ForecastPriceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiPassengerApplication.executor": "Run",
+    "Spring Boot.ServiceMapApplication.executor": "Run",
     "Spring Boot.ServicePassengerUserApplication.executor": "Run",
     "Spring Boot.ServicePriceApplication.executor": "Run",
     "Spring Boot.ServiceVerificationApplication.executor": "Run",
@@ -112,7 +104,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceMapApplication">
     <configuration name="JwtUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fc.internalcommon.util.JwtUtils" />
       <module name="internal-common" />
@@ -201,7 +193,7 @@
       <workItem from="1780386120132" duration="5248000" />
       <workItem from="1780731462372" duration="7398000" />
       <workItem from="1780816071472" duration="4400000" />
-      <workItem from="1780901448648" duration="4601000" />
+      <workItem from="1780901448648" duration="5284000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -323,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780904376148</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写">
+      <option name="closed" value="true" />
+      <created>1780906820260</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1780906820260</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +356,7 @@
     <MESSAGE value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
     <MESSAGE value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
     <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
+    <MESSAGE value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
   </component>
 </project>
