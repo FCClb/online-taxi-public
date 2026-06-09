@@ -1,8 +1,11 @@
 package com.fc.apipassenger.service;
 
+import com.fc.apipassenger.remote.ServicePriceClient;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.request.ForecastPriceDTO;
 import com.fc.internalcommon.response.ForecastPriceResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +15,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ForecastPriceService {
 
+    @Autowired
+    private ServicePriceClient servicePriceClient;
 
     /**
      * 根据 出发地和目的地的经纬度 计算预估价格
@@ -24,10 +29,12 @@ public class ForecastPriceService {
     public ResponseResult forecastPrice(String depLongitude, String depLatitude, String destLongitude, String destLatitude) {
 
         log.info("调用计价服务，计算价格");
+        ForecastPriceDTO forecastPriceDTO = new ForecastPriceDTO();
+        forecastPriceDTO.setDepLongitude(depLongitude);
+        forecastPriceDTO.setDepLatitude(depLatitude);
+        forecastPriceDTO.setDestLongitude(destLongitude);
+        forecastPriceDTO.setDestLatitude(destLatitude);
 
-        ForecastPriceResponse response = new ForecastPriceResponse();
-        response.setPrice(12.12);
-
-        return ResponseResult.success(response);
+        return servicePriceClient.forecastPrice(forecastPriceDTO);
     }
 }
