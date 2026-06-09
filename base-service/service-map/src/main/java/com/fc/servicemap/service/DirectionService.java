@@ -2,6 +2,8 @@ package com.fc.servicemap.service;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.DirectionResponse;
+import com.fc.servicemap.remote.MapDirectionClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Service
 public class DirectionService {
+
+    @Autowired
+    private MapDirectionClient mapDirectionClient;
 
     /**
      * 根据起始地点经纬度获取 距离（米）和时间（分钟）
@@ -22,10 +27,9 @@ public class DirectionService {
     @GetMapping("/driving")
     public ResponseResult driving(String depLongitude, String depLatitude, String destLongitude, String destLatitude) {
 
-        DirectionResponse directionResponse = new DirectionResponse();
-        directionResponse.setDistance(123);
-        directionResponse.setDuration(12);
+        //调用第三方地图接口
+        DirectionResponse direction = mapDirectionClient.direction(depLongitude, depLatitude, destLongitude, destLatitude);
 
-        return ResponseResult.success(directionResponse);
+        return ResponseResult.success(direction);
     }
 }

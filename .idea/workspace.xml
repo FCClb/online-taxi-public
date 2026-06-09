@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:根据起始地点经纬度获取距离和时间接口骨架编写">
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/MapDirectionClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/Controller/DirectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/DirectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -61,37 +66,37 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JwtUtils.executor": "Run",
-    "Maven.online-taxi-public [clean].executor": "Run",
-    "Maven.online-taxi-public [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiPassengerApplication.executor": "Run",
-    "Spring Boot.ServiceMapApplication.executor": "Run",
-    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
-    "Spring Boot.ServicePriceApplication.executor": "Run",
-    "Spring Boot.ServiceVerificationApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -193,7 +198,9 @@
       <workItem from="1780386120132" duration="5248000" />
       <workItem from="1780731462372" duration="7398000" />
       <workItem from="1780816071472" duration="4400000" />
-      <workItem from="1780901448648" duration="5284000" />
+      <workItem from="1780901448648" duration="5961000" />
+      <workItem from="1780908985159" duration="19000" />
+      <workItem from="1780988084297" duration="3218000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -323,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780906820260</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="service-map:根据起始地点经纬度获取距离和时间接口骨架编写">
+      <option name="closed" value="true" />
+      <created>1780907525685</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780907525685</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +372,7 @@
     <MESSAGE value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
     <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
     <MESSAGE value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
+    <MESSAGE value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
   </component>
 </project>

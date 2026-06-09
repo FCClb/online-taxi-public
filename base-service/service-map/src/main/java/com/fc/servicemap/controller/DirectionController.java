@@ -1,4 +1,4 @@
-package com.fc.servicemap.Controller;
+package com.fc.servicemap.controller;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.ForecastPriceDTO;
