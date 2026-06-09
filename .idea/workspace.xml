@@ -4,30 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-price:调用service-map获取路径距离和所需时间">
-      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/mapper/PriceRuleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PriceRule.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-price:从数据库读取计价规则，代码编写">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/DirectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/DirectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/ServicePriceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/ServicePriceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/remote/ServiceMapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/remote/ServiceMapClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/ServicePriceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/ServicePriceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/remote/ServiceMapClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/remote/ServiceMapClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/service/ForecastPriceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/service/ForecastPriceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/constant/CommonStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PriceRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PriceRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/dto/PriceRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/target/classes/com/fc/internalcommon/dto/PriceRule.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +63,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ForecastPriceService.executor": "Run",
     "Application.JwtUtils.executor": "Run",
     "Maven.online-taxi-public [clean].executor": "Run",
     "Maven.online-taxi-public [compile].executor": "Run",
@@ -215,7 +198,7 @@
       <workItem from="1780816071472" duration="4400000" />
       <workItem from="1780901448648" duration="5961000" />
       <workItem from="1780908985159" duration="19000" />
-      <workItem from="1780988084297" duration="9200000" />
+      <workItem from="1780988084297" duration="11814000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -369,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780992947029</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="service-price:从数据库读取计价规则，代码编写">
+      <option name="closed" value="true" />
+      <created>1780998750018</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780998750018</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +397,7 @@
     <MESSAGE value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
     <MESSAGE value="service-map:调用第三方地图接口，获取路径规划信息，代码编写" />
     <MESSAGE value="service-price:调用service-map获取路径距离和所需时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-price:调用service-map获取路径距离和所需时间" />
+    <MESSAGE value="service-price:从数据库读取计价规则，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-price:从数据库读取计价规则，代码编写" />
   </component>
 </project>
