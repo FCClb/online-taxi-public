@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:根据起始地点经纬度获取距离和时间接口骨架编写">
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/MapDirectionClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:调用第三方地图接口，获取路径规划信息，代码编写">
+      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/remote/ServiceMapClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/Controller/DirectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/DirectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServicePassengerUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServicePassengerUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceVerificationClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/ServiceMapApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DirectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/Controller/DirectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/service/DirectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DirectionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/ServiceMapApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/target/classes/com/fc/servicemap/ServiceMapApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/ServicePassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/ServicePassengerUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/ServicePassengerUserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/target/classes/com/fc/servicepassengeruser/ServicePassengerUserApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/ServicePriceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/ServicePriceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/ServicePriceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/ServicePriceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/service/ForecastPriceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/target/classes/com/fc/serviceprice/service/ForecastPriceService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -109,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceMapApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
     <configuration name="JwtUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fc.internalcommon.util.JwtUtils" />
       <module name="internal-common" />
@@ -200,7 +202,7 @@
       <workItem from="1780816071472" duration="4400000" />
       <workItem from="1780901448648" duration="5961000" />
       <workItem from="1780908985159" duration="19000" />
-      <workItem from="1780988084297" duration="3218000" />
+      <workItem from="1780988084297" duration="4591000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -338,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780907525685</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="service-map:调用第三方地图接口，获取路径规划信息，代码编写">
+      <option name="closed" value="true" />
+      <created>1780991543781</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780991543781</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +383,7 @@
     <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
     <MESSAGE value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
     <MESSAGE value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
+    <MESSAGE value="service-map:调用第三方地图接口，获取路径规划信息，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-map:调用第三方地图接口，获取路径规划信息，代码编写" />
   </component>
 </project>

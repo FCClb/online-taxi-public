@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+/**
+ * 乘客用户服务
+ */
 @FeignClient("service-passenger-user")
 public interface ServicePassengerUserClient {
 

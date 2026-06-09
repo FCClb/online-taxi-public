@@ -6,6 +6,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+/**
+ * 验证码服务
+ */
 @FeignClient(name = "service-verification")
 public interface ServiceVerificationClient {
 
