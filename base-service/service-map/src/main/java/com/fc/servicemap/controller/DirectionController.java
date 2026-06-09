@@ -2,6 +2,7 @@ package com.fc.servicemap.controller;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.ForecastPriceDTO;
+import com.fc.internalcommon.response.DirectionResponse;
 import com.fc.servicemap.service.DirectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class DirectionController {
      * @return
      */
     @PostMapping("/driving")
-    public ResponseResult driving(@RequestBody ForecastPriceDTO forecastPriceDTO) {
+    public ResponseResult<DirectionResponse> driving(@RequestBody ForecastPriceDTO forecastPriceDTO) {
         String depLongitude = forecastPriceDTO.getDepLongitude();
         String depLatitude = forecastPriceDTO.getDepLatitude();
         String destLongitude = forecastPriceDTO.getDestLongitude();

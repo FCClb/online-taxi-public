@@ -12,6 +12,17 @@
     <artifactId>service-price</artifactId>
 
     <dependencies>
+        <!-- mysql驱动，数据库连接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- mybatis-plus依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
 
     </dependencies>
 

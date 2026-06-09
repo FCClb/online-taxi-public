@@ -10,4 +10,6 @@ com\fc\internalcommon\response\NumberCodeResponse.class
 com\fc\internalcommon\request\ForecastPriceDTO.class
 com\fc\internalcommon\constant\CommonStatusEnum.class
 com\fc\internalcommon\request\VerificationCodeDTO.class
+com\fc\internalcommon\response\DirectionResponse.class
 com\fc\internalcommon\util\RedisPrefixUtils.class
+com\fc\internalcommon\constant\AmapConfigConstants.class

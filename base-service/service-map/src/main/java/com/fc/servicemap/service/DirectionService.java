@@ -5,7 +5,6 @@ import com.fc.internalcommon.response.DirectionResponse;
 import com.fc.servicemap.remote.MapDirectionClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * 调用第三方（高德地图）service
@@ -24,8 +23,7 @@ public class DirectionService {
      * @param destLatitude
      * @return
      */
-    @GetMapping("/driving")
-    public ResponseResult driving(String depLongitude, String depLatitude, String destLongitude, String destLatitude) {
+    public ResponseResult<DirectionResponse> driving(String depLongitude, String depLatitude, String destLongitude, String destLatitude) {
 
         //调用第三方地图接口
         DirectionResponse direction = mapDirectionClient.direction(depLongitude, depLatitude, destLongitude, destLatitude);

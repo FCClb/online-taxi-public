@@ -2,6 +2,7 @@ package com.fc.serviceprice.remote;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.ForecastPriceDTO;
+import com.fc.internalcommon.response.DirectionResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,5 +20,6 @@ public interface ServiceMapClient {
      * @return
      */
     @PostMapping("/direction/driving")
-    ResponseResult driving(@RequestBody ForecastPriceDTO forecastPriceDTO);
+    ResponseResult<DirectionResponse> driving(@RequestBody ForecastPriceDTO forecastPriceDTO);
+
 }
