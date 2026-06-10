@@ -40,7 +40,28 @@ public enum AmapConfigConstants {
     /**
      * 路径规划 json key值: duration
      */
-    DURATION("duration")
+    DURATION("duration"),
+
+    /**
+     * 地图区划 json key值: districts
+     */
+    DISTRICTS("districts"),
+
+    /**
+     * 地图区划 json key值: adcode
+     */
+    ADCODE("adcode"),
+
+    /**
+     * 地图区划 json key值: name
+     */
+    NAME("name"),
+
+    /**
+     * 地图区划 json key值: level
+     */
+    LEVEL("level"),
+
     ;
 
     @Getter
