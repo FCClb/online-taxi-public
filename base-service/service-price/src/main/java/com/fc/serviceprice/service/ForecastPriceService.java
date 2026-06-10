@@ -6,13 +6,13 @@ import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.ForecastPriceDTO;
 import com.fc.internalcommon.response.DirectionResponse;
 import com.fc.internalcommon.response.ForecastPriceResponse;
+import com.fc.internalcommon.util.BigDecimalUtils;
 import com.fc.serviceprice.mapper.PriceRuleMapper;
 import com.fc.serviceprice.remote.ServiceMapClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +61,7 @@ public class ForecastPriceService {
         PriceRule priceRule = priceRules.get(0);
 
         log.info("根据距离、时长和计价规则，计算价格");
-        Double price = getPrice(distance, duration, priceRule);
+        double price = getPrice(distance, duration, priceRule);
 
         ForecastPriceResponse forecastPriceResponse = new ForecastPriceResponse();
         forecastPriceResponse.setPrice(price);
@@ -77,46 +77,38 @@ public class ForecastPriceService {
      * @param priceRule 计价规则
      * @return
      */
-    private Double getPrice(Integer distance, Integer duration, PriceRule priceRule) {
-        BigDecimal price = new BigDecimal(0);
+    private double getPrice(Integer distance, Integer duration, PriceRule priceRule) {
+        double price = 0;
 
         //起步价
-        Double startFare = priceRule.getStartFare();
-        BigDecimal startFareDecimal = new BigDecimal(startFare);
-        price = price.add(startFareDecimal);
+        double startFare = priceRule.getStartFare();
+        price = BigDecimalUtils.add(price, startFare);
 
         //***里程费
-        //总里程 m
-        BigDecimal distanceDecimal = new BigDecimal(distance);
         //总里程 km
-        BigDecimal distanceMileDecimal = distanceDecimal.divide(new BigDecimal(1000), 2, BigDecimal.ROUND_HALF_UP);
+        double distanceMile = BigDecimalUtils.divide(distance, 1000);
         //起步里程
-        Integer startMile = priceRule.getStartMile();
-        BigDecimal startMileDecimal = new BigDecimal(startMile);
+        double startMile = (double)priceRule.getStartMile();
         //超出起步里程的里程
-        double distanceSubtract = distanceMileDecimal.subtract(startMileDecimal).doubleValue();
+        double distanceSubtract = BigDecimalUtils.subtract(distanceMile, startMile);
         //最终收费的里程数（不足起步里程要算作0）
         double mile = distanceSubtract < 0 ? 0 : distanceSubtract;
-        BigDecimal mileDecimal = new BigDecimal(mile);
         //每公里单价
-        Double unitPricePerMile = priceRule.getUnitPricePerMile();
-        BigDecimal unitPricePerMileDecimal = new BigDecimal(unitPricePerMile);
+        double unitPricePerMile = priceRule.getUnitPricePerMile();
 
-        BigDecimal mileFare = unitPricePerMileDecimal.multiply(mileDecimal).setScale(2, BigDecimal.ROUND_HALF_UP);
-        price = price.add(mileFare);
+        double mileFare = BigDecimalUtils.multiply(mile, unitPricePerMile);
+        price = BigDecimalUtils.add(price, mileFare);
 
         //***时长费
-        //时长（单位s）
-        BigDecimal time = new BigDecimal(duration);
         //时长（单位min）
-        BigDecimal timeDecimal = time.divide(new BigDecimal(60), 2, BigDecimal.ROUND_HALF_UP);
+        double time = BigDecimalUtils.divide(duration, 60);
         //计时单价
-        Double unitPricePerMinute = priceRule.getUnitPricePerMinute();
-        BigDecimal unitPricePerMinuteDecimal = new BigDecimal(unitPricePerMinute);
-        BigDecimal timeFare = timeDecimal.multiply(unitPricePerMinuteDecimal).setScale(2, BigDecimal.ROUND_HALF_UP);
-        price = price.add(timeFare);
+        double unitPricePerMinute = priceRule.getUnitPricePerMinute();
 
-        return price.doubleValue();
+        double timeFare = BigDecimalUtils.multiply(time, unitPricePerMinute);
+        price = BigDecimalUtils.add(price, timeFare);
+
+        return price;
     }
 
     //for test
@@ -129,4 +121,5 @@ public class ForecastPriceService {
 ////        预计结果：31.3
 //        System.out.println(getPrice(6500,1800,priceRule));
 //    }
+
 }
