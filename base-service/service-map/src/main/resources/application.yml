@@ -2,12 +2,20 @@ server:
   port: 8085
 
 spring:
+  # 微服务配置
   application:
     name: service-map
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
+
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/service-map?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
 
 amap:
   key: 7ac5f4e3d82567c118ba44c4398655c2

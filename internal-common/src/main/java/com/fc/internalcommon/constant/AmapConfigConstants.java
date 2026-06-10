@@ -8,9 +8,14 @@ import lombok.Getter;
 public enum AmapConfigConstants {
 
     /**
-     * 路径规划地址
+     * 路径规划url
      */
     DIRECTION_URL("https://restapi.amap.com/v3/direction/driving"),
+
+    /**
+     * 行政区域查询url
+     */
+    DISTRICT_URL("https://restapi.amap.com/v3/config/district"),
 
     /**
      * 路径规划 json key值: status
@@ -41,7 +46,7 @@ public enum AmapConfigConstants {
     @Getter
     private String value;
 
-    AmapConfigConstants(String url) {
-        this.value = url;
+    AmapConfigConstants(String value) {
+        this.value = value;
     }
 }

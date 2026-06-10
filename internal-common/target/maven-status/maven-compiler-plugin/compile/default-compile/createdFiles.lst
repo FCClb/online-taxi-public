@@ -3,8 +3,10 @@ com\fc\internalcommon\constant\TokenTypeEnum.class
 com\fc\internalcommon\dto\ResponseResult.class
 com\fc\internalcommon\dto\TokenResult.class
 com\fc\internalcommon\util\JwtUtils.class
+com\fc\internalcommon\dto\PriceRule.class
 com\fc\internalcommon\response\TokenResponse.class
 com\fc\internalcommon\dto\PassengerUser.class
+com\fc\internalcommon\util\BigDecimalUtils.class
 com\fc\internalcommon\constant\IdentityEnum.class
 com\fc\internalcommon\response\NumberCodeResponse.class
 com\fc\internalcommon\request\ForecastPriceDTO.class

@@ -2,6 +2,7 @@ com\fc\apipassenger\service\ForecastPriceService.class
 com\fc\apipassenger\controller\VerificationCodeController.class
 com\fc\apipassenger\service\TokenService.class
 com\fc\apipassenger\controller\UserController.class
+com\fc\apipassenger\remote\ServicePriceClient.class
 com\fc\apipassenger\controller\TokenController.class
 com\fc\apipassenger\remote\ServiceVerificationClient.class
 com\fc\apipassenger\interceptor\JwtInterceptor.class
