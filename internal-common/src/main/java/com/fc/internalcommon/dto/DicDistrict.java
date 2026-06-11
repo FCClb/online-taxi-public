@@ -1,8 +1,11 @@
 package com.fc.internalcommon.dto;
 
+import lombok.Data;
+
 /**
  * 地区字典dto
  */
+@Data
 public class DicDistrict {
 
     /**

@@ -62,6 +62,12 @@ public enum AmapConfigConstants {
      */
     LEVEL("level"),
 
+    /**
+     * 地图区划 json key值: street
+     */
+    STREET("street"),
+
+
     ;
 
     @Getter
