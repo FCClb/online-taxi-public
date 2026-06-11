@@ -1,10 +1,10 @@
 -- 计价规则 数据库脚本
 
--- 创建数据库 service-price
-CREATE DATABASE IF NOT EXISTS `service-price` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- 创建数据库 service_price
+CREATE DATABASE IF NOT EXISTS `service_price` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- 使用该数据库
-USE `service-price`;
+USE `service_price`;
 
 DROP TABLE IF EXISTS `price_rule`;
 

@@ -1,10 +1,10 @@
 -- 地图服务 数据库脚本
 
--- 创建数据库 service-map
-CREATE DATABASE IF NOT EXISTS `service-map` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- 创建数据库 service_map
+CREATE DATABASE IF NOT EXISTS `service_map` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- 使用该数据库
-USE `service-map`;
+USE `service_map`;
 
 DROP TABLE IF EXISTS `dic_district`;
 CREATE TABLE `dic_district`  (

@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:地区字典获取，编码实现完成">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/initMysql/dic-common.sql" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="更新.gitignore文件 以及 字典服务数据库脚本">
+      <change afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PassengerUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/dic-common.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/dic_common.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service-map.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_map.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service-passenger-user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_passenger_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service-price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_price.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,40 +65,40 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ForecastPriceService.executor": "Run",
-    "Application.JwtUtils.executor": "Run",
-    "Maven.online-taxi-public [clean].executor": "Run",
-    "Maven.online-taxi-public [compile].executor": "Run",
-    "Maven.service-price [clean].executor": "Run",
-    "Maven.service-price [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiPassengerApplication.executor": "Run",
-    "Spring Boot.ServiceMapApplication.executor": "Run",
-    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
-    "Spring Boot.ServicePriceApplication.executor": "Run",
-    "Spring Boot.ServiceVerificationApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "debugger.stepping",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ForecastPriceService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-price [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-price [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.stepping&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -191,7 +196,9 @@
       <workItem from="1780988084297" duration="12343000" />
       <workItem from="1781073923719" duration="5442000" />
       <workItem from="1781145526158" duration="1638000" />
-      <workItem from="1781147215609" duration="3007000" />
+      <workItem from="1781147215609" duration="3248000" />
+      <workItem from="1781150545804" duration="9000" />
+      <workItem from="1781168781047" duration="2729000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -393,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781148434908</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="更新.gitignore文件 以及 字典服务数据库脚本">
+      <option name="closed" value="true" />
+      <created>1781150464582</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1781150464582</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题" />
     <MESSAGE value="service-passenger-user:登录or注册用户骨架编写完成" />
     <MESSAGE value="service-passenger-user:根据手机号查询用户信息" />
     <MESSAGE value="service-passenger-user:根据手机号插入用户信息" />
@@ -436,7 +450,8 @@
     <MESSAGE value="service-price:预估价格计算过程优化" />
     <MESSAGE value="service-map:请求地图地区字典" />
     <MESSAGE value="service-map:地区字典获取，编码实现完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-map:地区字典获取，编码实现完成" />
+    <MESSAGE value="更新.gitignore文件 以及 字典服务数据库脚本" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore文件 以及 字典服务数据库脚本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

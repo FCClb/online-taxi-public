@@ -1,10 +1,10 @@
 -- 字典服务 数据库脚本
 
--- 创建数据库 dic-common
-CREATE DATABASE IF NOT EXISTS `dic-common` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- 创建数据库 dic_common
+CREATE DATABASE IF NOT EXISTS `dic_common` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- 使用该数据库
-USE `dic-common`;
+USE `dic_common`;
 
 DROP TABLE IF EXISTS `dic_nation`;
 CREATE TABLE `dic_nation`  (

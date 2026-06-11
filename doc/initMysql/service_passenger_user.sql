@@ -1,14 +1,14 @@
--- 乘客用户 数据库脚本
+-- 乘客用户服务 数据库脚本
 
--- 创建数据库 service-passenger-user
-CREATE DATABASE IF NOT EXISTS `service-passenger-user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- 创建数据库 service_passenger_user
+CREATE DATABASE IF NOT EXISTS `service_passenger_user` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- 使用该数据库
-USE `service-passenger-user`;
+USE `service_passenger_user`;
 
 DROP TABLE IF EXISTS `passenger_user`;
 CREATE TABLE `passenger_user`  (
-                                   `id` bigint unsigned NOT NULL COMMENT '用户id',
+                                   `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
                                    `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
                                    `gmt_modified` datetime NULL DEFAULT NULL COMMENT '更新时间',
                                    `passenger_phone` varchar(16) NULL DEFAULT NULL COMMENT '用户手机号',
