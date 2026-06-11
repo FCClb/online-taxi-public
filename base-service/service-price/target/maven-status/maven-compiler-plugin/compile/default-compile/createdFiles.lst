@@ -1,5 +1,0 @@
-com\fc\serviceprice\mapper\PriceRuleMapper.class
-com\fc\serviceprice\ServicePriceApplication.class
-com\fc\serviceprice\service\ForecastPriceService.class
-com\fc\serviceprice\controller\ForecastPriceController.class
-com\fc\serviceprice\remote\ServiceMapClient.class

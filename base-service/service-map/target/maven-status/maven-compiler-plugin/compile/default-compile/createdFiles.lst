@@ -1,4 +1,0 @@
-com\fc\servicemap\controller\DirectionController.class
-com\fc\servicemap\ServiceMapApplication.class
-com\fc\servicemap\service\DirectionService.class
-com\fc\servicemap\remote\MapDirectionClient.class

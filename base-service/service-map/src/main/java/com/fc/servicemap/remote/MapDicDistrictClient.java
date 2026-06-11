@@ -1,6 +1,7 @@
 package com.fc.servicemap.remote;
 
 import com.fc.internalcommon.constant.AmapConfigConstants;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
  * 调用第三方（高德地图）
  */
 @Service
+@Slf4j
 public class MapDicDistrictClient {
 
     @Value("${amap.key}")
@@ -26,13 +28,15 @@ public class MapDicDistrictClient {
     public String initDicDistrict(String keywords) {
         //拼装请求的url
         StringBuilder url = new StringBuilder();
-        url.append(AmapConfigConstants.DISTRICT_URL);
+        url.append(AmapConfigConstants.DISTRICT_URL.getValue());
         url.append("?");
         url.append("keywords=" + keywords);
         url.append("&");
         url.append("subdistrict=3");
         url.append("&");
         url.append("key=" + amapkey);
+
+        log.info(url.toString());
 
         //获取结果
         ResponseEntity<String> forEntity = restTemplate.getForEntity(url.toString(), String.class);

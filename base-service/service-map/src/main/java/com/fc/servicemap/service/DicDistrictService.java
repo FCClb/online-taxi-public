@@ -86,8 +86,12 @@ public class DicDistrictService {
             String name = district.getString(AmapConfigConstants.NAME.getValue());
             String level = district.getString(AmapConfigConstants.LEVEL.getValue());
 
-            // 插入当前层级数据：父编码 = 上层传入的 parentCode
-            insertDicDistrict(addressCode, name, parentCode, level);
+            if (level.equals(AmapConfigConstants.STREET.getValue())) {
+                continue;
+            } else {
+                // 插入当前层级数据：父编码 = 上层传入的 parentCode
+                insertDicDistrict(addressCode, name, parentCode, level);
+            }
 
             // 继续递归：获取当前节点的下一级子区域，当前addressCode作为新的父编码
             JSONArray nextChildDistricts = district.getJSONArray(AmapConfigConstants.DISTRICTS.getValue());
