@@ -29,4 +29,11 @@ public class DriverUserService {
         return ResponseResult.success("插入乘客用户成功");
     }
 
+    public ResponseResult updateDriverUser(DriverUser driverUser) {
+        LocalDateTime now = LocalDateTime.now();
+        driverUser.setGmtModified(now);
+        driverUserMapper.updateById(driverUser);
+        return ResponseResult.success("修改乘客用户信息成功");
+    }
+
 }

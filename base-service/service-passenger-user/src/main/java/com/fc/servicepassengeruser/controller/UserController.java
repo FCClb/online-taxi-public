@@ -2,7 +2,7 @@ package com.fc.servicepassengeruser.controller;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.VerificationCodeDTO;
-import com.fc.servicepassengeruser.service.UserService;
+import com.fc.servicepassengeruser.service.PassengerUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private PassengerUserService passengerUserService;
 
     /**
      * 登录或注册
@@ -23,7 +23,7 @@ public class UserController {
         String passengerPhone = verificationCodeDTO.getPassengerPhone();
         System.out.println("手机号passengerPhone: " + passengerPhone);
 
-        return userService.loginOrRegister(passengerPhone);
+        return passengerUserService.loginOrRegister(passengerPhone);
     }
 
     /**
@@ -35,7 +35,7 @@ public class UserController {
     @GetMapping("/user/{phone}")
     public ResponseResult getUserByPhone(@PathVariable("phone") String phone) {
 
-        return userService.getUserByPhone(phone);
+        return passengerUserService.getUserByPhone(phone);
     }
 
 }

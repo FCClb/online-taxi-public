@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:插入司机用户，代码编写">
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/ApiBossApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/service/DriverUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/ServiceDriverUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/ServiceDriverUserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/端口管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/端口管理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/remote/ServiceDriverUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/DriverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/PassengerUserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -82,6 +79,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiBossApplication.executor": "Run",
     "Spring Boot.ApiPassengerApplication.executor": "Run",
     "Spring Boot.ServiceDriverUserApplication.executor": "Run",
     "Spring Boot.ServiceMapApplication.executor": "Run",
@@ -121,7 +119,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiBossApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceDriverUserApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -219,7 +217,7 @@
       <workItem from="1781150545804" duration="9000" />
       <workItem from="1781168781047" duration="3576000" />
       <workItem from="1781173356439" duration="410000" />
-      <workItem from="1781247941697" duration="2132000" />
+      <workItem from="1781247941697" duration="3136000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -453,7 +451,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781249450482</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写">
+      <option name="closed" value="true" />
+      <created>1781250359206</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1781250359206</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +478,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-passenger:调用service-passenger-user插入新用户" />
     <MESSAGE value="internal-common:jwt通用工具类token生成代码编写" />
     <MESSAGE value="internal-common:jwt通用工具类token解析代码编写" />
     <MESSAGE value="api-passenger:使用jwt通用工具类，颁发令牌" />
@@ -497,7 +502,8 @@
     <MESSAGE value="更新司机用户服务数据库脚本" />
     <MESSAGE value="service-driver-user:司机用户服务创建" />
     <MESSAGE value="service-driver-user:插入司机用户，代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:插入司机用户，代码编写" />
+    <MESSAGE value="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

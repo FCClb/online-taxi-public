@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Service
-public class UserService {
+public class PassengerUserService {
 
     @Autowired
     private PassengerUserMapper passengerUserMapper;
