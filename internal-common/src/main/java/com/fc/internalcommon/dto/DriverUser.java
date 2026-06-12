@@ -11,7 +11,7 @@ public class DriverUser {
     /**
      * 司机id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 注册地行政区划代码
@@ -56,7 +56,7 @@ public class DriverUser {
     /**
      * 初次领取驾驶证日期
      */
-    private LocalDate getDriverLicenseLocalDate;
+    private LocalDate getDriverLicenseDate;
 
     /**
      * 驾驶证有效期起
@@ -86,12 +86,12 @@ public class DriverUser {
     /**
      * 资格证发证日期
      */
-    private LocalDate networkCarIssueLocalDate;
+    private LocalDate networkCarIssueDate;
 
     /**
      * 初次领取资格证日期
      */
-    private LocalDate getNetworkCarProofLocalDate;
+    private LocalDate getNetworkCarProofDate;
 
     /**
      * 资格证有效起始日期
@@ -106,7 +106,7 @@ public class DriverUser {
     /**
      * 报备日期
      */
-    private LocalDate registerLocalDate;
+    private LocalDate registerDate;
 
     /**
      * 服务类型（1网络预约出租汽车，2巡游出租汽车，3私人小客车合乘）

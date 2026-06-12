@@ -6,6 +6,6 @@ import com.fc.internalcommon.dto.DriverUser;
 import javax.annotation.Resource;
 
 @Resource
-public interface DriverMapper extends BaseMapper<DriverUser> {
+public interface DriverUserMapper extends BaseMapper<DriverUser> {
 
 }
