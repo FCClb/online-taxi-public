@@ -1,16 +1,16 @@
-package com.fc.servicedriveruser;
+package com.fc.apiboss;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@MapperScan("com.fc.servicedriveruser.mapper")
 @EnableDiscoveryClient
-public class ServiceDriverUserApplication {
+@EnableFeignClients
+public class ApiBossApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceDriverUserApplication.class, args);
+        SpringApplication.run(ApiBossApplication.class, args);
     }
 }
