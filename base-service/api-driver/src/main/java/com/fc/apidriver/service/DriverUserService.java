@@ -1,6 +1,6 @@
-package com.fc.apiboss.service;
+package com.fc.apidriver.service;
 
-import com.fc.apiboss.remote.ServiceDriverUserClient;
+import com.fc.apidriver.remote.ServiceDriverUserClient;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +13,12 @@ public class DriverUserService {
     private ServiceDriverUserClient serviceDriverUserClient;
 
     /**
-     * 增加 司机用户
-     * @param driverUser
-     * @return
-     */
-    public ResponseResult addDriverUser(DriverUser driverUser) {
-
-        return serviceDriverUserClient.addDriverUser(driverUser);
-    }
-
-    /**
      * 修改 司机用户信息
      * @param driverUser
      * @return
      */
     public ResponseResult updateDriverUser(DriverUser driverUser) {
-
         return serviceDriverUserClient.updateDriverUser(driverUser);
     }
+
 }

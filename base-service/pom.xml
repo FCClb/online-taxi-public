@@ -28,11 +28,15 @@
         <!-- 地图服务 -->
         <module>service-map</module>
 
-        <!-- 司机用户api -->
+        <!-- 司机用户服务 -->
         <module>service-driver-user</module>
 
         <!-- BOSS -->
         <module>api-boss</module>
+
+        <!-- 司机用户api -->
+        <module>api-driver</module>
+
     </modules>
 
     <dependencies>
