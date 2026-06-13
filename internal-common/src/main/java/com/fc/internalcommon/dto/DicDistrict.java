@@ -3,7 +3,7 @@ package com.fc.internalcommon.dto;
 import lombok.Data;
 
 /**
- * 地区字典dto
+ * 地区字典 实体类
  */
 @Data
 public class DicDistrict {

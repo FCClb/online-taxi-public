@@ -2,6 +2,9 @@ package com.fc.internalcommon.dto;
 
 import lombok.Data;
 
+/**
+ * 价格 实体类
+ */
 @Data
 public class PriceRule {
     /**

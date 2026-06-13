@@ -6,6 +6,7 @@ CREATE DATABASE IF NOT EXISTS `service_driver_user` DEFAULT CHARACTER SET utf8mb
 -- 使用该数据库
 USE `service_driver_user`;
 
+-- 创建driver_user表
 DROP TABLE IF EXISTS `driver_user`;
 CREATE TABLE `driver_user`  (
                                 `id` bigint NOT NULL AUTO_INCREMENT COMMENT '司机id',
@@ -94,3 +95,107 @@ INSERT INTO `driver_user` (
              NOW(),
              NOW()
          );
+
+-- 创建car表
+CREATE TABLE `car`  (
+                        `id` bigint NOT NULL AUTO_INCREMENT COMMENT '车辆id',
+                        `address` char(6) NULL DEFAULT NULL COMMENT '车辆所在城市',
+                        `vehicle_no` varchar(8) NULL DEFAULT NULL COMMENT '车辆号牌',
+                        `plate_color` char(1) NULL DEFAULT NULL COMMENT '车牌颜色',
+                        `seats` int NULL DEFAULT NULL COMMENT '核定载客位',
+                        `brand` varchar(16) NULL DEFAULT NULL COMMENT '车辆厂牌',
+                        `model` varchar(16) NULL DEFAULT NULL COMMENT '车辆型号',
+                        `vehicle_type` varchar(16) NULL DEFAULT NULL COMMENT '车辆类型',
+                        `owner_name` varchar(16) NULL DEFAULT NULL COMMENT '车辆所有人',
+                        `vehicle_color` char(2) NULL DEFAULT NULL COMMENT '车辆颜色（1白色，2黑色）',
+                        `engine_id` varchar(32) NULL DEFAULT NULL COMMENT '发动机号',
+                        `vin` varchar(64) NULL DEFAULT NULL COMMENT '车辆VIN码',
+                        `certify_date_a` date NULL DEFAULT NULL COMMENT '车辆注册日期',
+                        `fuel_type` char(2) NULL DEFAULT NULL COMMENT '车辆燃料类型（1汽油，2柴油，3天然气，4液化气，5电动，9其他）',
+                        `engine_displace` varchar(8) NULL DEFAULT NULL COMMENT '发动机排量（毫升）',
+                        `trans_agency` varchar(32) NULL DEFAULT NULL COMMENT '车辆运输证发证机构',
+                        `trans_area` varchar(32) NULL DEFAULT NULL COMMENT '车辆经营区域',
+                        `trans_date_start` date NULL DEFAULT NULL COMMENT '车辆运输证有效期起',
+                        `trans_date_end` date NULL DEFAULT NULL COMMENT '车辆运输证有效期止',
+                        `certify_date_b` date NULL DEFAULT NULL COMMENT '车辆初次登记日期',
+                        `fix_state` char(2) NULL DEFAULT NULL COMMENT '车辆检修状态（0未检修，1已检修，2未知）',
+                        `next_fix_date` date NULL DEFAULT NULL COMMENT '车辆下次年检时间',
+                        `check_state` char(2) NULL DEFAULT NULL COMMENT '车辆年度审验状态(0未年审，1年审合格，2年审不合格)',
+                        `fee_print_id` varchar(64) NULL DEFAULT NULL COMMENT '发票打印设备序列号',
+                        `gps_brand` varchar(32) NULL DEFAULT NULL COMMENT '卫星定位装置品牌',
+                        `gps_model` varchar(32) NULL DEFAULT NULL COMMENT '卫星定位装置型号',
+                        `gps_install_date` date NULL DEFAULT NULL COMMENT '卫星定位设备安装日期',
+                        `register_date` date NULL DEFAULT NULL COMMENT '报备日期',
+                        `commercial_type` int NULL DEFAULT NULL COMMENT '服务类型（1网络预约出租汽车，2巡游出租汽车，3私人小客车合乘）',
+                        `fare_type` varchar(16) NULL DEFAULT NULL COMMENT '运价类型编码',
+                        `state` tinyint(1) NULL DEFAULT NULL COMMENT '状态（0有效，1失效）',
+                        `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
+                        `gmt_modified` datetime NULL DEFAULT NULL COMMENT '更新时间',
+                        PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB;
+
+-- 插入测试数据
+INSERT INTO `car` (
+    `address`,
+    `vehicle_no`,
+    `plate_color`,
+    `seats`,
+    `brand`,
+    `model`,
+    `vehicle_type`,
+    `owner_name`,
+    `vehicle_color`,
+    `engine_id`,
+    `vin`,
+    `certify_date_a`,
+    `fuel_type`,
+    `engine_displace`,
+    `trans_agency`,
+    `trans_area`,
+    `trans_date_start`,
+    `trans_date_end`,
+    `certify_date_b`,
+    `fix_state`,
+    `next_fix_date`,
+    `check_state`,
+    `fee_print_id`,
+    `gps_brand`,
+    `gps_model`,
+    `gps_install_date`,
+    `register_date`,
+    `commercial_type`,
+    `fare_type`,
+    `state`
+) VALUES (
+             '110101',
+             '京A12345',
+             '1',
+             5,
+             '比亚迪',
+             '汉EV',
+             '小型轿车',
+             '李四',
+             '1',
+             'DY20250613001',
+             'LHGCM568X01234567',
+             '2023-01-10',
+             '5',
+             '2000',
+             '北京市交通委',
+             '北京市',
+             '2023-02-01',
+             '2033-02-01',
+             '2023-01-05',
+             '1',
+             '2027-01-05',
+             '1',
+             'PRINT20260088',
+             '途强',
+             'TR08',
+             '2023-02-10',
+             '2026-06-13',
+             1,
+             'PRICE_01',
+             0
+         );
+

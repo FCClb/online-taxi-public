@@ -5,6 +5,9 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * 司机用户 实体类
+ */
 @Data
 public class DriverUser {
 

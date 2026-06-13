@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * 乘客用户 实体类
+ */
 @Data
 public class PassengerUser {
 
