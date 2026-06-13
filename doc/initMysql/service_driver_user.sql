@@ -97,6 +97,7 @@ INSERT INTO `driver_user` (
          );
 
 -- 创建car表
+DROP TABLE IF EXISTS `car`;
 CREATE TABLE `car`  (
                         `id` bigint NOT NULL AUTO_INCREMENT COMMENT '车辆id',
                         `address` char(6) NULL DEFAULT NULL COMMENT '车辆所在城市',
@@ -199,3 +200,14 @@ INSERT INTO `car` (
              0
          );
 
+-- 创建driver_car_binding_relationship表
+DROP TABLE IF EXISTS `driver_car_binding_relationship`;
+CREATE TABLE `driver_car_binding_relationship`  (
+                                                    `id` bigint NOT NULL AUTO_INCREMENT COMMENT '关联id',
+                                                    `driver_id` bigint NULL DEFAULT NULL COMMENT '司机id',
+                                                    `car_id` bigint NULL DEFAULT NULL COMMENT '车辆id',
+                                                    `bind_state` int NULL DEFAULT NULL COMMENT '绑定状态（1绑定，2解绑）',
+                                                    `binding_time` datetime NULL DEFAULT NULL COMMENT '绑定时间',
+                                                    `un_binding_time` datetime NULL DEFAULT NULL COMMENT '解绑时间',
+                                                    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB;

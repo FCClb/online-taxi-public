@@ -2,6 +2,7 @@ package com.fc.internalcommon.dto;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -137,11 +138,11 @@ public class Car {
     /**
      * 创建时间
      */
-    private Date gmtCreate;
+    private LocalDateTime gmtCreate;
     /**
      * 更新时间
      */
-    private Date gmtModified;
+    private LocalDateTime gmtModified;
 
 }
 
