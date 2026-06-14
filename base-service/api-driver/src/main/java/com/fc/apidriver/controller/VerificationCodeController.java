@@ -21,6 +21,7 @@ public class VerificationCodeController {
 
     @GetMapping("/verification-code")
     public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO) {
+
         String driverPhone = verificationCodeDTO.getDriverPhone();
         log.info("driverPhone: {}", driverPhone);
         return verificationCodeService.checkAndSendVerificationCode(driverPhone);

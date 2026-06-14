@@ -2,7 +2,10 @@ package com.fc.apidriver.remote;
 
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.response.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,5 +20,15 @@ public interface ServiceDriverUserClient {
      */
     @PutMapping("/user")
     ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
+
+    /**
+     * 查询
+     * 根据 手机号查询司机
+     *
+     * @param driverPhone
+     * @return
+     */
+    @GetMapping("/check-driver/{driverPhone}")
+    ResponseResult<DriverUserExistsResponse> checkDriverUser(@PathVariable("driverPhone") String driverPhone);
 
 }

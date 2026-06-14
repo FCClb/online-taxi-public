@@ -1,5 +1,6 @@
 package com.fc.servicedriveruser.controller;
 
+import com.fc.internalcommon.constant.DriverCarConstants;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.DriverUserExistsResponse;
@@ -40,17 +41,17 @@ public class UserController {
      * @return
      */
     @GetMapping("/check-driver/{driverPhone}")
-    public ResponseResult getDriverUser(@PathVariable("driverPhone") String driverPhone) {
+    public ResponseResult checkDriverUser(@PathVariable("driverPhone") String driverPhone) {
         ResponseResult<DriverUser> driverUserByPhone = driverUserService.getDriverUserByPhone(driverPhone);
         DriverUser driverUserDb = driverUserByPhone.getData();
 
         DriverUserExistsResponse response = new DriverUserExistsResponse();
         if (driverUserDb == null) { //不存在这个司机
             response.setDriverPhone(driverPhone);
-            response.setIfExists(0);
+            response.setIfExists(DriverCarConstants.DRIVER_NOT_EXISTS.getState());
         } else {    //存在
             response.setDriverPhone(driverUserDb.getDriverPhone());
-            response.setIfExists(1);
+            response.setIfExists(DriverCarConstants.DRIVER_EXISTS.getState());
         }
 
         return ResponseResult.success(response);

@@ -27,6 +27,17 @@ public enum DriverCarConstants {
      */
     DRIVER_STATE_INVALID(1),
 
+    /**
+     * 根据手机号查询司机：司机存在
+     */
+    DRIVER_EXISTS(1),
+
+
+    /**
+     * 根据手机号查询司机：司机不存在
+     */
+    DRIVER_NOT_EXISTS(0),
+
     ;
 
 

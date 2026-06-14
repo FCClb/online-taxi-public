@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:发送验证码，骨架代码编写">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/DriverUserExistsResponse.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:根据手机号查询该司机是否存在，代码编写">
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceVerificationClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/VerificationCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/VerificationCodeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/DriverCarConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/DriverCarConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -242,7 +244,7 @@
       <workItem from="1781253630459" duration="2000" />
       <workItem from="1781321536351" duration="1728000" />
       <workItem from="1781333548357" duration="4619000" />
-      <workItem from="1781420047023" duration="3775000" />
+      <workItem from="1781420047023" duration="5381000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -532,7 +534,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781422477586</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="service-driver-user:根据手机号查询该司机是否存在，代码编写">
+      <option name="closed" value="true" />
+      <created>1781424088891</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1781424088891</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-passenger:查询乘客用户信息，骨架代码编写" />
     <MESSAGE value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
     <MESSAGE value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
     <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
@@ -576,7 +585,8 @@
     <MESSAGE value="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写" />
     <MESSAGE value="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑" />
     <MESSAGE value="api-driver:发送验证码，骨架代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-driver:发送验证码，骨架代码编写" />
+    <MESSAGE value="service-driver-user:根据手机号查询该司机是否存在，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:根据手机号查询该司机是否存在，代码编写" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
