@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写">
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverCarBindingRelationshipController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/service/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/service/DriverCarBindingRelationshipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026_6_6_15_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026_6_6_15_38__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑">
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/VerificationCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/VerificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/controller/DriverUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-boss/src/main/java/com/fc/apiboss/remote/ServiceDriverUserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/DriverCarBindingRelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/DriverCarBindingRelationship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/VerificationCodeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/VerificationCodeDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,9 +188,9 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.ApiBossApplication" />
-      <item itemvalue="Spring Boot.ServiceDriverUserApplication" />
       <item itemvalue="Spring Boot.ApiDriverApplication" />
       <item itemvalue="Spring Boot.ApiPassengerApplication" />
+      <item itemvalue="Spring Boot.ServiceDriverUserApplication" />
       <item itemvalue="Spring Boot.ServiceMapApplication" />
       <item itemvalue="Spring Boot.ServicePassengerUserApplication" />
       <item itemvalue="Spring Boot.ServiceVerificationApplication" />
@@ -247,7 +242,7 @@
       <workItem from="1781253630459" duration="2000" />
       <workItem from="1781321536351" duration="1728000" />
       <workItem from="1781333548357" duration="4619000" />
-      <workItem from="1781420047023" duration="1452000" />
+      <workItem from="1781420047023" duration="2130000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -521,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781338157024</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑">
+      <option name="closed" value="true" />
+      <created>1781421611399</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1781421611399</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-passenger:双token生成骨架编写" />
     <MESSAGE value="api-passenger:根据refreshToken刷新双token，代码编写及测试" />
     <MESSAGE value="api-passenger:查询乘客用户信息，骨架代码编写" />
     <MESSAGE value="service-passenger-user:根据手机号查询乘客用户信息，代码编写" />
@@ -565,7 +567,8 @@
     <MESSAGE value="api-driver:调用service-driver-user修改司机用户信息" />
     <MESSAGE value="service-driver-user:更新car表数据库脚本，创建car实体类" />
     <MESSAGE value="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写" />
+    <MESSAGE value="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
