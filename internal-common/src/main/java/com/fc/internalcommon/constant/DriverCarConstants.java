@@ -17,6 +17,16 @@ public enum DriverCarConstants {
      */
     DRIVER_CAR_UNBIND(2),
 
+    /**
+     * 司机账号状态：有效
+     */
+    DRIVER_STATE_VALID(0),
+
+    /**
+     * 司机账号状态：失效
+     */
+    DRIVER_STATE_INVALID(1),
+
     ;
 
 
