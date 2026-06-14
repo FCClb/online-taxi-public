@@ -3,7 +3,6 @@ package com.fc.internalcommon.dto;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * 司机车辆关联关系 实体类

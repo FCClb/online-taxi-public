@@ -1,6 +1,8 @@
 package com.fc.apiboss.controller;
 
+import com.fc.apiboss.service.CarService;
 import com.fc.apiboss.service.DriverUserService;
+import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,9 @@ public class DriverUserController {
 
     @Autowired
     private DriverUserService driverUserService;
+
+    @Autowired
+    private CarService carService;
 
     /**
      * 增加 乘客用户
@@ -35,6 +40,17 @@ public class DriverUserController {
     public ResponseResult updateDriverUser(@RequestBody DriverUser driverUser) {
 
         return driverUserService.updateDriverUser(driverUser);
+    }
+
+    /**
+     * 新增 车辆
+     *
+     * @param car
+     * @return
+     */
+    @PostMapping("/car")
+    public ResponseResult addCar(@RequestBody Car car) {
+        return carService.addCar(car);
     }
 
 

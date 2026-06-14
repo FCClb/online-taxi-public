@@ -1,5 +1,7 @@
 package com.fc.apiboss.remote;
 
+import com.fc.internalcommon.dto.Car;
+import com.fc.internalcommon.dto.DriverCarBindingRelationship;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -27,4 +29,31 @@ public interface ServiceDriverUserClient {
      */
     @PutMapping("/user")
     ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
+
+    /**
+     * 新增 车辆
+     *
+     * @param car
+     * @return
+     */
+    @PostMapping("/car")
+    ResponseResult addCar(@RequestBody Car car);
+
+    /**
+     * 司机车辆 绑定
+     *
+     * @param relationship
+     * @return
+     */
+    @PostMapping("/driver-car-binding-relationship/bind")
+    ResponseResult bind(@RequestBody DriverCarBindingRelationship relationship);
+
+    /**
+     * 司机车辆 解绑
+     *
+     * @param relationship
+     * @return
+     */
+    @PostMapping("/driver-car-binding-relationship/unbind")
+    ResponseResult unbind(@RequestBody DriverCarBindingRelationship relationship);
 }
