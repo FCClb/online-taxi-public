@@ -49,7 +49,7 @@ public class VerificationCodeService {
 
         //存入redis
         //需要有key，value，过期时间
-        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone);
+        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone,IdentityEnum.PASSENGER_IDENTITY.getValue());
         stringRedisTemplate.opsForValue().set(key, numberCode + "", 2, TimeUnit.MINUTES);
 
         //todo 通过短信服务商（阿里短信服务，腾讯短信通，华信，容联），将对应的验证码发送到手机上
@@ -67,7 +67,7 @@ public class VerificationCodeService {
     public ResponseResult checkVerificationCode(String passengerPhone, String verificationCode) {
         //1.根据手机号，去redis验证验证码
         // 生成key
-        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone);
+        String key = RedisPrefixUtils.generateKeyByPhone(passengerPhone,IdentityEnum.PASSENGER_IDENTITY.getValue());
         //根据key去获取value
         String value = stringRedisTemplate.opsForValue().get(key);
 

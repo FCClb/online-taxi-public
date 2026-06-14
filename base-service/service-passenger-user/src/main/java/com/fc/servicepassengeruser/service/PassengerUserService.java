@@ -33,6 +33,8 @@ public class PassengerUserService {
         //如果不存在，则插入用户信息
         if (passengerUsers.size() == 0) {
             PassengerUser passengerUser = new PassengerUser();
+
+            //todo 需要新建一个用户，此处先写定用户称谓，性别等
             passengerUser.setPassengerName("芙芙");
             passengerUser.setPassengerGender((byte) 0);
             passengerUser.setPassengerPhone(passengerPhone);
