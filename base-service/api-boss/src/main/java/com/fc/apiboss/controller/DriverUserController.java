@@ -21,7 +21,7 @@ public class DriverUserController {
     private CarService carService;
 
     /**
-     * 增加 乘客用户
+     * 增加 司机用户
      * @param driverUser
      * @return
      */
@@ -32,7 +32,7 @@ public class DriverUserController {
     }
 
     /**
-     * 修改 乘客用户信息
+     * 修改 司机用户信息
      * @param driverUser
      * @return
      */
