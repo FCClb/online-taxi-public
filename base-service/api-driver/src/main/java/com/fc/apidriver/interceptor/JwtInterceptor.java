@@ -1,4 +1,4 @@
-package com.fc.apipassenger.interceptor;
+package com.fc.apidriver.interceptor;
 
 import com.fc.internalcommon.constant.TokenTypeEnum;
 import com.fc.internalcommon.dto.ResponseResult;

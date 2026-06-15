@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:调用service-verification服务，获取验证码">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:发送验证码并存入redis，代码编写">
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/DriverUserWorkStatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/mapper/DriverUserWorkStatusMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserWorkStatusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/DriverUserWorkStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/VerificationCodeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/VerificationCodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/VerificationCodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/PassengerUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-passenger-user/src/main/java/com/fc/servicepassengeruser/service/PassengerUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/RedisPrefixUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/RedisPrefixUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/DriverCarConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/DriverCarConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiBossApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceDriverUserApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -244,7 +252,9 @@
       <workItem from="1781253630459" duration="2000" />
       <workItem from="1781321536351" duration="1728000" />
       <workItem from="1781333548357" duration="4619000" />
-      <workItem from="1781420047023" duration="6831000" />
+      <workItem from="1781420047023" duration="7340000" />
+      <workItem from="1781504961135" duration="1525000" />
+      <workItem from="1781525576665" duration="4193000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -550,7 +560,23 @@
       <option name="project" value="LOCAL" />
       <updated>1781425542614</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="api-driver:发送验证码并存入redis，代码编写">
+      <option name="closed" value="true" />
+      <created>1781427029499</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1781427029499</updated>
+    </task>
+    <task id="LOCAL-00040" summary="api-driver:发送验证码并存入redis，代码编写">
+      <option name="closed" value="true" />
+      <created>1781427153917</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1781427153917</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-passenger:通过feign调用service-passenger-user查询用户信息，代码编写" />
     <MESSAGE value="api-passenger:预估价格接口编写 以及&#10;service-price:预估价格服务骨架编写" />
     <MESSAGE value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
     <MESSAGE value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
@@ -594,7 +619,8 @@
     <MESSAGE value="api-driver:发送验证码，骨架代码编写" />
     <MESSAGE value="service-driver-user:根据手机号查询该司机是否存在，代码编写" />
     <MESSAGE value="api-driver:调用service-verification服务，获取验证码" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-driver:调用service-verification服务，获取验证码" />
+    <MESSAGE value="api-driver:发送验证码并存入redis，代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-driver:发送验证码并存入redis，代码编写" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

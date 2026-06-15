@@ -211,3 +211,14 @@ CREATE TABLE `driver_car_binding_relationship`  (
                                                     `un_binding_time` datetime NULL DEFAULT NULL COMMENT '解绑时间',
                                                     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB;
+
+-- 创建driver_user_work_status表
+DROP TABLE IF EXISTS `driver_user_work_status`;
+CREATE TABLE `driver_user_work_status`  (
+                                            `id` bigint NOT NULL AUTO_INCREMENT COMMENT '司机工作状态id',
+                                            `driver_id` bigint NOT NULL COMMENT '司机id',
+                                            `work_status` int NULL DEFAULT NULL COMMENT '司机工作状态（0收车，1开始接单，2暂停接单）',
+                                            `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
+                                            `gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
+                                            PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB;

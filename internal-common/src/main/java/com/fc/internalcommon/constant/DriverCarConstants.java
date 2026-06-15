@@ -32,11 +32,25 @@ public enum DriverCarConstants {
      */
     DRIVER_EXISTS(1),
 
-
     /**
      * 根据手机号查询司机：司机不存在
      */
     DRIVER_NOT_EXISTS(0),
+
+    /**
+     * 司机工作状态：收车
+     */
+    DRIVER_WORK_STATUS_STOP(0),
+
+    /**
+     * 司机工作状态：出车/开始接单
+     */
+    DRIVER_WORK_STATUS_START(1),
+
+    /**
+     * 司机工作状态：暂停接单
+     */
+    DRIVER_WORK_STATUS_SUSPEND(2),
 
     ;
 
