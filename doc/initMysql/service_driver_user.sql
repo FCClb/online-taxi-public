@@ -130,6 +130,7 @@ CREATE TABLE `car`  (
                         `commercial_type` int NULL DEFAULT NULL COMMENT '服务类型（1网络预约出租汽车，2巡游出租汽车，3私人小客车合乘）',
                         `fare_type` varchar(16) NULL DEFAULT NULL COMMENT '运价类型编码',
                         `state` tinyint(1) NULL DEFAULT NULL COMMENT '状态（0有效，1失效）',
+                        `tid` varchar(16) NULL DEFAULT NULL COMMENT '高德猎鹰服务终端tid',
                         `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
                         `gmt_modified` datetime NULL DEFAULT NULL COMMENT '更新时间',
                         PRIMARY KEY (`id`) USING BTREE

@@ -136,6 +136,10 @@ public class Car {
      */
     private Integer state;
     /**
+     * 高德猎鹰服务终端tid
+     */
+    private String tid;
+    /**
      * 创建时间
      */
     private LocalDateTime gmtCreate;
