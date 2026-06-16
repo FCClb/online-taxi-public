@@ -140,6 +140,14 @@ public class Car {
      */
     private String tid;
     /**
+     * 高德猎鹰服务轨迹trid
+     */
+    private String trid;
+    /**
+     * 高德猎鹰服务轨迹名称
+     */
+    private String trname;
+    /**
      * 创建时间
      */
     private LocalDateTime gmtCreate;

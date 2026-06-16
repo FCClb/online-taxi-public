@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:高德猎鹰-在新增车辆时同步创建终端">
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TraceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TraceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/TraceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/TraceResponse.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:高德猎鹰-地图服务创建轨迹，代码实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/ServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/remote/ServiceMapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/remote/ServiceMapClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TraceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TraceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +246,7 @@
       <workItem from="1781420047023" duration="7340000" />
       <workItem from="1781504961135" duration="1525000" />
       <workItem from="1781525576665" duration="4345000" />
-      <workItem from="1781595935714" duration="8004000" />
+      <workItem from="1781595935714" duration="8949000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -601,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781605528902</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="service-map:高德猎鹰-地图服务创建轨迹，代码实现">
+      <option name="closed" value="true" />
+      <created>1781607567445</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1781607567445</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-price:调用service-map获取路径距离和所需时间" />
     <MESSAGE value="service-price:从数据库读取计价规则，代码编写" />
     <MESSAGE value="service-price:计算价格，代码编写" />
     <MESSAGE value="api-passenger:调用service-price服务，预估价格功能编写完成" />
@@ -645,7 +651,8 @@
     <MESSAGE value="service-map:高德猎鹰-创建服务接口，代码实现" />
     <MESSAGE value="service-map:高德猎鹰-车辆终端管理创建终端，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
+    <MESSAGE value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,11 +661,6 @@
           <url>file://$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/DicDistrictService.java</url>
           <line>78</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CarService.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

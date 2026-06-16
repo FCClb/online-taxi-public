@@ -1,6 +1,7 @@
 package com.fc.servicedriveruser.remote;
 
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.dto.TraceResponse;
 import com.fc.internalcommon.response.TerminalResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,5 +17,15 @@ public interface ServiceMapClient {
      * @return
      */
     @PostMapping("/terminal/add")
-    ResponseResult<TerminalResponse> add(@RequestParam String name);
+    ResponseResult<TerminalResponse> addTerminal(@RequestParam String name);
+
+    /**
+     * 创建 轨迹
+     *
+     * @param tid
+     * @return
+     */
+    @PostMapping("/trace/add")
+    ResponseResult<TraceResponse> addTrace(@RequestParam String tid);
+
 }

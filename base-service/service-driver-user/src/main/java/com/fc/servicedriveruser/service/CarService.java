@@ -2,6 +2,7 @@ package com.fc.servicedriveruser.service;
 
 import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.dto.TraceResponse;
 import com.fc.internalcommon.response.TerminalResponse;
 import com.fc.servicedriveruser.mapper.CarMapper;
 import com.fc.servicedriveruser.remote.ServiceMapClient;
@@ -29,11 +30,19 @@ public class CarService {
         car.setGmtCreate(now);
         car.setGmtModified(now);
 
-        //获得此车辆 对应的 tid
-        ResponseResult<TerminalResponse> responseResult = serviceMapClient.add(car.getVehicleNo());
-        TerminalResponse data = responseResult.getData();
-        String tid = data.getTid();
+        //获得此车辆 对应的 终端tid
+        ResponseResult<TerminalResponse> terminalResponseResult = serviceMapClient.addTerminal(car.getVehicleNo());
+        TerminalResponse terminalData = terminalResponseResult.getData();
+        String tid = terminalData.getTid();
         car.setTid(tid);
+
+        //获得此车辆 对应的 轨迹trid
+        ResponseResult<TraceResponse> traceResponseResponseResult = serviceMapClient.addTrace(tid);
+        TraceResponse traceData = traceResponseResponseResult.getData();
+        String trid = traceData.getTrid();
+        String trname = traceData.getTrname();
+        car.setTrid(trid);
+        car.setTrname(trname);
 
         carMapper.insert(car);
 
