@@ -18,6 +18,11 @@ public enum AmapConfigConstants {
     DISTRICT_URL("https://restapi.amap.com/v3/config/district"),
 
     /**
+     * 猎鹰轨迹服务 创建服务url
+     */
+    SERVICE_ADD_URL("https://tsapi.amap.com/v1/track/service/add"),
+
+    /**
      * 路径规划 json key值: status
      */
     STATUS("status"),
