@@ -33,6 +33,11 @@ public enum AmapConfigConstants {
     TRACE_ADD_URL("https://tsapi.amap.com/v1/track/trace/add"),
 
     /**
+     * 猎鹰轨迹服务 轨迹点上传url
+     */
+    POINT_UPLOAD_URL("https://tsapi.amap.com/v1/track/point/upload"),
+
+    /**
      * 路径规划 json key值: status
      */
     STATUS("status"),

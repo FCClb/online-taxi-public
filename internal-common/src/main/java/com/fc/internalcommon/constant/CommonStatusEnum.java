@@ -47,6 +47,12 @@ public enum CommonStatusEnum {
 
 
     /**
+     * 猎鹰服务
+     * url拼接错误提示：2000-2099
+     */
+    URL_ERROR(2099, "url拼接错误"),
+
+    /**
      * 成功
      */
     SUCCESS(1, "success"),
