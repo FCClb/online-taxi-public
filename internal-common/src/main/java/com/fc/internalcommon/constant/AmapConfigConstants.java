@@ -22,6 +22,12 @@ public enum AmapConfigConstants {
      */
     SERVICE_ADD_URL("https://tsapi.amap.com/v1/track/service/add"),
 
+
+    /**
+     * 猎鹰轨迹服务 创建终端url
+     */
+    TERMINAL_ADD_URL("https://tsapi.amap.com/v1/track/terminal/add"),
+
     /**
      * 路径规划 json key值: status
      */

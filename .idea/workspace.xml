@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:校验验证码并存储jwt，司机工作状态业务，代码编写">
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/ServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/ServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/ServiceMapService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/ServiceResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-map:高德猎鹰-创建服务接口，代码实现">
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TerminalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/TerminalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TerminalResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,7 +247,7 @@
       <workItem from="1781420047023" duration="7340000" />
       <workItem from="1781504961135" duration="1525000" />
       <workItem from="1781525576665" duration="4345000" />
-      <workItem from="1781595935714" duration="2368000" />
+      <workItem from="1781595935714" duration="4301000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -577,7 +577,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781530366482</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="service-map:高德猎鹰-创建服务接口，代码实现">
+      <option name="closed" value="true" />
+      <created>1781599178751</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1781599178751</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +604,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写" />
     <MESSAGE value="service-map:根据起始地点经纬度获取距离和时间接口骨架编写" />
     <MESSAGE value="service-map:调用第三方地图接口，获取路径规划信息，代码编写" />
     <MESSAGE value="service-price:调用service-map获取路径距离和所需时间" />
@@ -621,7 +628,8 @@
     <MESSAGE value="api-driver:调用service-verification服务，获取验证码" />
     <MESSAGE value="api-driver:发送验证码并存入redis，代码编写" />
     <MESSAGE value="service-driver-user:校验验证码并存储jwt，司机工作状态业务，代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:校验验证码并存储jwt，司机工作状态业务，代码编写" />
+    <MESSAGE value="service-map:高德猎鹰-创建服务接口，代码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-map:高德猎鹰-创建服务接口，代码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

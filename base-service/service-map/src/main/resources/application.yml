@@ -19,3 +19,5 @@ spring:
 
 amap:
   key: 7ac5f4e3d82567c118ba44c4398655c2
+  # 高德猎鹰-服务id
+  sid: 1063468
