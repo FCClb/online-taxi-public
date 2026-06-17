@@ -1,13 +1,11 @@
 package com.fc.apidriver.remote;
 
+import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient("service-driver-user")
 public interface ServiceDriverUserClient {
@@ -30,5 +28,14 @@ public interface ServiceDriverUserClient {
      */
     @GetMapping("/check-driver/{driverPhone}")
     ResponseResult<DriverUserExistsResponse> checkDriverUser(@PathVariable("driverPhone") String driverPhone);
+
+    /**
+     * 查询 根据id查询车辆
+     *
+     * @param carId
+     * @return
+     */
+    @GetMapping("/car")
+    ResponseResult<Car> getCarById(@RequestParam Long carId);
 
 }

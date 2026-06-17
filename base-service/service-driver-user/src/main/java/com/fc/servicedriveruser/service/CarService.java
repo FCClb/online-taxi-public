@@ -1,5 +1,6 @@
 package com.fc.servicedriveruser.service;
 
+import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.dto.TraceResponse;
@@ -8,8 +9,12 @@ import com.fc.servicedriveruser.mapper.CarMapper;
 import com.fc.servicedriveruser.remote.ServiceMapClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class CarService {
@@ -48,4 +53,23 @@ public class CarService {
 
         return ResponseResult.success("新增车辆成功");
     }
+
+    /**
+     * 查询 根据id查询车辆
+     * @param carId
+     * @return
+     */
+    public ResponseResult getCarById(Long carId) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id", carId);
+        List<Car> cars = carMapper.selectByMap(map);
+
+        if (cars.isEmpty()) {
+            return ResponseResult.fail(CommonStatusEnum.CAR_NOT_EXISTS.getCode(), CommonStatusEnum.CAR_NOT_EXISTS.getValue());
+        } else {
+            return ResponseResult.success(cars.get(0));
+        }
+
+    }
+
 }

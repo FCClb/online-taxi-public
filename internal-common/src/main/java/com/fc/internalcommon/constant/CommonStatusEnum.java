@@ -45,6 +45,9 @@ public enum CommonStatusEnum {
 
     CAR_BIND_EXISTS(1504, "车辆已经绑定，请勿重复绑定"),
 
+    CAR_NOT_EXISTS(1505, "车辆不存在"),
+
+
 
     /**
      * 猎鹰服务

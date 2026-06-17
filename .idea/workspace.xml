@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:高德猎鹰-新增车辆时同步初始化轨迹，代码实现">
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/PointController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/PointClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/PointService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/PointDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/PointRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-driver-user:高德猎鹰-轨迹点上传，代码实现">
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/PointController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceMapClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/PointService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/ApiDriverPointRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TraceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TraceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -128,7 +127,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceMapApplication">
+  <component name="RunManager" selected="Spring Boot.ApiDriverApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -251,7 +250,8 @@
       <workItem from="1781504961135" duration="1525000" />
       <workItem from="1781525576665" duration="4345000" />
       <workItem from="1781595935714" duration="9112000" />
-      <workItem from="1781614072973" duration="6160000" />
+      <workItem from="1781614072973" duration="6235000" />
+      <workItem from="1781656296819" duration="3673000" />
     </task>
     <task id="LOCAL-00001" summary="项目整体重构：两层架构改为三层架构，解决自定义公共工具包循环依赖问题">
       <option name="closed" value="true" />
@@ -621,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781608471509</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="service-driver-user:高德猎鹰-轨迹点上传，代码实现">
+      <option name="closed" value="true" />
+      <created>1781620360509</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1781620360509</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-price:计算价格，代码编写" />
     <MESSAGE value="api-passenger:调用service-price服务，预估价格功能编写完成" />
     <MESSAGE value="service-price:预估价格计算过程优化" />
     <MESSAGE value="service-map:请求地图地区字典" />
@@ -665,7 +672,8 @@
     <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
     <MESSAGE value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-新增车辆时同步初始化轨迹，代码实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:高德猎鹰-新增车辆时同步初始化轨迹，代码实现" />
+    <MESSAGE value="service-driver-user:高德猎鹰-轨迹点上传，代码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-driver-user:高德猎鹰-轨迹点上传，代码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
