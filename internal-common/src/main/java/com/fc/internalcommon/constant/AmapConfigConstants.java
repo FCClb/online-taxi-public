@@ -38,6 +38,11 @@ public enum AmapConfigConstants {
     POINT_UPLOAD_URL("https://tsapi.amap.com/v1/track/point/upload"),
 
     /**
+     * 猎鹰轨迹服务 周边搜索终端url
+     */
+    TERMINAL_AROUNDSEARCH_URL("https://tsapi.amap.com/v1/track/terminal/aroundsearch"),
+
+    /**
      * 路径规划 json key值: status
      */
     STATUS("status"),

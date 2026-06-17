@@ -9,8 +9,6 @@ import com.fc.servicedriveruser.mapper.CarMapper;
 import com.fc.servicedriveruser.remote.ServiceMapClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -35,8 +33,10 @@ public class CarService {
         car.setGmtCreate(now);
         car.setGmtModified(now);
 
+        carMapper.insert(car);
+
         //获得此车辆 对应的 终端tid
-        ResponseResult<TerminalResponse> terminalResponseResult = serviceMapClient.addTerminal(car.getVehicleNo());
+        ResponseResult<TerminalResponse> terminalResponseResult = serviceMapClient.addTerminal(car.getVehicleNo(), car.getId() + "");
         TerminalResponse terminalData = terminalResponseResult.getData();
         String tid = terminalData.getTid();
         car.setTid(tid);
@@ -46,10 +46,11 @@ public class CarService {
         TraceResponse traceData = traceResponseResponseResult.getData();
         String trid = traceData.getTrid();
         String trname = traceData.getTrname();
+
         car.setTrid(trid);
         car.setTrname(trname);
 
-        carMapper.insert(car);
+        carMapper.updateById(car);
 
         return ResponseResult.success("新增车辆成功");
     }

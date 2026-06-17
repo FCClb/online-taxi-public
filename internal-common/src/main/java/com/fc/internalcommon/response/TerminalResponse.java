@@ -8,5 +8,14 @@ import lombok.Data;
 @Data
 public class TerminalResponse {
 
+    /**
+     * 终端id
+     */
     private String tid;
+
+    /**
+     * 车辆id
+     */
+    private Long carId;
+
 }

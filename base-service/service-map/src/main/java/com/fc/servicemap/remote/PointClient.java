@@ -55,11 +55,11 @@ public class PointClient {
             return ResponseResult.fail(CommonStatusEnum.URL_ERROR.getCode(), CommonStatusEnum.URL_ERROR.getValue());
         }
 
-        System.out.println("最终请求URL：" + url);
+        System.out.println("上传轨迹点最终请求URL：" + url);
 
         ResponseEntity<String> forEntity = restTemplate.postForEntity(URI.create(url.toString()), null, String.class);
 
-        System.out.println("高德地图响应：" + forEntity.getBody());
+        System.out.println("上传轨迹点高德地图响应：" + forEntity.getBody());
 
         return ResponseResult.success(pointRequest);
     }

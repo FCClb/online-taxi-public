@@ -80,11 +80,15 @@
         </dependency>
 
         <!-- JSON工具 -->
+        <!-- net.sf.json-lib是早已停止维护的老旧库，存在各种缺陷 -->
+        <!-- 未来开发解析JSON建议直接用Spring/Spring Boot 默认内置的Jackson -->
+        <!-- 或者 用阿里开源的新一代 JSON 库 Fastjson2  / 谷歌出品的Gson -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
             <classifier>jdk15</classifier>
         </dependency>
+
 
         <!-- Lombok -->
         <dependency>
