@@ -16,11 +16,12 @@ public class TerminalService {
 
     /**
      * 新增 终端
+     *
      * @param name
      * @return
      */
-    public ResponseResult add(String name) {
+    public ResponseResult add(String name, String desc) {
 
-        return terminalClient.add(name);
+        return terminalClient.add(name, desc);
     }
 }

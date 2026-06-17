@@ -20,12 +20,14 @@ public class TerminalController {
 
     /**
      * 新增 终端
+     *
      * @param name
      * @return
      */
     @PostMapping("/add")
-    public ResponseResult add(@RequestParam String name) {
-        return terminalService.add(name);
+    public ResponseResult add(@RequestParam("name") String name, @RequestParam("desc") String desc) {
+
+        return terminalService.add(name, desc);
     }
 
 }

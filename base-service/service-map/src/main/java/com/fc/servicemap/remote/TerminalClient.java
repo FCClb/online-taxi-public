@@ -28,14 +28,19 @@ public class TerminalClient {
 
     /**
      * 新增 终端
+     *
      * @param name
      * @return
      */
-    public ResponseResult add(String name) {
+    public ResponseResult add(String name, String desc) {
+
         StringBuilder url = new StringBuilder();
         url.append(AmapConfigConstants.TERMINAL_ADD_URL.getValue());
         url.append("?");
-        url.append("key=" + amapKey + "&sid=" + amapSid + "&name=" + name);
+        url.append("key=" + amapKey);
+        url.append("&sid=" + amapSid);
+        url.append("&name=" + name);
+        url.append("&desc=" + desc);
 
         ResponseEntity<String> forEntity = restTemplate.postForEntity(url.toString(), null, String.class);
         String body = forEntity.getBody();
