@@ -1,5 +1,6 @@
 package com.fc.serviceorder.service;
 
+import com.fc.internalcommon.constant.OrderConstants;
 import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
@@ -28,6 +29,8 @@ public class OrderService {
     public ResponseResult add(OrderRequest orderRequest) {
         OrderInfo orderInfo = new OrderInfo();
         BeanUtils.copyProperties(orderRequest, orderInfo);
+
+        orderInfo.setOrderStatus(OrderConstants.ORDER_START.getCode());
 
         LocalDateTime now = LocalDateTime.now();
         orderInfo.setGmtCreate(now);
