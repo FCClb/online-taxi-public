@@ -80,6 +80,10 @@ public class OrderInfo {
      */
     private String fareType;
     /**
+     * 运价类型版本
+     */
+    private Integer fareVersion;
+    /**
      * 司机接单时车辆经度
      */
     private String receiveOrderCarLongitude;

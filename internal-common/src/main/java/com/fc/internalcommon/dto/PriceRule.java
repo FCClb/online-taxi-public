@@ -37,4 +37,13 @@ public class PriceRule {
      */
     private Double unitPricePerMinute;
 
+    /**
+     * 运价类型编码
+     */
+    private String fareType;
+
+    /**
+     * 运价类型版本
+     */
+    private Integer fareVersion;
 }

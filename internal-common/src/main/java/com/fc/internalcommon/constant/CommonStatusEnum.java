@@ -10,27 +10,31 @@ public enum CommonStatusEnum {
     /**
      * 验证码错误提示：1000-1099
      */
-    VERIFICATION_CODE_ERROR(1099, "验证码不正确"),
+    VERIFICATION_CODE_ERROR(1000, "验证码不正确"),
 
     /**
      * token错误提示：1100-1199
      */
-    TOKEN_ERROR(1199, "token错误"),
+    TOKEN_ERROR(1100, "token错误"),
 
     /**
      * 用户错误提示：1200-1299
      */
-    USER_NOT_EXISTS(1299, "当前用户不存在"),
+    USER_NOT_EXISTS(1200, "当前用户不存在"),
 
     /**
      * 计价规则错误提示：1300-1399
      */
-    PRICE_RULE_EMPTY(1399, "计价规则不存在"),
+    PRICE_RULE_EMPTY(1300, "计价规则不存在"),
+
+    PRICE_RULE_EXISTS(1301, "计价规则已经存在"),
+
+    PRICE_RULE_NOT_EDIT(1302, "计价规则没有变化"),
 
     /**
      * 地图信息错误提示：1400-1499
      */
-    MAP_DISTRICT_ERROR(1499, "请求地图错误"),
+    MAP_DISTRICT_ERROR(1400, "请求地图错误"),
 
     /**
      * 司机车辆关系 错误提示：1500-1599
@@ -53,7 +57,7 @@ public enum CommonStatusEnum {
      * 猎鹰服务
      * url拼接错误提示：2000-2099
      */
-    URL_ERROR(2099, "url拼接错误"),
+    URL_ERROR(2000, "url拼接错误"),
 
     /**
      * 成功

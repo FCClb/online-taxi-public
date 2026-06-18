@@ -25,6 +25,7 @@ CREATE TABLE `order_info` (
                          `dest_latitude` varchar(16) NULL DEFAULT NULL COMMENT '预计目的地纬度',
                          `encrypt` int NULL DEFAULT NULL COMMENT '坐标加密标识(1：GCJ-02 测绘局标准；2：WGS84 GPS标准；3：JBD-09 百度标准；4：CGCS2000 北斗标准；0：其他)',
                          `fare_type` varchar(16) NULL DEFAULT NULL COMMENT '运价类型编码',
+                         `fare_version` int NULL DEFAULT NULL COMMENT '运价类型版本',
                          `receive_order_car_longitude` varchar(16) NULL DEFAULT NULL COMMENT '司机接单时车辆经度',
                          `receive_order_car_latitude` varchar(16) NULL DEFAULT NULL COMMENT '司机接单时车辆纬度',
                          `receive_order_time` datetime NULL DEFAULT NULL COMMENT '司机接单时间，派单成功时间',

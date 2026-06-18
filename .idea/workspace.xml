@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:创建订单，代码实现">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/OrderConstants.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量">
+      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceRuleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceRuleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service-order.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service-order.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_price.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PriceRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/PriceRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -124,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceOrderApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -261,15 +266,7 @@
       <workItem from="1781687944439" duration="4344000" />
       <workItem from="1781692576502" duration="165000" />
       <workItem from="1781754198834" duration="4931000" />
-      <workItem from="1781777511050" duration="5549000" />
-    </task>
-    <task id="LOCAL-00005" summary="api-passenger:调用service-passenger-user插入新用户">
-      <option name="closed" value="true" />
-      <created>1780299444496</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1780299444496</updated>
+      <workItem from="1781777511050" duration="11164000" />
     </task>
     <task id="LOCAL-00006" summary="internal-common:jwt通用工具类token生成代码编写">
       <option name="closed" value="true" />
@@ -655,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781781199880</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量">
+      <option name="closed" value="true" />
+      <created>1781783123764</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1781783123764</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +679,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-driver-user:司机用户服务创建" />
     <MESSAGE value="service-driver-user:插入司机用户，代码编写" />
     <MESSAGE value="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写" />
     <MESSAGE value="api-boss:调用service-driver-user修改司机用户信息" />
@@ -699,7 +703,8 @@
     <MESSAGE value="api-passenger:乘客下单接口接受参数，代码编写" />
     <MESSAGE value="service-order:订单服务 项目创建" />
     <MESSAGE value="service-order:创建订单，代码实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:创建订单，代码实现" />
+    <MESSAGE value="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
