@@ -1,8 +1,8 @@
-package com.fc.apipassenger.controller;
+package com.fc.serviceorder.controller;
 
-import com.fc.apipassenger.service.OrderService;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
+import com.fc.serviceorder.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,8 @@ public class OrderController {
     private OrderService orderService;
 
     /**
-     * 创建订单/下单
+     * 创建订单
+     * @param orderRequest
      * @return
      */
     @PostMapping("/add")

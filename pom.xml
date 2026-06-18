@@ -64,7 +64,7 @@
         <version>${lombok.version}</version>
       </dependency>
 
-      <!-- Json工具 -->
+      <!-- Json工具 老旧，未来使用spring boot内置的Jackson更好-->
       <dependency>
         <groupId>net.sf.json-lib</groupId>
         <artifactId>json-lib</artifactId>
