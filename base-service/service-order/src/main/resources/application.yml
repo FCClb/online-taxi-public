@@ -1,0 +1,11 @@
+server:
+  port: 8089
+
+spring:
+  # 微服务配置
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

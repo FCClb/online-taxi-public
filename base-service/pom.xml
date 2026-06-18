@@ -13,8 +13,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!-- 乘客用户api -->
+        <!-- 乘客用户 api -->
         <module>api-passenger</module>
+
+        <!-- BOSS api -->
+        <module>api-boss</module>
+
+        <!-- 司机用户 api -->
+        <module>api-driver</module>
 
         <!-- 验证码服务 -->
         <module>service-verification</module>
@@ -31,17 +37,14 @@
         <!-- 司机用户服务 -->
         <module>service-driver-user</module>
 
-        <!-- BOSS -->
-        <module>api-boss</module>
-
-        <!-- 司机用户api -->
-        <module>api-driver</module>
+        <!-- 订单服务 -->
+        <module>service-order</module>
 
     </modules>
 
     <dependencies>
 
-<!--        Web 应用-->
+        <!-- Web 应用-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
