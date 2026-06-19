@@ -4,10 +4,7 @@ import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.serviceprice.service.PriceRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 计价规则 管理
@@ -39,6 +36,30 @@ public class PriceRuleController {
     public ResponseResult edit(@RequestBody PriceRule priceRule) {
 
         return priceRuleService.edit(priceRule);
+    }
+
+    /**
+     * 查询 最新的计价规则
+     *
+     * @param fareType
+     * @return
+     */
+    @GetMapping("/get-newest-version")
+    public ResponseResult<PriceRule> getNewestVersion(@RequestParam String fareType) {
+
+        return priceRuleService.getNewestVersion(fareType);
+    }
+
+    /**
+     * 判断 计价规则是否最新
+     *
+     * @param fareType
+     * @return
+     */
+    @GetMapping("/is-new")
+    public ResponseResult isNew(@RequestParam String fareType, @RequestParam Integer fareVersion) {
+
+        return priceRuleService.isNew(fareType, fareVersion);
     }
 
 }
