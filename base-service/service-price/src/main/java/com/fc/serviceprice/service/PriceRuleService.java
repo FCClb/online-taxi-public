@@ -7,6 +7,8 @@ import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.serviceprice.mapper.PriceRuleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -140,6 +142,30 @@ public class PriceRuleService {
             return ResponseResult.success(false);
         } else {
             return ResponseResult.success(true);    //fareVersion是最新的版本
+        }
+    }
+
+    /**
+     * 根据城市编码和车型查询计价规则 是否存在
+     *
+     * @param priceRule
+     * @return
+     */
+    public ResponseResult ifExists(PriceRule priceRule) {
+
+        String cityCode = priceRule.getCityCode();
+        String vehicleType = priceRule.getVehicleType();
+
+        QueryWrapper<PriceRule> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("city_code", cityCode);
+        queryWrapper.eq("vehicle_type", vehicleType);
+        queryWrapper.orderByDesc("fare_version");
+        List<PriceRule> priceRules = priceRuleMapper.selectList(queryWrapper);
+
+        if (priceRules.size() > 0) {
+            return ResponseResult.success(true);
+        } else {
+            return ResponseResult.success(false);
         }
     }
 
