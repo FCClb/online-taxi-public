@@ -16,3 +16,8 @@ spring:
     url: jdbc:mysql://localhost:3306/service_order?characterEncoding=UTF-8&serverTimezone=UTC
     password: root
     username: root
+
+  # redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379

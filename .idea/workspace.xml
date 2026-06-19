@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:创建订单前，判断当前计价规则是否最新，代码实现">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/HeaderParamConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/OrderConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/OrderConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/RedisPrefixUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/RedisPrefixUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -124,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceOrderApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -263,15 +268,7 @@
       <workItem from="1781754198834" duration="4931000" />
       <workItem from="1781777511050" duration="11766000" />
       <workItem from="1781839172626" duration="5296000" />
-      <workItem from="1781851674115" duration="1360000" />
-    </task>
-    <task id="LOCAL-00010" summary="api-passenger:双token生成骨架编写">
-      <option name="closed" value="true" />
-      <created>1780734941428</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1780734941428</updated>
+      <workItem from="1781851674115" duration="4326000" />
     </task>
     <task id="LOCAL-00011" summary="api-passenger:根据refreshToken刷新双token，代码编写及测试">
       <option name="closed" value="true" />
@@ -657,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781843883297</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现">
+      <option name="closed" value="true" />
+      <created>1781853132546</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1781853132546</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-driver-user:更新car表数据库脚本，创建car实体类" />
     <MESSAGE value="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写" />
     <MESSAGE value="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑" />
     <MESSAGE value="api-driver:发送验证码，骨架代码编写" />
@@ -701,7 +705,8 @@
     <MESSAGE value="service-price:预估价格改造，请求体需要携带cityCode和vehicleType" />
     <MESSAGE value="service-price:查询最新的计价规则，判断当前计价规则是否最新，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前计价规则是否最新，代码实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:创建订单前，判断当前计价规则是否最新，代码实现" />
+    <MESSAGE value="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
