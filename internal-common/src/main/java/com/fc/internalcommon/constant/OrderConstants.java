@@ -8,6 +8,11 @@ import lombok.Getter;
 public enum OrderConstants {
 
     /**
+     * 订单无效
+     */
+    ORDER_INVALID(0),
+
+    /**
      * 订单开始
      */
     ORDER_START(1),

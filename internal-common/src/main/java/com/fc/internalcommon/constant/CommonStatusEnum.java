@@ -54,6 +54,10 @@ public enum CommonStatusEnum {
 
     CAR_NOT_EXISTS(1505, "车辆不存在"),
 
+    /**
+     * 订单错误提示：1600-1699
+     */
+    ORDER_GOING_ON(1600, "有正在进行的订单"),
 
 
     /**
