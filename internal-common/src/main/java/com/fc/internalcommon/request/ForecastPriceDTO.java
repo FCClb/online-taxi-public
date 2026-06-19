@@ -28,5 +28,14 @@ public class ForecastPriceDTO {
      */
     private String destLatitude;
 
+    /**
+     * 城市编码
+     */
+    private String cityCode;
+
+    /**
+     * 车辆类型
+     */
+    private String vehicleType;
 
 }

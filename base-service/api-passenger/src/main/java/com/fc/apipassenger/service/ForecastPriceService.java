@@ -20,13 +20,15 @@ public class ForecastPriceService {
 
     /**
      * 根据 出发地和目的地的经纬度 计算预估价格
+     *
      * @param depLongitude
      * @param depLatitude
      * @param destLongitude
      * @param destLatitude
      * @return
      */
-    public ResponseResult forecastPrice(String depLongitude, String depLatitude, String destLongitude, String destLatitude) {
+    public ResponseResult forecastPrice(String depLongitude, String depLatitude, String destLongitude, String destLatitude,
+                                        String cityCode, String vehicleType) {
 
         log.info("调用计价服务，计算价格");
         ForecastPriceDTO forecastPriceDTO = new ForecastPriceDTO();
@@ -34,6 +36,8 @@ public class ForecastPriceService {
         forecastPriceDTO.setDepLatitude(depLatitude);
         forecastPriceDTO.setDestLongitude(destLongitude);
         forecastPriceDTO.setDestLatitude(destLatitude);
+        forecastPriceDTO.setCityCode(cityCode);
+        forecastPriceDTO.setVehicleType(vehicleType);
 
         return servicePriceClient.forecastPrice(forecastPriceDTO);
     }

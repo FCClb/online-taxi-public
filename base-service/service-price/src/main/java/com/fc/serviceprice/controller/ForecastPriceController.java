@@ -26,7 +26,8 @@ public class ForecastPriceController {
     public ResponseResult forecastPrice(@RequestBody ForecastPriceDTO forecastPriceDTO) {
 
         return forecastPriceService.forecastPrice(forecastPriceDTO.getDepLongitude(), forecastPriceDTO.getDepLatitude(),
-                forecastPriceDTO.getDestLongitude(), forecastPriceDTO.getDestLatitude());
+                forecastPriceDTO.getDestLongitude(), forecastPriceDTO.getDestLatitude(),
+                forecastPriceDTO.getCityCode(), forecastPriceDTO.getVehicleType());
     }
 
 }

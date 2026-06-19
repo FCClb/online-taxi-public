@@ -30,6 +30,7 @@ public class ForecastPriceController {
         log.info("forecastPriceDTO: {}", forecastPriceDTO);
 
         return forecastPriceService.forecastPrice(forecastPriceDTO.getDepLongitude(), forecastPriceDTO.getDepLatitude(),
-                forecastPriceDTO.getDestLongitude(), forecastPriceDTO.getDestLatitude());
+                forecastPriceDTO.getDestLongitude(), forecastPriceDTO.getDestLatitude(),
+                forecastPriceDTO.getCityCode(), forecastPriceDTO.getVehicleType());
     }
 }
