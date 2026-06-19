@@ -71,7 +71,7 @@ public class OrderRequest {
     /**
      * 坐标加密标识(1：GCJ-02 测绘局标准；2：WGS84 GPS标准；3：JBD-09 百度标准；4：CGCS2000 北斗标准；0：其他)
      */
-    private String encrypt;
+    private Integer encrypt;
 
     /**
      * 运价类型编码
@@ -81,6 +81,6 @@ public class OrderRequest {
     /**
      * 运价类型版本
      */
-    private String fareVersion;
+    private Integer fareVersion;
 
 }
