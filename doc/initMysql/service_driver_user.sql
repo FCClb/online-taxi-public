@@ -225,3 +225,12 @@ CREATE TABLE `driver_user_work_status`  (
                                             `gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
                                             PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB;
+
+-- 创建 司机和司机工作状态查询视图
+CREATE VIEW `v_city_driver_user_work_status` AS SELECT
+                                                   t1.id AS driver_id,
+                                                   t1.address AS city_code,
+                                                   t2.work_status
+                                               FROM
+                                                   driver_user t1 LEFT JOIN driver_user_work_status t2
+                                               ON t1.id = t2.driver_id

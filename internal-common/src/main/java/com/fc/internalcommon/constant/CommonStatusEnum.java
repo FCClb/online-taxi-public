@@ -54,12 +54,19 @@ public enum CommonStatusEnum {
 
     CAR_NOT_EXISTS(1505, "车辆不存在"),
 
+    CITY_DRIVER_EMPTY(1506, "当前城市没有可用的司机"),
+
+
+
     /**
      * 订单错误提示：1600-1699
      */
     ORDER_GOING_ON(1600, "有正在进行的订单"),
 
     DEVICE_IS_BLACK(1601, "该设备超过下单次数"),
+
+    CITY_SERVICE_NOT_SERVICE(1602, "当前城市不提供叫车服务"),
+
 
 
 

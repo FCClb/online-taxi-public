@@ -4,11 +4,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.constant.OrderConstants;
 import com.fc.internalcommon.dto.OrderInfo;
+import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import com.fc.internalcommon.util.RedisPrefixUtils;
 import com.fc.serviceorder.mapper.OrderMapper;
+import com.fc.serviceorder.remote.ServiceDriverUserClient;
 import com.fc.serviceorder.remote.ServicePriceClient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -21,6 +24,7 @@ import java.util.concurrent.TimeUnit;
  * 订单管理
  */
 @Service
+@Slf4j
 public class OrderService {
 
     @Autowired
@@ -32,6 +36,9 @@ public class OrderService {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    @Autowired
+    private ServiceDriverUserClient serviceDriverUserClient;
+
     /**
      * 创建订单
      *
@@ -39,22 +46,34 @@ public class OrderService {
      * @return
      */
     public ResponseResult add(OrderRequest orderRequest) {
-        //需要判断计价规则的版本是否为最新
+
+        //测试城市是否有司机
+        ResponseResult<Boolean> availableDriver = serviceDriverUserClient.isAvailableDriver(orderRequest.getAddress());
+        log.info("测试城市是否有司机" + availableDriver.getData());
+        if (!availableDriver.getData()) {
+            return ResponseResult.fail(CommonStatusEnum.CITY_DRIVER_EMPTY.getCode(), CommonStatusEnum.CITY_DRIVER_EMPTY.getValue());
+        }
+
+        //判断计价规则的版本是否为最新
         ResponseResult<Boolean> isNew = servicePriceClient.isNew(orderRequest.getFareType(), orderRequest.getFareVersion());
         if (!(isNew.getData())) {
             return ResponseResult.fail(CommonStatusEnum.PRICE_RULE_CHANGED.getCode(), CommonStatusEnum.PRICE_RULE_CHANGED.getValue());
         }
 
         //判断下单的设备是否在黑名单
-        String deviceCode = orderRequest.getDeviceCode();
-        if (isBlack(deviceCode)) {
+        if (isBlack(orderRequest)) {
             return ResponseResult.fail(CommonStatusEnum.DEVICE_IS_BLACK.getCode(), CommonStatusEnum.DEVICE_IS_BLACK.getValue());
         }
 
-        //判断有正在进行的订单，不允许下单
+        //判断是否有正在进行的订单，有则不允许下单
         if (isOrderGoingOn(orderRequest.getPassengerId()) > 0) {
             return ResponseResult.fail(CommonStatusEnum.ORDER_GOING_ON.getCode(), CommonStatusEnum.ORDER_GOING_ON.getValue());
         }
+
+        //判断下单的城市和计价规则是否正常
+//        if (!isPriceRuleExists(orderRequest)) {
+//            return ResponseResult.fail(CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getCode(), CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getValue());
+//        }
 
         //创建订单
         OrderInfo orderInfo = new OrderInfo();
@@ -95,10 +114,12 @@ public class OrderService {
 
     /**
      * 判断下单的设备是否在黑名单
-     * @param deviceCode
+     * @param orderRequest
      * @return
      */
-    private boolean isBlack(String deviceCode) {
+    private boolean isBlack(OrderRequest orderRequest) {
+        //获取设备唯一码
+        String deviceCode = orderRequest.getDeviceCode();
         //生成key
         String deviceCodeKey = RedisPrefixUtils.blackDeviceCodePrefix + deviceCode;
         //设置key（查询原来有没有）
@@ -117,5 +138,26 @@ public class OrderService {
         }
         return false;
     }
+
+    /**
+     * 判断下单的城市和计价规则是否正常
+     *
+     * @param orderRequest
+     * @return
+     */
+    private boolean isPriceRuleExists(OrderRequest orderRequest) {
+        String fareType = orderRequest.getFareType();
+        int index = fareType.indexOf("$");
+        String cityCode = fareType.substring(0, index);
+        String vehicleType = fareType.substring(index + 1);
+
+        PriceRule priceRule = new PriceRule();
+        priceRule.setCityCode(cityCode);
+        priceRule.setVehicleType(vehicleType);
+
+        ResponseResult<Boolean> booleanResponseResult = servicePriceClient.ifExists(priceRule);
+        return booleanResponseResult.getData();
+    }
+
 
 }

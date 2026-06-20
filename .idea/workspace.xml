@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:创建订单前，判断当前设备是否在黑名单，代码实现">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-price:根据城市编码和车型查询是否存在计价规则，代码实现">
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/CityDriverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/CityDriverUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/resources/mapper/DriverUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceDriverUserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/mapper/DriverUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/mapper/DriverUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceRuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceRuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceRuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/CommonStatusEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -86,7 +95,7 @@
     &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/internal-common/src/main/java/com/fc/internalcommon/dto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-driver-user/src/main/java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -97,7 +106,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.stepping&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -123,7 +132,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceDriverUserApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -263,15 +272,8 @@
       <workItem from="1781777511050" duration="11766000" />
       <workItem from="1781839172626" duration="5296000" />
       <workItem from="1781851674115" duration="4953000" />
-      <workItem from="1781861612853" duration="561000" />
-    </task>
-    <task id="LOCAL-00012" summary="api-passenger:查询乘客用户信息，骨架代码编写">
-      <option name="closed" value="true" />
-      <created>1780817426875</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1780817426875</updated>
+      <workItem from="1781861612853" duration="3489000" />
+      <workItem from="1781931192087" duration="1489000" />
     </task>
     <task id="LOCAL-00013" summary="service-passenger-user:根据手机号查询乘客用户信息，代码编写">
       <option name="closed" value="true" />
@@ -657,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781856329771</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="service-price:根据城市编码和车型查询是否存在计价规则，代码实现">
+      <option name="closed" value="true" />
+      <created>1781862241867</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1781862241867</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑" />
     <MESSAGE value="api-driver:发送验证码，骨架代码编写" />
     <MESSAGE value="service-driver-user:根据手机号查询该司机是否存在，代码编写" />
     <MESSAGE value="api-driver:调用service-verification服务，获取验证码" />
@@ -701,7 +710,8 @@
     <MESSAGE value="service-order:创建订单前，判断当前计价规则是否最新，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前设备是否在黑名单，代码实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:创建订单前，判断当前设备是否在黑名单，代码实现" />
+    <MESSAGE value="service-price:根据城市编码和车型查询是否存在计价规则，代码实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-price:根据城市编码和车型查询是否存在计价规则，代码实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
