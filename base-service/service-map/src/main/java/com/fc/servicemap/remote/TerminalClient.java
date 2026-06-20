@@ -93,8 +93,14 @@ public class TerminalClient {
             //这一步可能会错误赋值，需要先getString()，再Long.parseLong()，是net.sf.json 缺陷
             Long carId = Long.parseLong(object.getString("desc"));
 
+            JSONObject location = object.getJSONObject("location");
+            String longitude = location.getString("longitude");
+            String latitude = location.getString("latitude");
+
             terminalResponse.setTid(tid);
             terminalResponse.setCarId(carId);
+            terminalResponse.setLongitude(longitude);
+            terminalResponse.setLatitude(latitude);
             list.add(terminalResponse);
         }
 

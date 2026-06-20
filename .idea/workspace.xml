@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="更新.gitignore文件">
-      <change afterPath="$PROJECT_DIR$/doc/待办.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/PriceRuleIsNewRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:实时订单派单:查询是否有可派单司机">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/DriverUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserWorkStatusService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserWorkStatusService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceDriverUserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceRuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TerminalResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TerminalResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,15 +268,8 @@
       <workItem from="1781851674115" duration="4953000" />
       <workItem from="1781861612853" duration="3489000" />
       <workItem from="1781931192087" duration="9640000" />
-      <workItem from="1781947602037" duration="5266000" />
-    </task>
-    <task id="LOCAL-00016" summary="service-map:地图服务骨架编写 以及 根据起始地点经纬度获取距离和时间接口骨架编写">
-      <option name="closed" value="true" />
-      <created>1780906820260</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1780906820260</updated>
+      <workItem from="1781947602037" duration="5289000" />
+      <workItem from="1781963990673" duration="3079000" />
     </task>
     <task id="LOCAL-00017" summary="service-map:根据起始地点经纬度获取距离和时间接口骨架编写">
       <option name="closed" value="true" />
@@ -670,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781942005107</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="service-order:实时订单派单:查询是否有可派单司机">
+      <option name="closed" value="true" />
+      <created>1781952905650</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1781952905650</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,7 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-driver:发送验证码并存入redis，代码编写" />
     <MESSAGE value="service-driver-user:校验验证码并存储jwt，司机工作状态业务，代码编写" />
     <MESSAGE value="service-map:高德猎鹰-创建服务接口，代码实现" />
     <MESSAGE value="service-map:高德猎鹰-车辆终端管理创建终端，代码实现" />
@@ -714,7 +706,8 @@
     <MESSAGE value="service-order:创建订单前检查当前城市是否有可用司机，代码实现" />
     <MESSAGE value="service-driver-user:根据carId查询当前能够接单的司机，代码实现" />
     <MESSAGE value="更新.gitignore文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore文件" />
+    <MESSAGE value="service-order:实时订单派单:查询是否有可派单司机" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:实时订单派单:查询是否有可派单司机" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

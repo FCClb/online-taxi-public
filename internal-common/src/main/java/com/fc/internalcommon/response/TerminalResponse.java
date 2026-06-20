@@ -18,4 +18,14 @@ public class TerminalResponse {
      */
     private Long carId;
 
+    /**
+     * 终端经度
+     */
+    private String longitude;
+
+    /**
+     * 终端纬度
+     */
+    private String latitude;
+
 }

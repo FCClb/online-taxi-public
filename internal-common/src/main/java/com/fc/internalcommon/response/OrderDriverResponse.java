@@ -1,5 +1,6 @@
 package com.fc.internalcommon.response;
 
+import com.fc.internalcommon.dto.OrderInfo;
 import lombok.Data;
 
 /**
@@ -22,4 +23,15 @@ public class OrderDriverResponse {
      * 车辆Id
      */
     private Long carId;
+
+    /**
+     * 驾驶证编号
+     */
+    private String licenseId;
+
+    /**
+     * 车牌号
+     */
+    private String vehicleNo;
+
 }
