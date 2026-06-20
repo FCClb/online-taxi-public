@@ -3,6 +3,7 @@ package com.fc.servicemap.remote;
 import com.fc.internalcommon.constant.AmapConfigConstants;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.TerminalResponse;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
  * 高德地图-猎鹰轨迹服务-终端管理
  */
 @Service
+@Slf4j
 public class TerminalClient {
 
     @Value("${amap.key}")
@@ -72,9 +74,11 @@ public class TerminalClient {
         url.append("&center=" + center);
         url.append("&radius=" + radius);
 
-        ResponseEntity<String> StringResponseEntity = restTemplate.postForEntity(url.toString(), null, String.class);
+        log.info("终端搜索请求url： " + url);
+        ResponseEntity<String> stringResponseEntity = restTemplate.postForEntity(url.toString(), null, String.class);
+        log.info("终端搜索请求结果： "+ stringResponseEntity.getBody());
 
-        String body = StringResponseEntity.getBody();
+        String body = stringResponseEntity.getBody();
         JSONObject result = JSONObject.fromObject(body);
         JSONObject data = result.getJSONObject("data");
 
@@ -101,15 +105,15 @@ public class TerminalClient {
     //forTest
     //net.sf.json 缺陷
     //未来开发解析JSON建议直接用Spring/Spring Boot 默认内置的Jackson
-    public static void main(String[] args) {
-        String numStr = "2067182759027159041";
-        // 模拟 getLong 的内部逻辑
-        long wrong = Double.valueOf(numStr).longValue();
-        // 正确写法
-        long correct = Long.parseLong(numStr);
-
-        System.out.println("getLong 效果：" + wrong);   // 输出 2067182759027159040
-        System.out.println("parseLong 效果：" + correct); // 输出 2067182759027159041
-    }
+//    public static void main(String[] args) {
+//        String numStr = "2067182759027159041";
+//        // 模拟 getLong 的内部逻辑
+//        long wrong = Double.valueOf(numStr).longValue();
+//        // 正确写法
+//        long correct = Long.parseLong(numStr);
+//
+//        System.out.println("getLong 效果：" + wrong);   // 输出 2067182759027159040
+//        System.out.println("parseLong 效果：" + correct); // 输出 2067182759027159041
+//    }
 
 }

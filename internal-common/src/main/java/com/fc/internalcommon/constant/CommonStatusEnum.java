@@ -56,6 +56,8 @@ public enum CommonStatusEnum {
 
     CITY_DRIVER_EMPTY(1506, "当前城市没有可用的司机"),
 
+    AVAILABLE_DRIVER_EMPTY(1507, "驾驶当前车辆的司机不能接单"),
+
 
 
     /**

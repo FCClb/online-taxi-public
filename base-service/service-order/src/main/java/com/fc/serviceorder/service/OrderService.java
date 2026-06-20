@@ -1,23 +1,32 @@
 package com.fc.serviceorder.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.constant.OrderConstants;
 import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
+import com.fc.internalcommon.response.TerminalResponse;
 import com.fc.internalcommon.util.RedisPrefixUtils;
 import com.fc.serviceorder.mapper.OrderMapper;
 import com.fc.serviceorder.remote.ServiceDriverUserClient;
+import com.fc.serviceorder.remote.ServiceMapClient;
 import com.fc.serviceorder.remote.ServicePriceClient;
 import lombok.extern.slf4j.Slf4j;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,6 +47,12 @@ public class OrderService {
 
     @Autowired
     private ServiceDriverUserClient serviceDriverUserClient;
+
+    @Autowired
+    private ServiceMapClient serviceMapClient;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     /**
      * 创建订单
@@ -88,6 +103,51 @@ public class OrderService {
         orderMapper.insert(orderInfo);
 
         return ResponseResult.success("创建订单");
+    }
+
+    /**
+     * 实时订单派单
+     * @param orderInfo
+     * @return
+     */
+    public ResponseResult dispatchRealTimeOrder(OrderInfo orderInfo) {
+
+        String depLongitude = orderInfo.getDepLongitude();
+        String depLatitude = orderInfo.getDepLatitude();
+        String center = depLatitude + "," + depLongitude;
+
+        ArrayList<Integer> radiusList = new ArrayList<>();
+        radiusList.add(2000);
+        radiusList.add(4000);
+        radiusList.add(5000);
+
+        ResponseResult<List<TerminalResponse>> listResponseResult = null;
+
+        for (int i = 0; i < radiusList.size(); i++) {
+            Integer radius = radiusList.get(i);
+            listResponseResult = serviceMapClient.aroundsearch(center, radius);
+
+            log.info("在半径为" + radius + "的范围内，寻找车辆，响应结果：" + JSONArray.fromObject(listResponseResult.getData()).toString());
+
+            //获得终端
+            JsonNode jsonNode = objectMapper.valueToTree(listResponseResult.getData());
+            for (JsonNode node : jsonNode) {
+                String carId = node.path("carId").asText();
+                String tid = node.path("tid").asText();
+                log.info("搜索到的车辆为：carId:"+carId+",tid:"+tid);
+            }
+
+            //解析终端
+
+            //根据解析出的终端，查询车辆信息
+
+            //找到符合的车辆，进行派单
+
+            //如果派单成功，则退出循环
+        }
+
+
+        return null;
     }
 
     /**
