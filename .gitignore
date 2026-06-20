@@ -6,6 +6,19 @@
 .idea/
 /.idea/
 
+# 忽略Maven构建工具的标准编译输出目录（包含所有编译、打包生成的文件）
+target/
+base-service/api-boss/target
+base-service/api-driver/target
+base-service/api-passenger/target
+base-service/service-driver-user/target
+base-service/service-map/target
+base-service/service-order/target
+base-service/service-passenger-user/target
+base-service/service-price/target
+base-service/service-verification/target
+internal-common/target
+
 # 忽略IDEA模块描述文件（记录模块的依赖、源码目录等信息）
 *.iml
 # 忽略IDEA旧版工作空间文件（已被.idea/workspace.xml替代）
@@ -23,5 +36,3 @@
 out/
 # 忽略Gradle构建工具的编译输出目录
 build/
-# 忽略Maven构建工具的标准编译输出目录（包含所有编译、打包生成的文件）
-target/
