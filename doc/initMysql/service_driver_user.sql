@@ -68,7 +68,7 @@ INSERT INTO `driver_user` (
     `gmt_create`,
     `gmt_modified`
 ) VALUES (
-             '110101',
+             '110000',
              '张三',
              '13800138000',
              1,

@@ -2,6 +2,7 @@ package com.fc.apidriver.remote;
 
 import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.DriverUser;
+import com.fc.internalcommon.dto.DriverUserWorkStatus;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -18,6 +19,15 @@ public interface ServiceDriverUserClient {
      */
     @PutMapping("/user")
     ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
+
+    /**
+     * 更改司机工作状态（0收车，1开始接单，2暂停接单）
+     *
+     * @param driverUserWorkStatus
+     * @return
+     */
+    @PostMapping("/driver-user-work-status")
+    ResponseResult changeDriverUserWorkStatus(@RequestBody DriverUserWorkStatus driverUserWorkStatus);
 
     /**
      * 查询

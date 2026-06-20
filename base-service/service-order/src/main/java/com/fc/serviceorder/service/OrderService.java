@@ -1,7 +1,6 @@
 package com.fc.serviceorder.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fc.internalcommon.constant.CommonStatusEnum;
@@ -10,6 +9,8 @@ import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
+import com.fc.internalcommon.request.PriceRuleIsNewRequest;
+import com.fc.internalcommon.response.OrderDriverResponse;
 import com.fc.internalcommon.response.TerminalResponse;
 import com.fc.internalcommon.util.RedisPrefixUtils;
 import com.fc.serviceorder.mapper.OrderMapper;
@@ -18,7 +19,6 @@ import com.fc.serviceorder.remote.ServiceMapClient;
 import com.fc.serviceorder.remote.ServicePriceClient;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -43,13 +43,13 @@ public class OrderService {
     private ServicePriceClient servicePriceClient;
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
     private ServiceDriverUserClient serviceDriverUserClient;
 
     @Autowired
     private ServiceMapClient serviceMapClient;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -62,7 +62,7 @@ public class OrderService {
      */
     public ResponseResult add(OrderRequest orderRequest) {
 
-        //测试城市是否有司机
+        //判断城市是否有司机
         ResponseResult<Boolean> availableDriver = serviceDriverUserClient.isAvailableDriver(orderRequest.getAddress());
         log.info("测试城市是否有司机" + availableDriver.getData());
         if (!availableDriver.getData()) {
@@ -70,19 +70,23 @@ public class OrderService {
         }
 
         //判断计价规则的版本是否为最新
-        ResponseResult<Boolean> isNew = servicePriceClient.isNew(orderRequest.getFareType(), orderRequest.getFareVersion());
+        PriceRuleIsNewRequest priceRuleIsNewRequest = new PriceRuleIsNewRequest();
+        priceRuleIsNewRequest.setFareType(orderRequest.getFareType());
+        priceRuleIsNewRequest.setFareVersion(orderRequest.getFareVersion());
+        ResponseResult<Boolean> isNew = servicePriceClient.isNew(priceRuleIsNewRequest);
         if (!(isNew.getData())) {
             return ResponseResult.fail(CommonStatusEnum.PRICE_RULE_CHANGED.getCode(), CommonStatusEnum.PRICE_RULE_CHANGED.getValue());
+        }
+
+
+        //判断是否有正在进行的订单，有则不允许下单
+        if (isOrderGoingOn(orderRequest.getPassengerId()) > 0) {
+            return ResponseResult.fail(CommonStatusEnum.ORDER_GOING_ON.getCode(), CommonStatusEnum.ORDER_GOING_ON.getValue());
         }
 
         //判断下单的设备是否在黑名单
         if (isBlack(orderRequest)) {
             return ResponseResult.fail(CommonStatusEnum.DEVICE_IS_BLACK.getCode(), CommonStatusEnum.DEVICE_IS_BLACK.getValue());
-        }
-
-        //判断是否有正在进行的订单，有则不允许下单
-        if (isOrderGoingOn(orderRequest.getPassengerId()) > 0) {
-            return ResponseResult.fail(CommonStatusEnum.ORDER_GOING_ON.getCode(), CommonStatusEnum.ORDER_GOING_ON.getValue());
         }
 
         //判断下单的城市和计价规则是否正常
@@ -123,6 +127,9 @@ public class OrderService {
 
         ResponseResult<List<TerminalResponse>> listResponseResult = null;
 
+        // goto 是为了测试
+        radius:
+
         for (int i = 0; i < radiusList.size(); i++) {
             Integer radius = radiusList.get(i);
             listResponseResult = serviceMapClient.aroundsearch(center, radius);
@@ -132,20 +139,29 @@ public class OrderService {
             //获得终端
             JsonNode jsonNode = objectMapper.valueToTree(listResponseResult.getData());
             for (JsonNode node : jsonNode) {
-                String carId = node.path("carId").asText();
-                String tid = node.path("tid").asText();
-                log.info("搜索到的车辆为：carId:"+carId+",tid:"+tid);
+                Long carId = node.path("carId").asLong();
+                Long tid = node.path("tid").asLong();
+//                log.info("carId:" + carId + " tid:" + tid);
+                //查询 是否有可派单司机
+                ResponseResult<OrderDriverResponse> availableDriver = serviceDriverUserClient.getAvailableDriver(carId);
+                if (availableDriver.getCode() == CommonStatusEnum.AVAILABLE_DRIVER_EMPTY.getCode()) {
+                    log.info("车辆Id" + carId+"的司机不可派单");
+                    continue radius;
+                } else {
+                    log.info("找到了可派单的司机，车辆Id为:" + carId);
+
+                    //解析终端
+
+                    //根据解析出的终端，查询车辆信息
+
+                    //找到符合的车辆，进行派单
+
+                    //如果派单成功，则退出循环
+
+                    break radius;
+                }
             }
-
-            //解析终端
-
-            //根据解析出的终端，查询车辆信息
-
-            //找到符合的车辆，进行派单
-
-            //如果派单成功，则退出循环
         }
-
 
         return null;
     }

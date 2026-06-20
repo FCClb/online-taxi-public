@@ -2,6 +2,7 @@ package com.fc.serviceorder.remote;
 
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.request.PriceRuleIsNewRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,11 +15,11 @@ public interface ServicePriceClient {
     /**
      * 判断 计价规则是否最新
      *
-     * @param fareType
+     * @param priceRuleIsNewRequest
      * @return
      */
-    @GetMapping("/price-rule/is-new")
-    ResponseResult<Boolean> isNew(@RequestParam String fareType, @RequestParam Integer fareVersion);
+    @PostMapping("/price-rule/is-new")
+    ResponseResult<Boolean> isNew(@RequestBody PriceRuleIsNewRequest priceRuleIsNewRequest);
 
 
     /**

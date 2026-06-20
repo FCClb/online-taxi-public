@@ -23,6 +23,11 @@ public class TestController {
     @Autowired
     private OrderMapper orderMapper;
 
+    /**
+     * 测试 实时订单派单
+     * @param orderId
+     * @return
+     */
     @GetMapping("/test-real-time-order")
     public String dispatchRealTimeOrder(@RequestParam String orderId) {
 
