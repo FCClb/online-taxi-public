@@ -1,11 +1,9 @@
 package com.fc.serviceorder.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.constant.OrderConstants;
-import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
@@ -20,6 +18,8 @@ import com.fc.serviceorder.remote.ServiceMapClient;
 import com.fc.serviceorder.remote.ServicePriceClient;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -53,7 +53,7 @@ public class OrderService {
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private RedissonClient redissonClient;
 
     /**
      * 创建订单
@@ -115,10 +115,10 @@ public class OrderService {
 
     /**
      * 实时订单派单
+     *
      * @param orderInfo
-     * @return
      */
-    public OrderInfo dispatchRealTimeOrder(OrderInfo orderInfo) {
+    public void dispatchRealTimeOrder(OrderInfo orderInfo) {
 
         String depLongitude = orderInfo.getDepLongitude();
         String depLatitude = orderInfo.getDepLatitude();
@@ -183,11 +183,12 @@ public class OrderService {
                     orderMapper.updateById(orderInfo);
 
                     break radius;
+
                 }
             }
         }
 
-        return orderInfo;
+
     }
 
     /**

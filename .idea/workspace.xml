@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:实时订单派单:查询是否有可派单司机">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:实时订单派单：订单与可派单司机信息匹配">
+      <change afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TerminalResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TerminalResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,15 +271,9 @@
       <workItem from="1781861612853" duration="3489000" />
       <workItem from="1781931192087" duration="9640000" />
       <workItem from="1781947602037" duration="5289000" />
-      <workItem from="1781963990673" duration="3079000" />
-    </task>
-    <task id="LOCAL-00017" summary="service-map:根据起始地点经纬度获取距离和时间接口骨架编写">
-      <option name="closed" value="true" />
-      <created>1780907525685</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1780907525685</updated>
+      <workItem from="1781963990673" duration="3383000" />
+      <workItem from="1782025364407" duration="7515000" />
+      <workItem from="1782043224462" duration="433000" />
     </task>
     <task id="LOCAL-00018" summary="service-map:调用第三方地图接口，获取路径规划信息，代码编写">
       <option name="closed" value="true" />
@@ -663,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781952905650</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="service-order:实时订单派单：订单与可派单司机信息匹配">
+      <option name="closed" value="true" />
+      <created>1781967315118</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1781967315118</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-driver-user:校验验证码并存储jwt，司机工作状态业务，代码编写" />
     <MESSAGE value="service-map:高德猎鹰-创建服务接口，代码实现" />
     <MESSAGE value="service-map:高德猎鹰-车辆终端管理创建终端，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
@@ -707,7 +710,8 @@
     <MESSAGE value="service-driver-user:根据carId查询当前能够接单的司机，代码实现" />
     <MESSAGE value="更新.gitignore文件" />
     <MESSAGE value="service-order:实时订单派单:查询是否有可派单司机" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:实时订单派单:查询是否有可派单司机" />
+    <MESSAGE value="service-order:实时订单派单：订单与可派单司机信息匹配" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:实时订单派单：订单与可派单司机信息匹配" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
