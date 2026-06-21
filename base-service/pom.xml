@@ -40,6 +40,9 @@
         <!-- 订单服务 -->
         <module>service-order</module>
 
+        <!-- 消息推送服务 -->
+        <module>service-sse-push</module>
+
     </modules>
 
     <dependencies>

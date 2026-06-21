@@ -1,10 +1,10 @@
 server:
-  port: 8082
+  port: 9000
 
 spring:
   # 微服务配置
   application:
-    name: service-verification
+    name: service-sse-push
   cloud:
     nacos:
       discovery:

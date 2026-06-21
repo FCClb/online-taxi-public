@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:实时订单派单：订单与可派单司机信息匹配">
-      <change afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/config/RedisConfig.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:尝试解决并发问题，暂存">
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/SseDriverClientWeb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/测试地址.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/SsePrefixUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/interceptor/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/端口管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/端口管理.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +96,7 @@
     &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-driver-user/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,8 +120,15 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\service-sse-push" />
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\sse-driver-client-web\src\main\resources\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\doc\mysql" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fc.ssedriverclientweb.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,7 +210,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SseDriverClientWeb" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-sse-push" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicessepush.SseDriverClientWeb" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Spring Boot.SseDriverClientWeb" />
       <item itemvalue="Spring Boot.ApiBossApplication" />
       <item itemvalue="Spring Boot.ApiDriverApplication" />
       <item itemvalue="Spring Boot.ApiPassengerApplication" />
@@ -273,15 +293,7 @@
       <workItem from="1781947602037" duration="5289000" />
       <workItem from="1781963990673" duration="3383000" />
       <workItem from="1782025364407" duration="7515000" />
-      <workItem from="1782043224462" duration="433000" />
-    </task>
-    <task id="LOCAL-00018" summary="service-map:调用第三方地图接口，获取路径规划信息，代码编写">
-      <option name="closed" value="true" />
-      <created>1780991543781</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1780991543781</updated>
+      <workItem from="1782043224462" duration="3129000" />
     </task>
     <task id="LOCAL-00019" summary="service-price:调用service-map获取路径距离和所需时间">
       <option name="closed" value="true" />
@@ -667,7 +679,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781967315118</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="service-order:尝试解决并发问题，暂存">
+      <option name="closed" value="true" />
+      <created>1782043686610</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1782043686610</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +706,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-map:高德猎鹰-创建服务接口，代码实现" />
     <MESSAGE value="service-map:高德猎鹰-车辆终端管理创建终端，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
     <MESSAGE value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
@@ -711,7 +730,8 @@
     <MESSAGE value="更新.gitignore文件" />
     <MESSAGE value="service-order:实时订单派单:查询是否有可派单司机" />
     <MESSAGE value="service-order:实时订单派单：订单与可派单司机信息匹配" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:实时订单派单：订单与可派单司机信息匹配" />
+    <MESSAGE value="service-order:尝试解决并发问题，暂存" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:尝试解决并发问题，暂存" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
