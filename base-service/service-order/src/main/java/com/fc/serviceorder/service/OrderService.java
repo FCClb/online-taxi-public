@@ -1,14 +1,18 @@
 package com.fc.serviceorder.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fc.internalcommon.constant.CommonStatusEnum;
+import com.fc.internalcommon.constant.IdentityEnum;
 import com.fc.internalcommon.constant.OrderConstants;
 import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import com.fc.internalcommon.request.PriceRuleIsNewRequest;
+import com.fc.internalcommon.request.PushRequest;
 import com.fc.internalcommon.response.OrderDriverResponse;
 import com.fc.internalcommon.response.TerminalResponse;
 import com.fc.internalcommon.util.RedisPrefixUtils;
@@ -16,6 +20,7 @@ import com.fc.serviceorder.mapper.OrderMapper;
 import com.fc.serviceorder.remote.ServiceDriverUserClient;
 import com.fc.serviceorder.remote.ServiceMapClient;
 import com.fc.serviceorder.remote.ServicePriceClient;
+import com.fc.serviceorder.remote.ServiceSsePushClient;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import org.redisson.api.RLock;
@@ -53,7 +58,13 @@ public class OrderService {
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
+    private ObjectMapper objectMapper;
+
+    @Autowired
     private RedissonClient redissonClient;
+
+    @Autowired
+    private ServiceSsePushClient serviceSsePushClient;
 
     /**
      * 创建订单
@@ -164,23 +175,49 @@ public class OrderService {
                     //没订单，该司机可派单，不再进行司机的查找
 
                     //直接给司机派单
-                    //1.查询当前司机信息
+                    //1.当前司机信息
                     orderInfo.setDriverId(driverId);
                     orderInfo.setDriverPhone(orderDriverResponse.getDriverPhone());
                     orderInfo.setLicenseId(orderDriverResponse.getLicenseId());
 
-                    //2.查询当前车辆信息
+                    //2.当前车辆信息
                     orderInfo.setCarId(carId);
                     orderInfo.setVehicleNo(orderDriverResponse.getVehicleNo());
 
-                    //3.查询地图信息
+                    //3.地图信息
                     orderInfo.setReceiveOrderCarLongitude(longitude);
                     orderInfo.setReceiveOrderCarLatitude(latitude);
 
                     //司机接单
                     orderInfo.setReceiveOrderTime(LocalDateTime.now());
                     orderInfo.setOrderStatus(OrderConstants.DRIVER_RECEIVE_ORDER.getCode());
+
                     orderMapper.updateById(orderInfo);
+
+                    //通知司机
+                    PushRequest pushRequest = new PushRequest();
+                    pushRequest.setUserId(driverId);
+                    pushRequest.setIdentity(IdentityEnum.DRIVER_IDENTITY.getValue());
+
+                    ObjectNode objectNode = objectMapper.createObjectNode();
+                    objectNode.put("passengerId", String.valueOf(orderInfo.getPassengerId()));
+                    objectNode.put("passengerPhone", orderInfo.getPassengerPhone());
+                    objectNode.put("departure", orderInfo.getDeparture());
+                    objectNode.put("depLongitude", orderInfo.getDepLongitude());
+                    objectNode.put("depLatitude", orderInfo.getDepLatitude());
+
+                    objectNode.put("destination",orderInfo.getDestination());
+                    objectNode.put("destLongitude",orderInfo.getDestLongitude());
+                    objectNode.put("destLatitude",orderInfo.getDestLatitude());
+                    try {
+                        String ContentText = objectMapper.writeValueAsString(objectNode);
+                        log.info("发送给司机的消息" + ContentText);
+                        pushRequest.setContent(ContentText);
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
+
+                    serviceSsePushClient.push(pushRequest);
 
                     break radius;
 

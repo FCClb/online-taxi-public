@@ -24,11 +24,11 @@ public class SseController {
      */
     @GetMapping("/connect")
     public SseEmitter connect(@RequestParam Long userId, @RequestParam String identity){
-        log.info("用户ID："+userId+",身份类型："+identity);
-        SseEmitter sseEmitter = new SseEmitter(0l);
+        log.info("连接到用户ID："+userId+",身份类型："+identity);
+        SseEmitter sseEmitter = new SseEmitter(30000L);
 
         String sseMapKey = SsePrefixUtils.generatorSseKey(userId,identity);
-
+        log.info("建立连接存入SSE Map的key：{}", sseMapKey);
         sseEmitterMap.put(sseMapKey, sseEmitter);
 
         return sseEmitter;
@@ -47,9 +47,11 @@ public class SseController {
         String content = pushRequest.getContent();
         log.info("用户ID："+userId+",身份："+identity);
         String sseMapKey = SsePrefixUtils.generatorSseKey(userId,identity);
+        log.info("sseMapKey:" + sseMapKey);
         try {
             if (sseEmitterMap.containsKey(sseMapKey)){
-                sseEmitterMap.get(sseMapKey).send(content);
+                SseEmitter.SseEventBuilder builder = SseEmitter.event().data(content);
+                sseEmitterMap.get(sseMapKey).send(builder);
             }else {
                 return "推送失败";
             }

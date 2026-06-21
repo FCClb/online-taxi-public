@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:尝试解决并发问题，暂存">
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/SseDriverClientWeb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/测试地址.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/util/SsePrefixUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-sse-push:消息服务构建">
+      <change afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceSsePushClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-verification/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/端口管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/端口管理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/SseDriverClientWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/ServiceSsePushApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/测试地址.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -69,53 +63,56 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ForecastPriceService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalClient.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiBossApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiDriverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceDriverUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceOrderApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ForecastPriceService.executor": "Run",
+    "Application.JwtUtils.executor": "Run",
+    "Application.TerminalClient.executor": "Run",
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "Maven.service-price [clean].executor": "Run",
+    "Maven.service-price [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiBossApplication.executor": "Run",
+    "Spring Boot.ApiDriverApplication.executor": "Run",
+    "Spring Boot.ApiPassengerApplication.executor": "Run",
+    "Spring Boot.ServiceDriverUserApplication.executor": "Run",
+    "Spring Boot.ServiceMapApplication.executor": "Run",
+    "Spring Boot.ServiceOrderApplication.executor": "Run",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "Spring Boot.ServicePriceApplication.executor": "Run",
+    "Spring Boot.ServiceSsePush.executor": "Run",
+    "Spring Boot.ServiceSsePushApplication.executor": "Run",
+    "Spring Boot.ServiceVerificationApplication.executor": "Run",
+    "Spring Boot.SseDriverClientWeb.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -140,7 +137,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceOrderApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceSsePushApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -203,6 +200,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceSsePushApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-sse-push" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicessepush.ServiceSsePushApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fc.servicessepush.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceVerificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-verification" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.serviceverification.ServiceVerificationApplication" />
@@ -210,15 +220,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SseDriverClientWeb" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="service-sse-push" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicessepush.SseDriverClientWeb" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Spring Boot.SseDriverClientWeb" />
       <item itemvalue="Spring Boot.ApiBossApplication" />
       <item itemvalue="Spring Boot.ApiDriverApplication" />
       <item itemvalue="Spring Boot.ApiPassengerApplication" />
@@ -227,10 +229,12 @@
       <item itemvalue="Spring Boot.ServicePassengerUserApplication" />
       <item itemvalue="Spring Boot.ServiceVerificationApplication" />
       <item itemvalue="Spring Boot.ServiceOrderApplication" />
+      <item itemvalue="Spring Boot.ServiceSsePushApplication" />
       <item itemvalue="Spring Boot.ServicePriceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ServiceSsePushApplication" />
         <item itemvalue="Spring Boot.ServicePriceApplication" />
       </list>
     </recent_temporary>
@@ -294,14 +298,9 @@
       <workItem from="1781963990673" duration="3383000" />
       <workItem from="1782025364407" duration="7515000" />
       <workItem from="1782043224462" duration="3129000" />
-    </task>
-    <task id="LOCAL-00019" summary="service-price:调用service-map获取路径距离和所需时间">
-      <option name="closed" value="true" />
-      <created>1780992947029</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1780992947029</updated>
+      <workItem from="1782048563196" duration="1976000" />
+      <workItem from="1782050555425" duration="282000" />
+      <workItem from="1782050843981" duration="2616000" />
     </task>
     <task id="LOCAL-00020" summary="service-price:从数据库读取计价规则，代码编写">
       <option name="closed" value="true" />
@@ -687,7 +686,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782043686610</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="service-sse-push:消息服务构建">
+      <option name="closed" value="true" />
+      <created>1782048867478</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1782048867478</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +713,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-map:高德猎鹰-车辆终端管理创建终端，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
     <MESSAGE value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-新增车辆时同步初始化轨迹，代码实现" />
@@ -731,7 +737,8 @@
     <MESSAGE value="service-order:实时订单派单:查询是否有可派单司机" />
     <MESSAGE value="service-order:实时订单派单：订单与可派单司机信息匹配" />
     <MESSAGE value="service-order:尝试解决并发问题，暂存" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:尝试解决并发问题，暂存" />
+    <MESSAGE value="service-sse-push:消息服务构建" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-sse-push:消息服务构建" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
