@@ -46,4 +46,15 @@ public class OrderController {
         return orderService.toPickUpPassenger(orderRequest);
     }
 
+
+    /**
+     * 司机到达上车点 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/arrived-departure")
+    public ResponseResult arrivedDeparture(@RequestBody OrderRequest orderRequest) {
+
+        return orderService.arrivedDeparture(orderRequest);
+    }
 }

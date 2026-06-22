@@ -396,4 +396,22 @@ public class OrderService {
 
         return ResponseResult.success("司机前往接驾乘客 修改订单状态");
     }
+
+    /**
+     * 司机到达上车点 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult arrivedDeparture(OrderRequest orderRequest) {
+        Long orderId = orderRequest.getOrderId();
+        QueryWrapper<OrderInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", orderId);
+        OrderInfo orderInfo = orderMapper.selectOne(queryWrapper);
+
+        orderInfo.setDriverArrivedDepartureTime(LocalDateTime.now());
+        orderInfo.setOrderStatus(OrderConstants.DRIVER_ARRIVED_DEPARTURE.getCode());
+
+        orderMapper.updateById(orderInfo);
+        return ResponseResult.success("司机到达上车点 修改订单状态");
+    }
 }
