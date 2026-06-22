@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.constant.IdentityEnum;
 import com.fc.internalcommon.constant.OrderConstants;
+import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.PriceRule;
 import com.fc.internalcommon.dto.ResponseResult;
@@ -23,7 +24,6 @@ import com.fc.serviceorder.remote.ServicePriceClient;
 import com.fc.serviceorder.remote.ServiceSsePushClient;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
-import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -195,29 +195,58 @@ public class OrderService {
                     orderMapper.updateById(orderInfo);
 
                     //通知司机
-                    PushRequest pushRequest = new PushRequest();
-                    pushRequest.setUserId(driverId);
-                    pushRequest.setIdentity(IdentityEnum.DRIVER_IDENTITY.getValue());
+                    PushRequest driverPushRequest = new PushRequest();
+                    driverPushRequest.setUserId(driverId);
+                    driverPushRequest.setIdentity(IdentityEnum.DRIVER_IDENTITY.getValue());
 
-                    ObjectNode objectNode = objectMapper.createObjectNode();
-                    objectNode.put("passengerId", String.valueOf(orderInfo.getPassengerId()));
-                    objectNode.put("passengerPhone", orderInfo.getPassengerPhone());
-                    objectNode.put("departure", orderInfo.getDeparture());
-                    objectNode.put("depLongitude", orderInfo.getDepLongitude());
-                    objectNode.put("depLatitude", orderInfo.getDepLatitude());
+                    ObjectNode driverObjectNode = objectMapper.createObjectNode();
+                    driverObjectNode.put("passengerId", String.valueOf(orderInfo.getPassengerId()));
+                    driverObjectNode.put("passengerPhone", orderInfo.getPassengerPhone());
+                    driverObjectNode.put("departure", orderInfo.getDeparture());
+                    driverObjectNode.put("depLongitude", orderInfo.getDepLongitude());
+                    driverObjectNode.put("depLatitude", orderInfo.getDepLatitude());
 
-                    objectNode.put("destination",orderInfo.getDestination());
-                    objectNode.put("destLongitude",orderInfo.getDestLongitude());
-                    objectNode.put("destLatitude",orderInfo.getDestLatitude());
+                    driverObjectNode.put("destination",orderInfo.getDestination());
+                    driverObjectNode.put("destLongitude",orderInfo.getDestLongitude());
+                    driverObjectNode.put("destLatitude",orderInfo.getDestLatitude());
                     try {
-                        String ContentText = objectMapper.writeValueAsString(objectNode);
+                        String ContentText = objectMapper.writeValueAsString(driverObjectNode);
                         log.info("发送给司机的消息" + ContentText);
-                        pushRequest.setContent(ContentText);
+                        driverPushRequest.setContent(ContentText);
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
                     }
 
-                    serviceSsePushClient.push(pushRequest);
+                    serviceSsePushClient.push(driverPushRequest);
+
+                    //通知乘客
+                    PushRequest passengerPushRequest = new PushRequest();
+                    passengerPushRequest.setUserId(orderInfo.getPassengerId());
+                    passengerPushRequest.setIdentity(IdentityEnum.PASSENGER_IDENTITY.getValue());
+
+                    ObjectNode passengerObjectNode = objectMapper.createObjectNode();
+                    passengerObjectNode.put("driverId", String.valueOf(orderInfo.getDriverId()));
+                    passengerObjectNode.put("driverPhone", orderInfo.getDriverPhone());
+                    passengerObjectNode.put("vehicleNo", orderInfo.getVehicleNo());
+
+                    ResponseResult<Car> carById = serviceDriverUserClient.getCarById(carId);
+                    passengerObjectNode.put("brand", carById.getData().getBrand());
+                    passengerObjectNode.put("model", carById.getData().getModel());
+                    passengerObjectNode.put("vehicleColor", carById.getData().getVehicleColor());
+
+                    passengerObjectNode.put("receiveOrderCarLongitude",orderInfo.getReceiveOrderCarLongitude());
+                    passengerObjectNode.put("receiveOrderCarLatitude",orderInfo.getReceiveOrderCarLatitude());
+                    passengerObjectNode.put("destLatitude",orderInfo.getDestLatitude());
+                    try {
+                        String passengerContentText = objectMapper.writeValueAsString(passengerObjectNode);
+                        log.info("发送给乘客的消息" + passengerContentText);
+                        passengerPushRequest.setContent(passengerContentText);
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
+
+                    serviceSsePushClient.push(passengerPushRequest);
+
 
                     break radius;
 

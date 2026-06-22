@@ -1,5 +1,6 @@
 package com.fc.serviceorder.remote;
 
+import com.fc.internalcommon.dto.Car;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.OrderDriverResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -28,4 +29,13 @@ public interface ServiceDriverUserClient {
      */
     @GetMapping("/get-available-driver/{carId}")
     ResponseResult<OrderDriverResponse> getAvailableDriver(@PathVariable("carId") Long carId);
+
+    /**
+     * 查询 根据id查询车辆
+     *
+     * @param carId
+     * @return
+     */
+    @GetMapping("/car")
+    ResponseResult<Car> getCarById(@RequestParam Long carId);
 }

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-sse-push:消息服务构建">
-      <change afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceSsePushClient.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:派给司机订单后，远程调用service-sse-push服务向司机发送消息">
+      <change afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/passenger-test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceDriverUserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/SseDriverClientWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/ServiceSsePushApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/测试地址.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +90,7 @@
     "Spring Boot.SseDriverClientWeb.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push",
+    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,6 +115,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\service-sse-push\src\main\resources\static" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\service-sse-push" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\sse-driver-client-web\src\main\resources\static" />
     </key>
@@ -224,11 +222,11 @@
       <item itemvalue="Spring Boot.ApiBossApplication" />
       <item itemvalue="Spring Boot.ApiDriverApplication" />
       <item itemvalue="Spring Boot.ApiPassengerApplication" />
+      <item itemvalue="Spring Boot.ServicePassengerUserApplication" />
       <item itemvalue="Spring Boot.ServiceDriverUserApplication" />
       <item itemvalue="Spring Boot.ServiceMapApplication" />
-      <item itemvalue="Spring Boot.ServicePassengerUserApplication" />
-      <item itemvalue="Spring Boot.ServiceVerificationApplication" />
       <item itemvalue="Spring Boot.ServiceOrderApplication" />
+      <item itemvalue="Spring Boot.ServiceVerificationApplication" />
       <item itemvalue="Spring Boot.ServiceSsePushApplication" />
       <item itemvalue="Spring Boot.ServicePriceApplication" />
     </list>
@@ -300,15 +298,8 @@
       <workItem from="1782043224462" duration="3129000" />
       <workItem from="1782048563196" duration="1976000" />
       <workItem from="1782050555425" duration="282000" />
-      <workItem from="1782050843981" duration="2616000" />
-    </task>
-    <task id="LOCAL-00020" summary="service-price:从数据库读取计价规则，代码编写">
-      <option name="closed" value="true" />
-      <created>1780998750018</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1780998750018</updated>
+      <workItem from="1782050843981" duration="2727000" />
+      <workItem from="1782110800095" duration="2244000" />
     </task>
     <task id="LOCAL-00021" summary="service-price:计算价格，代码编写">
       <option name="closed" value="true" />
@@ -694,7 +685,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782048867478</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="service-order:派给司机订单后，远程调用service-sse-push服务向司机发送消息">
+      <option name="closed" value="true" />
+      <created>1782053565441</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1782053565441</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +712,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-driver-user:高德猎鹰-在新增车辆时同步创建终端" />
     <MESSAGE value="service-map:高德猎鹰-地图服务创建轨迹，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-新增车辆时同步初始化轨迹，代码实现" />
     <MESSAGE value="service-driver-user:高德猎鹰-轨迹点上传，代码实现" />
@@ -738,7 +736,8 @@
     <MESSAGE value="service-order:实时订单派单：订单与可派单司机信息匹配" />
     <MESSAGE value="service-order:尝试解决并发问题，暂存" />
     <MESSAGE value="service-sse-push:消息服务构建" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-sse-push:消息服务构建" />
+    <MESSAGE value="service-order:派给司机订单后，远程调用service-sse-push服务向司机发送消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:派给司机订单后，远程调用service-sse-push服务向司机发送消息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
