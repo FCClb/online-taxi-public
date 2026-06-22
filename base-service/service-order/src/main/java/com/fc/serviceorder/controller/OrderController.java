@@ -1,6 +1,7 @@
 package com.fc.serviceorder.controller;
 
 import com.fc.internalcommon.constant.HeaderParamConstants;
+import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import com.fc.serviceorder.service.OrderService;
@@ -32,6 +33,17 @@ public class OrderController {
     public ResponseResult add(@RequestBody OrderRequest orderRequest) {
 
         return orderService.add(orderRequest);
+    }
+
+    /**
+     * 司机前往接驾乘客 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/to-pick-up-passenger")
+    public ResponseResult toPickUpPassenger(@RequestBody OrderRequest orderRequest) {
+
+        return orderService.toPickUpPassenger(orderRequest);
     }
 
 }
