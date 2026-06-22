@@ -90,7 +90,6 @@ public class OrderService {
             return ResponseResult.fail(CommonStatusEnum.PRICE_RULE_CHANGED.getCode(), CommonStatusEnum.PRICE_RULE_CHANGED.getValue());
         }
 
-
         //判断是否有正在进行的订单，有则不允许下单
         if (isPassengerOrderGoingOn(orderRequest.getPassengerId()) > 0) {
             return ResponseResult.fail(CommonStatusEnum.ORDER_GOING_ON.getCode(), CommonStatusEnum.ORDER_GOING_ON.getValue());
@@ -101,7 +100,7 @@ public class OrderService {
             return ResponseResult.fail(CommonStatusEnum.DEVICE_IS_BLACK.getCode(), CommonStatusEnum.DEVICE_IS_BLACK.getValue());
         }
 
-        //判断下单的城市和计价规则是否正常
+        //判断下单的城市和计价规则是否正常 弃用
 //        if (!isPriceRuleExists(orderRequest)) {
 //            return ResponseResult.fail(CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getCode(), CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getValue());
 //        }
@@ -118,18 +117,37 @@ public class OrderService {
 
         orderMapper.insert(orderInfo);
 
-        //实时订单派单
-        dispatchRealTimeOrder(orderInfo);
+        //定时任务的处理
+        for (int i = 0; i < 6; i++) {
+            //实时订单派单
+            int result = dispatchRealTimeOrder(orderInfo);
+
+            int count = i + 1;
+            log.info("===第" + count + "次尝试派单===");
+            if (result == 1) {  //派单成功 则跳出循环
+                break;
+            }
+
+            //等待20秒
+            try {
+                Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+
 
         return ResponseResult.success("订单");
     }
 
     /**
      * 实时订单派单
-     *
      * @param orderInfo
+     * @return 派单成功则返回 1
      */
-    public void dispatchRealTimeOrder(OrderInfo orderInfo) {
+    public int dispatchRealTimeOrder(OrderInfo orderInfo) {
+        int result = 0; //标记 派单是否成功
 
         String depLongitude = orderInfo.getDepLongitude();
         String depLatitude = orderInfo.getDepLatitude();
@@ -142,7 +160,7 @@ public class OrderService {
 
         ResponseResult<List<TerminalResponse>> listResponseResult = null;
 
-        // goto 是为了测试
+        // goto
         radius:
 
         for (int i = 0; i < radiusList.size(); i++) {
@@ -153,6 +171,7 @@ public class OrderService {
 
             //获得终端
             List<TerminalResponse> data = listResponseResult.getData();
+
             for (TerminalResponse terminalResponse : data) {
                 Long carId = terminalResponse.getCarId();
                 String longitude = terminalResponse.getLongitude();
@@ -247,6 +266,7 @@ public class OrderService {
 
                     serviceSsePushClient.push(passengerPushRequest);
 
+                    result = 1; //标记 派单成功
 
                     break radius;
 
@@ -254,7 +274,7 @@ public class OrderService {
             }
         }
 
-
+        return result;
     }
 
     /**
