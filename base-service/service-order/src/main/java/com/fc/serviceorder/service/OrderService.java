@@ -16,6 +16,7 @@ import com.fc.internalcommon.request.PriceRuleIsNewRequest;
 import com.fc.internalcommon.request.PushRequest;
 import com.fc.internalcommon.response.OrderDriverResponse;
 import com.fc.internalcommon.response.TerminalResponse;
+import com.fc.internalcommon.response.TrsearchResponse;
 import com.fc.internalcommon.util.RedisPrefixUtils;
 import com.fc.serviceorder.mapper.OrderMapper;
 import com.fc.serviceorder.remote.ServiceDriverUserClient;
@@ -33,6 +34,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -435,5 +437,41 @@ public class OrderService {
 
         orderMapper.updateById(orderInfo);
         return ResponseResult.success("司机接到乘客 修改订单状态");
+    }
+
+    /**
+     * 乘客到达目的地/行程终止 修改订单状态
+     *
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult passengerGetoff(OrderRequest orderRequest) {
+        Long orderId = orderRequest.getOrderId();
+        QueryWrapper<OrderInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", orderId);
+        OrderInfo orderInfo = orderMapper.selectOne(queryWrapper);
+
+        orderInfo.setPassengerGetoffTime(LocalDateTime.now());
+        orderInfo.setPassengerGetoffLongitude(orderRequest.getPassengerGetoffLongitude());
+        orderInfo.setPassengerGetoffLatitude(orderRequest.getPassengerGetoffLatitude());
+        orderInfo.setOrderStatus(OrderConstants.PASSENGER_GET_OFF.getCode());
+
+        //更新订单 载客里程(米) 载客时长(分)
+        ResponseResult<Car> carById = serviceDriverUserClient.getCarById(orderInfo.getCarId());
+
+        long starttime = orderInfo.getPickUpPassengerTime().toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        long endtime = LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        log.info("starttime:" + starttime + " endtime:" + endtime);
+        ResponseResult<TrsearchResponse> trsearch = serviceMapClient.trsearch(carById.getData().getTid(), starttime, endtime);
+
+        TrsearchResponse data = trsearch.getData();
+        Long driveMile = data.getDriveMile();
+        Long driveTime = data.getDriveTime();
+        orderInfo.setDriveMile(driveMile);
+        orderInfo.setDriveTime(driveTime);
+
+        orderMapper.updateById(orderInfo);
+
+        return ResponseResult.success("乘客到达目的地/行程终止 修改订单状态");
     }
 }

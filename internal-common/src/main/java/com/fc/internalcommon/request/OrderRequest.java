@@ -120,4 +120,13 @@ public class OrderRequest {
      */
     private String pickUpPassengerLatitude;
 
+    /**
+     * 乘客下车经度
+     */
+    private String passengerGetoffLongitude;
+    /**
+     * 乘客下车纬度
+     */
+    private String passengerGetoffLatitude;
+
 }

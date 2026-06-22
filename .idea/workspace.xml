@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:司机到达上车点 修改订单状态">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:司机接到乘客 修改订单状态">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/TrsearchResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TerminalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/controller/TerminalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/TerminalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/service/TerminalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceMapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServiceMapClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/constant/AmapConfigConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,56 +66,56 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ForecastPriceService.executor": "Run",
-    "Application.JwtUtils.executor": "Run",
-    "Application.TerminalClient.executor": "Run",
-    "Maven.online-taxi-public [clean].executor": "Run",
-    "Maven.online-taxi-public [compile].executor": "Run",
-    "Maven.service-price [clean].executor": "Run",
-    "Maven.service-price [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiBossApplication.executor": "Run",
-    "Spring Boot.ApiDriverApplication.executor": "Run",
-    "Spring Boot.ApiPassengerApplication.executor": "Run",
-    "Spring Boot.ServiceDriverUserApplication.executor": "Run",
-    "Spring Boot.ServiceMapApplication.executor": "Run",
-    "Spring Boot.ServiceOrderApplication.executor": "Run",
-    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
-    "Spring Boot.ServicePriceApplication.executor": "Run",
-    "Spring Boot.ServiceSsePush.executor": "Run",
-    "Spring Boot.ServiceSsePushApplication.executor": "Run",
-    "Spring Boot.ServiceVerificationApplication.executor": "Run",
-    "Spring Boot.SseDriverClientWeb.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ForecastPriceService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TerminalClient.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-price [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-price [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiBossApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiDriverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceDriverUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceOrderApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceSsePush.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceSsePushApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SseDriverClientWeb.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -299,15 +305,8 @@
       <workItem from="1782048563196" duration="1976000" />
       <workItem from="1782050555425" duration="282000" />
       <workItem from="1782050843981" duration="2727000" />
-      <workItem from="1782110800095" duration="6236000" />
-    </task>
-    <task id="LOCAL-00025" summary="service-map:地区字典获取，编码实现完成">
-      <option name="closed" value="true" />
-      <created>1781148434908</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1781148434908</updated>
+      <workItem from="1782110800095" duration="6797000" />
+      <workItem from="1782135471555" duration="4236000" />
     </task>
     <task id="LOCAL-00026" summary="更新.gitignore文件 以及 字典服务数据库脚本">
       <option name="closed" value="true" />
@@ -693,7 +692,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782116590098</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="service-order:司机接到乘客 修改订单状态">
+      <option name="closed" value="true" />
+      <created>1782117074474</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1782117074474</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,7 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-map:创建终端改造，增加desc字段" />
     <MESSAGE value="service-map:周边搜索终端，代码编写" />
     <MESSAGE value="api-passenger:乘客下单接口接受参数，代码编写" />
     <MESSAGE value="service-order:订单服务 项目创建" />
@@ -737,7 +743,8 @@
     <MESSAGE value="service-order:找不到车时每隔20秒重新尝试派单（2，4，6(5)公里 循环）" />
     <MESSAGE value="service-order:司机前往接驾乘客 修改订单状态" />
     <MESSAGE value="service-order:司机到达上车点 修改订单状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:司机到达上车点 修改订单状态" />
+    <MESSAGE value="service-order:司机接到乘客 修改订单状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:司机接到乘客 修改订单状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

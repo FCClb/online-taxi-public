@@ -43,6 +43,15 @@ public enum AmapConfigConstants {
     TERMINAL_AROUNDSEARCH_URL("https://tsapi.amap.com/v1/track/terminal/aroundsearch"),
 
     /**
+     * 猎鹰轨迹服务 查询轨迹信息（轨迹信息包括经纬度点，里程，时间等信息）url
+     */
+    TERMINAL_TRSEARCH("https://tsapi.amap.com/v1/track/terminal/trsearch"),
+
+
+
+
+
+    /**
      * 路径规划 json key值: status
      */
     STATUS("status"),

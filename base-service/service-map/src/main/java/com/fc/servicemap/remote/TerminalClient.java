@@ -1,8 +1,12 @@
 package com.fc.servicemap.remote;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fc.internalcommon.constant.AmapConfigConstants;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.TerminalResponse;
+import com.fc.internalcommon.response.TrsearchResponse;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -31,6 +35,9 @@ public class TerminalClient {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     /**
      * 新增 终端
@@ -121,5 +128,55 @@ public class TerminalClient {
 //        System.out.println("getLong 效果：" + wrong);   // 输出 2067182759027159040
 //        System.out.println("parseLong 效果：" + correct); // 输出 2067182759027159041
 //    }
+
+    /**
+     * 查询轨迹信息（轨迹信息包括经纬度点，里程，时间等信息）
+     *
+     * @param tid
+     * @param starttime
+     * @param endtime
+     * @return
+     */
+    public ResponseResult<TrsearchResponse> trsearch(String tid, Long starttime, Long endtime) {
+        StringBuilder url = new StringBuilder();
+        url.append(AmapConfigConstants.TERMINAL_TRSEARCH.getValue());
+        url.append("?");
+        url.append("key=" + amapKey);
+        url.append("&sid=" + amapSid);
+        url.append("&tid=" + tid);
+        url.append("&starttime=" + starttime);
+        url.append("&endtime=" + endtime);
+
+        ResponseEntity<String> forEntity = restTemplate.getForEntity(url.toString(), String.class);
+        JsonNode result = null;
+        try {
+            result = objectMapper.readTree(forEntity.getBody());
+            log.info("查询轨迹信息 高德响应:" + result.toString());
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        long driveMile = 0L;
+        long driveTime = 0L;
+
+        if (result.isNull()) {
+            return ResponseResult.fail("查询轨迹信息失败");
+        } else {
+            JsonNode tracks = result.path("data").path("tracks");
+            for (JsonNode track : tracks) {
+                long distance = track.get("distance").asLong();
+                long time = track.get("time").asLong(); //毫秒
+                time = time / (1000 * 60);  //分钟
+
+                driveMile += distance;
+                driveTime += time;
+            }
+        }
+
+        TrsearchResponse trsearchResponse = new TrsearchResponse();
+        trsearchResponse.setDriveMile(driveMile);
+        trsearchResponse.setDriveTime(driveTime);
+        return ResponseResult.success(trsearchResponse);
+    }
 
 }

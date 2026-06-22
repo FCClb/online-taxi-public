@@ -2,12 +2,10 @@ package com.fc.servicemap.controller;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.TerminalResponse;
+import com.fc.internalcommon.response.TrsearchResponse;
 import com.fc.servicemap.service.TerminalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,6 +43,19 @@ public class TerminalController {
     public ResponseResult<List<TerminalResponse>> aroundsearch(@RequestParam String center, @RequestParam Integer radius) {
 
         return terminalService.aroundsearch(center, radius);
+    }
+
+    /**
+     * 查询轨迹信息（轨迹信息包括经纬度点，里程，时间等信息）
+     * @param tid
+     * @param starttime
+     * @param endtime
+     * @return
+     */
+    @PostMapping("/trsearch")
+    public ResponseResult<TrsearchResponse> trsearch(@RequestParam String tid, @RequestParam Long starttime, @RequestParam Long endtime) {
+
+        return terminalService.trsearch(tid, starttime, endtime);
     }
 
 }

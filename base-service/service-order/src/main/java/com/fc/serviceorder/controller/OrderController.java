@@ -1,7 +1,5 @@
 package com.fc.serviceorder.controller;
 
-import com.fc.internalcommon.constant.HeaderParamConstants;
-import com.fc.internalcommon.dto.OrderInfo;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import com.fc.serviceorder.service.OrderService;
@@ -10,8 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 订单管理
@@ -62,9 +58,20 @@ public class OrderController {
      * @param orderRequest
      * @return
      */
-    @PostMapping("/pick_up_passenger")
+    @PostMapping("/pick-up-passenger")
     public ResponseResult pickUpPassenger(@RequestBody OrderRequest orderRequest) {
 
         return orderService.pickUpPassenger(orderRequest);
+    }
+
+    /**
+     * 乘客到达目的地/行程终止 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/passenger-getoff")
+    public ResponseResult passengerGetoff(@RequestBody OrderRequest orderRequest) {
+
+        return orderService.passengerGetoff(orderRequest);
     }
 }

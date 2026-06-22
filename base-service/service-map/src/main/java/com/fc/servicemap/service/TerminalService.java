@@ -2,10 +2,10 @@ package com.fc.servicemap.service;
 
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.TerminalResponse;
+import com.fc.internalcommon.response.TrsearchResponse;
 import com.fc.servicemap.remote.TerminalClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -38,5 +38,18 @@ public class TerminalService {
     public ResponseResult<List<TerminalResponse>> aroundsearch(String center, Integer radius) {
 
         return terminalClient.aroundsearch(center, radius);
+    }
+
+    /**
+     * 查询轨迹信息（轨迹信息包括经纬度点，里程，时间等信息）
+     *
+     * @param tid
+     * @param starttime
+     * @param endtime
+     * @return
+     */
+    public ResponseResult<TrsearchResponse> trsearch(String tid, Long starttime, Long endtime) {
+
+        return terminalClient.trsearch(tid, starttime, endtime);
     }
 }
