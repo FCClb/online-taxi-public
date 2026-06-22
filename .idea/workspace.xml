@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:司机前往接驾乘客 修改订单状态">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:司机到达上车点 修改订单状态">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,15 +299,7 @@
       <workItem from="1782048563196" duration="1976000" />
       <workItem from="1782050555425" duration="282000" />
       <workItem from="1782050843981" duration="2727000" />
-      <workItem from="1782110800095" duration="5622000" />
-    </task>
-    <task id="LOCAL-00024" summary="service-map:请求地图地区字典">
-      <option name="closed" value="true" />
-      <created>1781079463347</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1781079463347</updated>
+      <workItem from="1782110800095" duration="6236000" />
     </task>
     <task id="LOCAL-00025" summary="service-map:地区字典获取，编码实现完成">
       <option name="closed" value="true" />
@@ -691,7 +685,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782116160607</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="service-order:司机到达上车点 修改订单状态">
+      <option name="closed" value="true" />
+      <created>1782116590098</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1782116590098</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +712,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-driver:调用service-driver-user服务根据carId查询tid和trid，调用service-map服务上传轨迹点" />
     <MESSAGE value="service-map:创建终端改造，增加desc字段" />
     <MESSAGE value="service-map:周边搜索终端，代码编写" />
     <MESSAGE value="api-passenger:乘客下单接口接受参数，代码编写" />
@@ -735,7 +736,8 @@
     <MESSAGE value="service-order:派给司机订单后，远程调用service-sse-push服务向乘客发送消息" />
     <MESSAGE value="service-order:找不到车时每隔20秒重新尝试派单（2，4，6(5)公里 循环）" />
     <MESSAGE value="service-order:司机前往接驾乘客 修改订单状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:司机前往接驾乘客 修改订单状态" />
+    <MESSAGE value="service-order:司机到达上车点 修改订单状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:司机到达上车点 修改订单状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
