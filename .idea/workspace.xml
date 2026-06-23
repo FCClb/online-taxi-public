@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:行程结束获得价格">
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/PayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceSsePushClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/PayService.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:调用service-sse-push服务向乘客发送付款消息">
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/AlipayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/ServicePayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceOrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceOrderClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceVerificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceVerificationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/端口管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/端口管理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,56 +67,57 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ForecastPriceService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalClient.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiBossApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiDriverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceDriverUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceOrderApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceSsePush.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceSsePushApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SseDriverClientWeb.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ForecastPriceService.executor": "Run",
+    "Application.JwtUtils.executor": "Run",
+    "Application.TerminalClient.executor": "Run",
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "Maven.service-price [clean].executor": "Run",
+    "Maven.service-price [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiBossApplication.executor": "Run",
+    "Spring Boot.ApiDriverApplication.executor": "Run",
+    "Spring Boot.ApiPassengerApplication.executor": "Run",
+    "Spring Boot.ServiceDriverUserApplication.executor": "Run",
+    "Spring Boot.ServiceMapApplication.executor": "Run",
+    "Spring Boot.ServiceOrderApplication.executor": "Run",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "Spring Boot.ServicePayApplication.executor": "Run",
+    "Spring Boot.ServicePriceApplication.executor": "Run",
+    "Spring Boot.ServiceSsePush.executor": "Run",
+    "Spring Boot.ServiceSsePushApplication.executor": "Run",
+    "Spring Boot.ServiceVerificationApplication.executor": "Run",
+    "Spring Boot.SseDriverClientWeb.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -137,7 +143,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiDriverApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePayApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -187,6 +193,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServicePayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-pay" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.servicepay.ServicePayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServicePriceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-price" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.serviceprice.ServicePriceApplication" />
@@ -229,6 +242,7 @@
       <item itemvalue="Spring Boot.ServiceMapApplication" />
       <item itemvalue="Spring Boot.ServiceOrderApplication" />
       <item itemvalue="Spring Boot.ServiceVerificationApplication" />
+      <item itemvalue="Spring Boot.ServicePayApplication" />
       <item itemvalue="Spring Boot.ServiceSsePushApplication" />
       <item itemvalue="Spring Boot.ServicePriceApplication" />
     </list>
@@ -304,15 +318,8 @@
       <workItem from="1782110800095" duration="6797000" />
       <workItem from="1782135471555" duration="4365000" />
       <workItem from="1782185125534" duration="5656000" />
-      <workItem from="1782208812986" duration="1663000" />
-    </task>
-    <task id="LOCAL-00030" summary="api-boss:创建微服务&amp;调用service-driver-user插入司机用户，代码编写">
-      <option name="closed" value="true" />
-      <created>1781250359206</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1781250359206</updated>
+      <workItem from="1782208812986" duration="1954000" />
+      <workItem from="1782216835507" duration="4546000" />
     </task>
     <task id="LOCAL-00031" summary="api-boss:调用service-driver-user修改司机用户信息">
       <option name="closed" value="true" />
@@ -698,7 +705,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782209549149</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="api-driver:调用service-sse-push服务向乘客发送付款消息">
+      <option name="closed" value="true" />
+      <created>1782210777707</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1782210777707</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -717,7 +732,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量" />
     <MESSAGE value="service-price:price实体类增加fareType,fareVersion属性，创建计价规则，修改计价规则" />
     <MESSAGE value="service-price:预估价格改造，请求体需要携带cityCode和vehicleType" />
     <MESSAGE value="service-price:查询最新的计价规则，判断当前计价规则是否最新，代码实现" />
@@ -742,7 +756,8 @@
     <MESSAGE value="api-driver:调用service-order，从接驾到到达目的地，修改订单状态" />
     <MESSAGE value="service-price:修改数据库表字段，计算实际价格" />
     <MESSAGE value="service-order:行程结束获得价格" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:行程结束获得价格" />
+    <MESSAGE value="api-driver:调用service-sse-push服务向乘客发送付款消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-driver:调用service-sse-push服务向乘客发送付款消息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
