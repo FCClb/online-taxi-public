@@ -146,6 +146,7 @@ public class TerminalClient {
         url.append("&tid=" + tid);
         url.append("&starttime=" + starttime);
         url.append("&endtime=" + endtime);
+        log.info("查询轨迹信息请求url:" + url.toString());
 
         ResponseEntity<String> forEntity = restTemplate.getForEntity(url.toString(), String.class);
         JsonNode result = null;

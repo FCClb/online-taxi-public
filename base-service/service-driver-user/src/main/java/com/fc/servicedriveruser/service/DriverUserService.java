@@ -51,7 +51,7 @@ public class DriverUserService {
         driverUserWorkStatus.setGmtModified(now);
         driverUserWorkStatusMapper.insert(driverUserWorkStatus);
 
-        return ResponseResult.success("插入乘客用户成功");
+        return ResponseResult.success("插入司机用户成功");
     }
 
     /**
