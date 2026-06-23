@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:调用service-sse-push服务向乘客发送付款消息">
-      <change afterPath="$PROJECT_DIR$/base-service/service-pay/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/AlipayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/ServicePayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-pay:服务创建，支付订单，支付宝回调信息">
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/remote/ServiceOrderClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/service/AlipayService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/端口管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/端口管理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceOrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceOrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/PayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/PayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/AlipayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/config/AlipayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/ServicePayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/ServicePayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -143,7 +142,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicePayApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceOrderApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -319,15 +318,7 @@
       <workItem from="1782135471555" duration="4365000" />
       <workItem from="1782185125534" duration="5656000" />
       <workItem from="1782208812986" duration="1954000" />
-      <workItem from="1782216835507" duration="4546000" />
-    </task>
-    <task id="LOCAL-00031" summary="api-boss:调用service-driver-user修改司机用户信息">
-      <option name="closed" value="true" />
-      <created>1781251390018</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1781251390018</updated>
+      <workItem from="1782216835507" duration="6576000" />
     </task>
     <task id="LOCAL-00032" summary="api-driver:调用service-driver-user修改司机用户信息">
       <option name="closed" value="true" />
@@ -713,7 +704,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782210777707</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="service-pay:服务创建，支付订单，支付宝回调信息">
+      <option name="closed" value="true" />
+      <created>1782221807928</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1782221807928</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,7 +731,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-price:price实体类增加fareType,fareVersion属性，创建计价规则，修改计价规则" />
     <MESSAGE value="service-price:预估价格改造，请求体需要携带cityCode和vehicleType" />
     <MESSAGE value="service-price:查询最新的计价规则，判断当前计价规则是否最新，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前计价规则是否最新，代码实现" />
@@ -757,7 +755,8 @@
     <MESSAGE value="service-price:修改数据库表字段，计算实际价格" />
     <MESSAGE value="service-order:行程结束获得价格" />
     <MESSAGE value="api-driver:调用service-sse-push服务向乘客发送付款消息" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-driver:调用service-sse-push服务向乘客发送付款消息" />
+    <MESSAGE value="service-pay:服务创建，支付订单，支付宝回调信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-pay:服务创建，支付订单，支付宝回调信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

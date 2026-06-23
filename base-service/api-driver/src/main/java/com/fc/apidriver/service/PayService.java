@@ -2,9 +2,11 @@ package com.fc.apidriver.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fc.apidriver.remote.ServiceOrderClient;
 import com.fc.apidriver.remote.ServiceSsePushClient;
 import com.fc.internalcommon.constant.IdentityEnum;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.request.OrderRequest;
 import com.fc.internalcommon.request.PushRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,9 @@ public class PayService {
     @Autowired
     private ServiceSsePushClient pushClient;
 
+    @Autowired
+    private ServiceOrderClient orderClient;
+
     /**
      * 司机发起收款/向乘客发收款消息
      *
@@ -29,6 +34,11 @@ public class PayService {
      * @return
      */
     public ResponseResult pushPayInfo(String orderId, String price, Long passengerId) {
+        //修改订单状态
+        OrderRequest orderRequest = new OrderRequest();
+        orderRequest.setOrderId(Long.parseLong(orderId));
+        orderClient.toStartPay(orderRequest);
+
         //封装消息
         ObjectNode objectNode = objectMapper.createObjectNode();
         objectNode.put("price", price);

@@ -74,4 +74,26 @@ public class OrderController {
 
         return orderService.passengerGetoff(orderRequest);
     }
+
+    /**
+     * 司机发起收款 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/to-start-pay")
+    public ResponseResult toStartPay(@RequestBody OrderRequest orderRequest) {
+
+        return orderService.toStartPay(orderRequest);
+    }
+
+    /**
+     * 乘客支付完成 修改订单状态
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/pay")
+    public ResponseResult pay(@RequestBody OrderRequest orderRequest) {
+
+        return orderService.pay(orderRequest);
+    }
 }

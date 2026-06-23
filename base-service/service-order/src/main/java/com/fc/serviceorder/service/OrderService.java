@@ -30,6 +30,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -483,4 +485,39 @@ public class OrderService {
 
         return ResponseResult.success("乘客到达目的地/行程终止 修改订单状态");
     }
+
+    /**
+     * 司机发起收款 修改订单状态
+     *
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult toStartPay(OrderRequest orderRequest) {
+        Long orderId = orderRequest.getOrderId();
+        OrderInfo orderInfo = orderMapper.selectById(orderId);
+
+        orderInfo.setOrderStatus(OrderConstants.TO_START_PAY.getCode());
+
+        orderMapper.updateById(orderInfo);
+
+        return ResponseResult.success("司机发起收款 修改订单状态");
+    }
+
+    /**
+     * 乘客支付完成 修改订单状态
+     *
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult pay(OrderRequest orderRequest) {
+        Long orderId = orderRequest.getOrderId();
+        OrderInfo orderInfo = orderMapper.selectById(orderId);
+
+        orderInfo.setOrderStatus(OrderConstants.SUCCESS_PAY.getCode());
+
+        orderMapper.updateById(orderInfo);
+
+        return ResponseResult.success("乘客支付完成 修改订单状态");
+    }
+
 }

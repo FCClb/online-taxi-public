@@ -2,8 +2,11 @@ package com.fc.servicepay.controller;
 
 import com.alipay.easysdk.factory.Factory;
 import com.alipay.easysdk.payment.page.models.AlipayTradePagePayResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.fc.internalcommon.request.OrderRequest;
+import com.fc.servicepay.service.AlipayService;
+import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +23,11 @@ import java.util.Map;
 @Controller
 @RequestMapping("/alipay")
 @ResponseBody
+@Slf4j
 public class AlipayController {
 
-    private static final Logger log = LoggerFactory.getLogger(AlipayController.class);
+    @Autowired
+    private AlipayService alipayService;
 
     /*
     http://localhost:9001/alipay/pay?subject=车费1&outTradeno=1003&totalAmount=103
@@ -53,9 +58,9 @@ public class AlipayController {
             if (Factory.Payment.Common().verifyNotify(param)) {
                 log.info("通过支付宝的验证");
 
-                for (String name : param.keySet()) {
-                    System.out.println("收到的参数：" + name + "=" + param.get(name));
-                }
+                Long orderId = Long.parseLong(param.get("out_trade_no"));
+                alipayService.pay(orderId);
+
             } else {
                 log.info("支付宝验证 不通过！");
             }

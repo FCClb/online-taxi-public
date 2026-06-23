@@ -48,4 +48,13 @@ public interface ServiceOrderClient {
      */
     @PostMapping("/order/passenger-getoff")
     ResponseResult passengerGetoff(@RequestBody OrderRequest orderRequest);
+
+    /**
+     * 司机发起收款 修改订单状态
+     *
+     * @param orderRequest
+     * @return
+     */
+    @PostMapping("/order/to-start-pay")
+    ResponseResult toStartPay(@RequestBody OrderRequest orderRequest);
 }
