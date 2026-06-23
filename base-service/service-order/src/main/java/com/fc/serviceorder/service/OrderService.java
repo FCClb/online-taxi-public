@@ -30,8 +30,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -475,6 +473,11 @@ public class OrderService {
         Long driveTime = data.getDriveTime();
         orderInfo.setDriveMile(driveMile);
         orderInfo.setDriveTime(driveTime);
+
+        //获取价格
+        ResponseResult<Double> doubleResponseResult = servicePriceClient.calculatePrice(driveMile.intValue(), driveTime.intValue(), orderInfo.getAddress(), orderInfo.getVehicleType());
+        Double price = doubleResponseResult.getData();
+        orderInfo.setPrice(price);
 
         orderMapper.updateById(orderInfo);
 

@@ -49,6 +49,7 @@ CREATE TABLE `order_info` (
                          `drive_mile` bigint NULL DEFAULT NULL COMMENT '载客里程(米)',
                          `drive_time` bigint NULL DEFAULT NULL COMMENT '载客时长(分)',
                          `order_status` int NULL DEFAULT NULL COMMENT '订单状态(1：订单开始 2：司机接单 3：去接乘客 4：司机到达乘客起点 5：乘客上车，司机开始行程 6：到达目的地，行程结束，未支付 7：发起收款 8: 支付完成 9. 订单取消)',
+                         `price` double(10, 2) NULL DEFAULT NULL COMMENT '价格',
                          `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
                          `gmt_modified` datetime NULL DEFAULT NULL COMMENT '更新时间',
                          PRIMARY KEY (`id`) USING BTREE

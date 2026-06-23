@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 预估价格接口
+ * 价格接口
  */
 @RestController
 public class PriceController {
@@ -41,7 +41,7 @@ public class PriceController {
      * @return
      */
     @PostMapping("/calculate-price")
-    public ResponseResult calculatePrice(@RequestParam Integer distance, @RequestParam Integer duration, @RequestParam String cityCode, @RequestParam String vehicleType) {
+    public ResponseResult<Double> calculatePrice(@RequestParam Integer distance, @RequestParam Integer duration, @RequestParam String cityCode, @RequestParam String vehicleType) {
 
         return priceService.calculatePrice(distance, duration, cityCode, vehicleType);
     }

@@ -30,4 +30,17 @@ public interface ServicePriceClient {
      */
     @PostMapping("/price-rule/if-exists")
     ResponseResult<Boolean> ifExists(@RequestBody PriceRule priceRule);
+
+    /**
+     * 计算实际价格
+     *
+     * @param distance
+     * @param duration
+     * @param cityCode
+     * @param vehicleType
+     * @return
+     */
+    @PostMapping("/calculate-price")
+    ResponseResult<Double> calculatePrice(@RequestParam Integer distance, @RequestParam Integer duration, @RequestParam String cityCode, @RequestParam String vehicleType);
+
 }

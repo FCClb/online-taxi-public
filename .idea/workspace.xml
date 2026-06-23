@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:调用service-order，从接驾到到达目的地，修改订单状态">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-price:修改数据库表字段，计算实际价格">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/remote/ServicePriceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/ForecastPriceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/initMysql/service-order.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service-order.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_price.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,15 +304,8 @@
       <workItem from="1782050843981" duration="2727000" />
       <workItem from="1782110800095" duration="6797000" />
       <workItem from="1782135471555" duration="4365000" />
-      <workItem from="1782185125534" duration="5374000" />
-    </task>
-    <task id="LOCAL-00028" summary="service-driver-user:司机用户服务创建">
-      <option name="closed" value="true" />
-      <created>1781173755387</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1781173755387</updated>
+      <workItem from="1782185125534" duration="5656000" />
+      <workItem from="1782208812986" duration="728000" />
     </task>
     <task id="LOCAL-00029" summary="service-driver-user:插入司机用户，代码编写">
       <option name="closed" value="true" />
@@ -701,7 +691,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782188290437</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="service-price:修改数据库表字段，计算实际价格">
+      <option name="closed" value="true" />
+      <created>1782190799794</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1782190799794</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +718,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-order:订单服务 项目创建" />
     <MESSAGE value="service-order:创建订单，代码实现" />
     <MESSAGE value="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量" />
     <MESSAGE value="service-price:price实体类增加fareType,fareVersion属性，创建计价规则，修改计价规则" />
@@ -745,7 +742,8 @@
     <MESSAGE value="service-order:司机接到乘客 修改订单状态" />
     <MESSAGE value="service-order:乘客到达目的地/行程终止 修改订单状态" />
     <MESSAGE value="api-driver:调用service-order，从接驾到到达目的地，修改订单状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-driver:调用service-order，从接驾到到达目的地，修改订单状态" />
+    <MESSAGE value="service-price:修改数据库表字段，计算实际价格" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-price:修改数据库表字段，计算实际价格" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

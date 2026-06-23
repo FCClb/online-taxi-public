@@ -176,6 +176,10 @@ public class OrderInfo {
      */
     private Integer orderStatus;
     /**
+     * 价格
+     */
+    private Double price;
+    /**
      * 创建时间
      */
     private LocalDateTime gmtCreate;
