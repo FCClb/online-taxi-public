@@ -36,6 +36,10 @@ public class OrderInfo {
      */
     private Long carId;
     /**
+     * 车型
+     */
+    private String vehicleType;
+    /**
      * 发起地行政区划编码
      */
     private String address;

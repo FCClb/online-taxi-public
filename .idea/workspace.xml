@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:乘客到达目的地/行程终止 修改订单状态">
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceOrderClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/OrderService.java" afterDir="false" />
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-driver:调用service-order，从接驾到到达目的地，修改订单状态">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-map/src/main/java/com/fc/servicemap/remote/TerminalClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/ForecastPriceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/controller/PriceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/ForecastPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-price/src/main/java/com/fc/serviceprice/service/PriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service-order.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service-order.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_driver_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_price.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/response/OrderDriverResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiDriverApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePriceApplication">
     <configuration name="ApiBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-boss" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fc.apiboss.ApiBossApplication" />
@@ -234,8 +238,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ServiceSsePushApplication" />
         <item itemvalue="Spring Boot.ServicePriceApplication" />
+        <item itemvalue="Spring Boot.ServiceSsePushApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -303,15 +307,7 @@
       <workItem from="1782050843981" duration="2727000" />
       <workItem from="1782110800095" duration="6797000" />
       <workItem from="1782135471555" duration="4365000" />
-      <workItem from="1782185125534" duration="2881000" />
-    </task>
-    <task id="LOCAL-00027" summary="更新司机用户服务数据库脚本">
-      <option name="closed" value="true" />
-      <created>1781172587219</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1781172587219</updated>
+      <workItem from="1782185125534" duration="5374000" />
     </task>
     <task id="LOCAL-00028" summary="service-driver-user:司机用户服务创建">
       <option name="closed" value="true" />
@@ -697,7 +693,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782139852914</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="api-driver:调用service-order，从接驾到到达目的地，修改订单状态">
+      <option name="closed" value="true" />
+      <created>1782188290437</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1782188290437</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +720,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api-passenger:乘客下单接口接受参数，代码编写" />
     <MESSAGE value="service-order:订单服务 项目创建" />
     <MESSAGE value="service-order:创建订单，代码实现" />
     <MESSAGE value="service-order:创建订单完善参数传递，增加乘客id和手机号码；创建 订单状态常量" />
@@ -741,7 +744,8 @@
     <MESSAGE value="service-order:司机到达上车点 修改订单状态" />
     <MESSAGE value="service-order:司机接到乘客 修改订单状态" />
     <MESSAGE value="service-order:乘客到达目的地/行程终止 修改订单状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:乘客到达目的地/行程终止 修改订单状态" />
+    <MESSAGE value="api-driver:调用service-order，从接驾到到达目的地，修改订单状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-driver:调用service-order，从接驾到到达目的地，修改订单状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

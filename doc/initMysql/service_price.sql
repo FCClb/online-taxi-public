@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS `price_rule`;
 
 CREATE TABLE `price_rule`  (
                                `city_code` char(6) NOT NULL COMMENT '城市代码',
-                               `vehicle_type` char(8) NOT NULL COMMENT '车型',
+                               `vehicle_type` varchar(8) NOT NULL COMMENT '车型',
                                `start_fare` double(4, 2) NULL DEFAULT NULL COMMENT '起步价',
                                `start_mile` int NULL DEFAULT NULL COMMENT '起步里程',
                                `unit_price_per_mile` double(4, 2) NULL DEFAULT NULL COMMENT '每公里价钱（超出起步里程后）',

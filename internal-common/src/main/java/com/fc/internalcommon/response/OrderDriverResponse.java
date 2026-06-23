@@ -34,4 +34,9 @@ public class OrderDriverResponse {
      */
     private String vehicleNo;
 
+    /**
+     * 车型
+     */
+    private String vehicleType;
+
 }

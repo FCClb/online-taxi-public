@@ -14,6 +14,7 @@ CREATE TABLE `order_info` (
                          `driver_id` bigint NULL DEFAULT NULL COMMENT '司机id',
                          `driver_phone` varchar(16) NULL DEFAULT NULL COMMENT '司机手机号',
                          `car_id` bigint NULL DEFAULT NULL COMMENT '车辆id',
+                         `vehicle_type` varchar(8) NULL DEFAULT NULL COMMENT '车型',
                          `address` char(6) NULL DEFAULT NULL COMMENT '发起地行政区划编码',
                          `order_time` datetime NULL DEFAULT NULL COMMENT '下单时间',
                          `depart_time` datetime NULL DEFAULT NULL COMMENT '预计用车时间',

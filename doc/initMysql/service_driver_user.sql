@@ -106,7 +106,7 @@ CREATE TABLE `car`  (
                         `seats` int NULL DEFAULT NULL COMMENT '核定载客位',
                         `brand` varchar(16) NULL DEFAULT NULL COMMENT '车辆厂牌',
                         `model` varchar(16) NULL DEFAULT NULL COMMENT '车辆型号',
-                        `vehicle_type` varchar(16) NULL DEFAULT NULL COMMENT '车辆类型',
+                        `vehicle_type` varchar(8) NULL DEFAULT NULL COMMENT '车辆类型',
                         `owner_name` varchar(16) NULL DEFAULT NULL COMMENT '车辆所有人',
                         `vehicle_color` char(2) NULL DEFAULT NULL COMMENT '车辆颜色（1白色，2黑色）',
                         `engine_id` varchar(32) NULL DEFAULT NULL COMMENT '发动机号',

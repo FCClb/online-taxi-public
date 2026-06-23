@@ -190,6 +190,12 @@ public class OrderService {
 
                     OrderDriverResponse orderDriverResponse = availableDriver.getData();
                     Long driverId = orderDriverResponse.getDriverId();
+                    String vehicleTypeFromCar = orderDriverResponse.getVehicleType();
+                    //判断车型是否符合
+                    if (!vehicleTypeFromCar.trim().equals(orderInfo.getVehicleType().trim())) {
+                        log.info("车型不符合");
+                        continue;
+                    }
 
                     //判断司机 是否有正在进行的订单
                     if (isDriverOrderGoingOn(driverId) > 0) {   //有订单
