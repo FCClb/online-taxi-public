@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
+ * 远程调用
  * 验证码服务
  */
 @FeignClient(name = "service-verification")
