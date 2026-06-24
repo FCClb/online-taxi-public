@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:订单取消">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger &amp; api-driver:调用service-order实现订单取消">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceOrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/remote/ServiceOrderClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,15 +312,7 @@
       <workItem from="1782208812986" duration="1954000" />
       <workItem from="1782216835507" duration="6838000" />
       <workItem from="1782261504465" duration="2659000" />
-      <workItem from="1782275835874" duration="1458000" />
-    </task>
-    <task id="LOCAL-00034" summary="service-driver-user:新增车辆功能，司机车辆关系绑定与解绑功能，代码编写">
-      <option name="closed" value="true" />
-      <created>1781338157024</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1781338157024</updated>
+      <workItem from="1782275835874" duration="2128000" />
     </task>
     <task id="LOCAL-00035" summary="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑">
       <option name="closed" value="true" />
@@ -709,7 +698,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782276844894</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="api-passenger &amp; api-driver:调用service-order实现订单取消">
+      <option name="closed" value="true" />
+      <created>1782277620288</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1782277620288</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-order:创建订单前，判断当前计价规则是否最新，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前设备是否在黑名单，代码实现" />
     <MESSAGE value="service-price:根据城市编码和车型查询是否存在计价规则，代码实现" />
@@ -753,7 +749,8 @@
     <MESSAGE value="service-pay:服务创建，支付订单，支付宝回调信息" />
     <MESSAGE value="service-pay:调用service-order，修改订单状态为支付完成" />
     <MESSAGE value="service-order:订单取消" />
-    <option name="LAST_COMMIT_MESSAGE" value="service-order:订单取消" />
+    <MESSAGE value="api-passenger &amp; api-driver:调用service-order实现订单取消" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-passenger &amp; api-driver:调用service-order实现订单取消" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

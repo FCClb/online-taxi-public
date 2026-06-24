@@ -131,11 +131,17 @@ public class OrderService {
                 break;
             }
 
-            //等待20秒
-            try {
-                Thread.sleep(20000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (i == 5) {
+                //订单无效
+                orderInfo.setOrderStatus(OrderConstants.ORDER_INVALID.getCode());
+                orderMapper.updateById(orderInfo);
+            } else {
+                //等待20秒
+                try {
+                    Thread.sleep(20000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
