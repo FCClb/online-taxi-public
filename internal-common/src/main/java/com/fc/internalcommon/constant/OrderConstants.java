@@ -57,6 +57,34 @@ public enum OrderConstants {
      */
     ORDER_CANCEL(9),
 
+
+
+    /**
+     * 乘客提前撤销
+     */
+    CANCEL_PASSENGER_BEFORE(1),
+
+    /**
+     * 驾驶员提前撤销
+     */
+    CANCEL_DRIVER_BEFORE(2),
+
+    /**
+     * 平台公司撤销
+     */
+    CANCEL_PLATFORM_BEFORE(3),
+
+    /**
+     * 乘客违约撤销
+     */
+    CANCEL_PASSENGER_ILLEGAL(4),
+
+    /**
+     * 驾驶员违约撤销
+     */
+    CANCEL_DRIVER_ILLEGAL(5),
+
+
     ;
 
     @Getter

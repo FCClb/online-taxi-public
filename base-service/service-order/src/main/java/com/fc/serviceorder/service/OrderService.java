@@ -30,11 +30,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -520,4 +519,86 @@ public class OrderService {
         return ResponseResult.success("乘客支付完成 修改订单状态");
     }
 
+    /**
+     * 订单取消
+     * @param orderId
+     * @param identity
+     * @return
+     */
+    public ResponseResult cancel(Long orderId, String identity) {
+        //查询订单当前状态
+        OrderInfo orderInfo = orderMapper.selectById(orderId);
+        Integer orderStatus = orderInfo.getOrderStatus();
+
+        LocalDateTime cancelTime = LocalDateTime.now();
+        Integer cancelTypeCode = null;
+
+        // 正常取消 标记
+        int cancelType = 1;
+
+        //更新订单的取消状态
+        //乘客取消
+        if (identity.trim().equals(IdentityEnum.PASSENGER_IDENTITY.getValue())) {
+
+            if (orderStatus.equals(OrderConstants.ORDER_START.getCode())) { // 订单开始
+                cancelTypeCode = OrderConstants.CANCEL_PASSENGER_BEFORE.getCode();
+
+            } else if (orderStatus.equals(OrderConstants.DRIVER_RECEIVE_ORDER.getCode())) { // 司机接到订单
+                LocalDateTime receiveOrderTime = orderInfo.getReceiveOrderTime();
+                long between = ChronoUnit.MINUTES.between(receiveOrderTime, cancelTime);
+                if (between > 1){
+                    cancelTypeCode = OrderConstants.CANCEL_PASSENGER_ILLEGAL.getCode();
+                }else {
+                    cancelTypeCode = OrderConstants.CANCEL_PASSENGER_BEFORE.getCode();
+                }
+
+            } else if (orderStatus.equals(OrderConstants.DRIVER_TO_PICK_UP_PASSENGER.getCode())) {  // 司机去接乘客
+                cancelTypeCode = OrderConstants.CANCEL_PASSENGER_ILLEGAL.getCode();
+
+            } else if (orderStatus.equals(OrderConstants.DRIVER_ARRIVED_DEPARTURE.getCode())) { // 司机到达乘客起点
+                cancelTypeCode = OrderConstants.CANCEL_PASSENGER_ILLEGAL.getCode();
+
+            } else {
+                log.info("乘客取消失败");
+                cancelType = 0;
+            }
+
+        }
+
+        // 如果是司机取消
+        if (identity.trim().equals(IdentityEnum.DRIVER_IDENTITY.getValue())) {
+
+            LocalDateTime receiveOrderTime = orderInfo.getReceiveOrderTime();
+            long between = ChronoUnit.MINUTES.between(receiveOrderTime, cancelTime);
+            // 订单开始
+            // 司机接到乘客
+            if (orderStatus.equals(OrderConstants.DRIVER_RECEIVE_ORDER.getCode())
+                    || orderStatus.equals(OrderConstants.DRIVER_TO_PICK_UP_PASSENGER.getCode())
+                    || orderStatus.equals(OrderConstants.DRIVER_ARRIVED_DEPARTURE.getCode())) {
+
+                if (between > 1) {
+                    cancelTypeCode = OrderConstants.CANCEL_DRIVER_ILLEGAL.getCode();
+                } else {
+                    cancelTypeCode = OrderConstants.CANCEL_DRIVER_BEFORE.getCode();
+                }
+
+            } else {
+                log.info("司机取消失败");
+                cancelType = 0;
+            }
+
+        }
+
+        if (cancelType == 0){
+            return ResponseResult.fail(CommonStatusEnum.ORDER_CANCEL_ERROR.getCode(),CommonStatusEnum.ORDER_CANCEL_ERROR.getValue());
+        }
+
+        orderInfo.setCancelTypeCode(cancelTypeCode);
+        orderInfo.setCancelTime(cancelTime);
+        orderInfo.setCancelOperator(Integer.parseInt(identity));
+        orderInfo.setOrderStatus(OrderConstants.ORDER_CANCEL.getCode());
+
+        orderMapper.updateById(orderInfo);
+        return ResponseResult.success("订单取消");
+    }
 }
