@@ -1,10 +1,13 @@
 package com.fc.apidriver.service;
 
 import com.fc.apidriver.remote.ServiceOrderClient;
+import com.fc.internalcommon.constant.IdentityEnum;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 订单管理
@@ -53,6 +56,17 @@ public class OrderService {
      */
     public ResponseResult passengerGetoff(OrderRequest orderRequest) {
         return orderClient.passengerGetoff(orderRequest);
+    }
+
+    /**
+     * 订单取消
+     *
+     * @param orderId
+     * @return
+     */
+    public ResponseResult cancel(Long orderId) {
+
+        return orderClient.cancel(orderId, IdentityEnum.DRIVER_IDENTITY.getValue());
     }
 
 }

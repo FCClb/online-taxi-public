@@ -4,10 +4,7 @@ import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.request.OrderRequest;
 import com.fc.serviceorder.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单管理
@@ -99,12 +96,13 @@ public class OrderController {
 
     /**
      * 订单取消
+     *
      * @param orderId
      * @param identity
      * @return
      */
     @PostMapping("/cancel")
-    public ResponseResult cancel(Long orderId, String identity) {
+    public ResponseResult cancel(@RequestParam Long orderId, @RequestParam String identity) {
 
         return orderService.cancel(orderId, identity);
     }
