@@ -1,11 +1,13 @@
 package com.fc.apidriver.service;
 
 import com.fc.apidriver.remote.ServiceDriverUserClient;
-import com.fc.internalcommon.dto.DriverUser;
-import com.fc.internalcommon.dto.DriverUserWorkStatus;
-import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.dto.*;
+import com.fc.internalcommon.util.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class DriverUserService {
@@ -30,6 +32,16 @@ public class DriverUserService {
      */
     public ResponseResult updateDriverUserWorkStatus(DriverUserWorkStatus driverUserWorkStatus) {
         return serviceDriverUserClient.changeDriverUserWorkStatus(driverUserWorkStatus);
+    }
+
+    /**
+     * 查询司机车辆绑定关系
+     *
+     * @return
+     */
+    public ResponseResult<DriverCarBindingRelationship> getDriverCarBindingRelationship(String driverPhone) {
+        //根据driverPhone查询司机车辆绑定信息
+        return serviceDriverUserClient.getDriverCarBindingRelationship(driverPhone);
     }
 
 }

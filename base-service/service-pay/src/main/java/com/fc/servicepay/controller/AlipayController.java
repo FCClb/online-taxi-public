@@ -48,7 +48,7 @@ public class AlipayController {
     public String notify(HttpServletRequest request) throws Exception {
         String tradeStatus = request.getParameter("trade_status");
         if (tradeStatus.trim().equals("TRADE_SUCCESS")) {
-            HashMap<String, String> param = new HashMap<>();
+            Map<String, String> param = new HashMap<>();
             Map<String, String[]> parameterMap = request.getParameterMap();
             for (String name : parameterMap.keySet()) {
                 param.put(name, request.getParameter(name));

@@ -10,7 +10,13 @@ import lombok.Data;
 @AllArgsConstructor
 public class TokenResult {
 
+    /**
+     * 手机号码
+     */
     private String phone;
 
+    /**
+     * 身份标识
+     */
     private String identity;
 }

@@ -25,7 +25,7 @@ public class SseController {
     @GetMapping("/connect")
     public SseEmitter connect(@RequestParam Long userId, @RequestParam String identity){
         log.info("连接到用户ID："+userId+",身份类型："+identity);
-        SseEmitter sseEmitter = new SseEmitter(30000L);
+        SseEmitter sseEmitter = new SseEmitter(0L);
 
         String sseMapKey = SsePrefixUtils.generatorSseKey(userId,identity);
         log.info("建立连接存入SSE Map的key：{}", sseMapKey);

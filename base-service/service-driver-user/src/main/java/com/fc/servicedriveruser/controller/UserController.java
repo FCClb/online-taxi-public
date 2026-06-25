@@ -1,10 +1,12 @@
 package com.fc.servicedriveruser.controller;
 
 import com.fc.internalcommon.constant.DriverCarConstants;
+import com.fc.internalcommon.dto.DriverCarBindingRelationship;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.internalcommon.response.DriverUserExistsResponse;
 import com.fc.internalcommon.response.OrderDriverResponse;
+import com.fc.servicedriveruser.service.DriverCarBindingRelationshipService;
 import com.fc.servicedriveruser.service.DriverUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,9 @@ public class UserController {
 
     @Autowired
     private DriverUserService driverUserService;
+
+    @Autowired
+    private DriverCarBindingRelationshipService driverCarBindingRelationshipService;
 
     /**
      * 新增 司机用户
@@ -37,7 +42,7 @@ public class UserController {
 
     /**
      * 查询
-     * 根据 手机号查询司机
+     * 根据 手机号查询司机是否存在
      * @param driverPhone
      * @return
      */
@@ -68,5 +73,16 @@ public class UserController {
     public ResponseResult<OrderDriverResponse> getAvailableDriver(@PathVariable("carId") Long carId) {
 
         return driverUserService.getAvailableDriver(carId);
+    }
+
+    /**
+     * 查询司机车辆绑定关系
+     * @param driverPhone
+     * @return
+     */
+    @GetMapping("/driver-car-binding-relationship")
+    public ResponseResult<DriverCarBindingRelationship> getDriverCarBindingRelationship(@RequestParam String driverPhone) {
+
+        return driverCarBindingRelationshipService.getDriverCarBindingRelationshipByDriverPhone(driverPhone);
     }
 }

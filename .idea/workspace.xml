@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="api-passenger &amp; api-driver:调用service-order实现订单取消">
+    <list default="true" id="b2660d13-ed78-406a-99cf-69bca0514ebb" name="Changes" comment="service-order:订单无效，修改订单状态">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/remote/ServiceDriverUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/DriverUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-driver/src/main/java/com/fc/apidriver/service/DriverUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/api-passenger/src/main/java/com/fc/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverCarBindingRelationshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-driver-user/src/main/java/com/fc/servicedriveruser/service/DriverCarBindingRelationshipService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-order/src/main/java/com/fc/serviceorder/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/controller/AlipayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/service/AlipayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-pay/src/main/java/com/fc/servicepay/service/AlipayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/java/com/fc/servicessepush/controller/SseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/driver-test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/passenger-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/service-sse-push/src/main/resources/static/passenger-test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/initMysql/service_price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/initMysql/service_price.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/待办.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/待办.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/TokenResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/dto/TokenResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/fc/internalcommon/request/OrderRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,67 +73,70 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ForecastPriceService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.JwtUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalClient.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.online-taxi-public [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-price [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiBossApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiDriverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiPassengerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceDriverUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceMapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceOrderApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePassengerUserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePriceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceSsePush.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceSsePushApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceVerificationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SseDriverClientWeb.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/B_code/Java_Idea/javaProject/online-taxi-public/base-service/service-sse-push/src/main/resources/static&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ForecastPriceService.executor": "Run",
+    "Application.JwtUtils.executor": "Run",
+    "Application.TerminalClient.executor": "Run",
+    "Maven.online-taxi-public [clean].executor": "Run",
+    "Maven.online-taxi-public [compile].executor": "Run",
+    "Maven.service-price [clean].executor": "Run",
+    "Maven.service-price [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiBossApplication.executor": "Run",
+    "Spring Boot.ApiDriverApplication.executor": "Run",
+    "Spring Boot.ApiPassengerApplication.executor": "Run",
+    "Spring Boot.ServiceDriverUserApplication.executor": "Run",
+    "Spring Boot.ServiceMapApplication.executor": "Run",
+    "Spring Boot.ServiceOrderApplication.executor": "Run",
+    "Spring Boot.ServicePassengerUserApplication.executor": "Run",
+    "Spring Boot.ServicePayApplication.executor": "Run",
+    "Spring Boot.ServicePriceApplication.executor": "Run",
+    "Spring Boot.ServiceSsePush.executor": "Run",
+    "Spring Boot.ServiceSsePushApplication.executor": "Run",
+    "Spring Boot.ServiceVerificationApplication.executor": "Run",
+    "Spring Boot.SseDriverClientWeb.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/B_code/Java_Idea/javaProject/online-taxi-public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public" />
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\doc" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\service-sse-push\src\main\resources\static" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\service-sse-push" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\base-service\sse-driver-client-web\src\main\resources\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public" />
       <recent name="D:\B_code\Java_Idea\javaProject\online-taxi-public\doc\mysql" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -312,15 +330,11 @@
       <workItem from="1782208812986" duration="1954000" />
       <workItem from="1782216835507" duration="6838000" />
       <workItem from="1782261504465" duration="2659000" />
-      <workItem from="1782275835874" duration="2128000" />
-    </task>
-    <task id="LOCAL-00035" summary="api-boss:调用service-driver-user实现新增车辆，司机车辆关系的绑定和解绑">
-      <option name="closed" value="true" />
-      <created>1781421611399</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1781421611399</updated>
+      <workItem from="1782275835874" duration="2931000" />
+      <workItem from="1782294485561" duration="18000" />
+      <workItem from="1782295005783" duration="1014000" />
+      <workItem from="1782302478147" duration="596000" />
+      <workItem from="1782353778445" duration="11651000" />
     </task>
     <task id="LOCAL-00036" summary="api-driver:发送验证码，骨架代码编写">
       <option name="closed" value="true" />
@@ -706,7 +720,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782277620288</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="service-order:订单无效，修改订单状态">
+      <option name="closed" value="true" />
+      <created>1782278019957</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1782278019957</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,7 +747,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="service-order:创建订单前，判断当前是否有正在进行的订单，代码实现" />
     <MESSAGE value="service-order:创建订单前，判断当前设备是否在黑名单，代码实现" />
     <MESSAGE value="service-price:根据城市编码和车型查询是否存在计价规则，代码实现" />
     <MESSAGE value="service-order:创建订单前检查当前城市是否有可用司机，代码实现" />
@@ -750,7 +771,8 @@
     <MESSAGE value="service-pay:调用service-order，修改订单状态为支付完成" />
     <MESSAGE value="service-order:订单取消" />
     <MESSAGE value="api-passenger &amp; api-driver:调用service-order实现订单取消" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-passenger &amp; api-driver:调用service-order实现订单取消" />
+    <MESSAGE value="service-order:订单无效，修改订单状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="service-order:订单无效，修改订单状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -234,6 +234,7 @@ public class OrderService {
                     driverPushRequest.setIdentity(IdentityEnum.DRIVER_IDENTITY.getValue());
 
                     ObjectNode driverObjectNode = objectMapper.createObjectNode();
+                    driverObjectNode.put("orderId", orderInfo.getId());
                     driverObjectNode.put("passengerId", String.valueOf(orderInfo.getPassengerId()));
                     driverObjectNode.put("passengerPhone", orderInfo.getPassengerPhone());
                     driverObjectNode.put("departure", orderInfo.getDeparture());
@@ -243,6 +244,7 @@ public class OrderService {
                     driverObjectNode.put("destination",orderInfo.getDestination());
                     driverObjectNode.put("destLongitude",orderInfo.getDestLongitude());
                     driverObjectNode.put("destLatitude",orderInfo.getDestLatitude());
+
                     try {
                         String ContentText = objectMapper.writeValueAsString(driverObjectNode);
                         log.info("发送给司机的消息" + ContentText);
@@ -259,6 +261,7 @@ public class OrderService {
                     passengerPushRequest.setIdentity(IdentityEnum.PASSENGER_IDENTITY.getValue());
 
                     ObjectNode passengerObjectNode = objectMapper.createObjectNode();
+                    passengerObjectNode.put("orderId", orderInfo.getId());
                     passengerObjectNode.put("driverId", String.valueOf(orderInfo.getDriverId()));
                     passengerObjectNode.put("driverPhone", orderInfo.getDriverPhone());
                     passengerObjectNode.put("vehicleNo", orderInfo.getVehicleNo());

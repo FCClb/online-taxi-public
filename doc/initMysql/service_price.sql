@@ -16,9 +16,9 @@ CREATE TABLE `price_rule`  (
                                `unit_price_per_mile` double(4, 2) NULL DEFAULT NULL COMMENT '每公里价钱（超出起步里程后）',
                                `unit_price_per_minute` double(4, 2) NULL DEFAULT NULL COMMENT '每分钟价钱',
                                `fare_type` varchar(16) NULL DEFAULT NULL COMMENT '运价类型编码',
-                               `fare_version` int NULL DEFAULT NULL COMMENT '运价类型版本（默认1，更新则数值增加）',
+                               `fare_version` int NOT NULL DEFAULT 1 COMMENT '运价类型版本（默认1，更新则数值增加）',
                                PRIMARY KEY (`city_code`, `vehicle_type`, `fare_version`) USING BTREE
 ) ENGINE = InnoDB;
 
 -- 测试用例
-INSERT INTO `price_rule` VALUES ('110000', '1', 10.00, 3, 1.80, 0.50);
+INSERT INTO `price_rule` VALUES ('110000', '1', 10.00, 3, 1.80, 0.50,"110000$1");

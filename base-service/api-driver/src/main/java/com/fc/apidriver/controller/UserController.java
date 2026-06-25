@@ -4,11 +4,12 @@ import com.fc.apidriver.service.DriverUserService;
 import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.DriverUserWorkStatus;
 import com.fc.internalcommon.dto.ResponseResult;
+import com.fc.internalcommon.dto.TokenResult;
+import com.fc.internalcommon.util.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class UserController {
@@ -37,6 +38,21 @@ public class UserController {
     public ResponseResult updateDriverUserWorkStatus(@RequestBody DriverUserWorkStatus driverUserWorkStatus) {
 
         return driverUserService.updateDriverUserWorkStatus(driverUserWorkStatus);
+    }
+
+    /**
+     * 查询司机车辆绑定关系
+     *
+     * @return
+     */
+    @GetMapping("/driver-car-binding-relationship")
+    public ResponseResult getDriverCarBindingRelationship(HttpServletRequest httpServletRequest) {
+        String authorization = httpServletRequest.getHeader("Authorization");
+
+        TokenResult tokenResult = JwtUtils.checkToken(authorization);
+        String driverPhone = tokenResult.getPhone();
+
+        return driverUserService.getDriverCarBindingRelationship(driverPhone);
     }
 
 }

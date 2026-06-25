@@ -44,6 +44,11 @@ public class OrderRequest {
     private LocalDateTime orderTime;
 
     /**
+     * 车型
+     */
+    private String vehicleType;
+
+    /**
      * 出发地点
      */
     private String departure;

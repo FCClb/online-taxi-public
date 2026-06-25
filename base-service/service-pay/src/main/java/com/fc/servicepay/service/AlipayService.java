@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 public class AlipayService {
 
     @Autowired
-    private ServiceOrderClient orderClient;
-    @Autowired
     private ServiceOrderClient serviceOrderClient;
 
     public void pay(Long orderId) {

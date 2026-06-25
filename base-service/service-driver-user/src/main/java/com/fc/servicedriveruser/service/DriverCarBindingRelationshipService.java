@@ -4,8 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.fc.internalcommon.constant.CommonStatusEnum;
 import com.fc.internalcommon.constant.DriverCarConstants;
 import com.fc.internalcommon.dto.DriverCarBindingRelationship;
+import com.fc.internalcommon.dto.DriverUser;
 import com.fc.internalcommon.dto.ResponseResult;
 import com.fc.servicedriveruser.mapper.DriverCarBindingRelationshipMapper;
+import com.fc.servicedriveruser.mapper.DriverUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,9 @@ public class DriverCarBindingRelationshipService {
 
     @Autowired
     private DriverCarBindingRelationshipMapper driverCarBindingRelationshipMapper;
+
+    @Autowired
+    private DriverUserMapper driverUserMapper;
 
 
     /**
@@ -91,5 +96,27 @@ public class DriverCarBindingRelationshipService {
         driverCarBindingRelationshipMapper.updateById(relationship);
         return ResponseResult.success("司机车辆解绑成功");
     }
+
+    /**
+     * 查询司机车辆绑定关系
+     *
+     * @param driverPhone
+     * @return
+     */
+    public ResponseResult<DriverCarBindingRelationship> getDriverCarBindingRelationshipByDriverPhone(String driverPhone) {
+        QueryWrapper<DriverUser> driverCarBindingRelationshipQueryWrapper = new QueryWrapper<>();
+        driverCarBindingRelationshipQueryWrapper.eq("driver_phone", driverPhone);
+        DriverUser driverUser = driverUserMapper.selectOne(driverCarBindingRelationshipQueryWrapper);
+        Long driverId = driverUser.getId();
+
+        QueryWrapper<DriverCarBindingRelationship> driverUserWorkStatusQueryWrapper = new QueryWrapper<>();
+        driverUserWorkStatusQueryWrapper.eq("driver_id", driverId);
+        driverUserWorkStatusQueryWrapper.eq("bind_state", DriverCarConstants.DRIVER_CAR_BIND.getState());
+        DriverCarBindingRelationship relationship = driverCarBindingRelationshipMapper.selectOne(driverUserWorkStatusQueryWrapper);
+
+
+        return ResponseResult.success(relationship);
+    }
+
 
 }
